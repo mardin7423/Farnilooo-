@@ -11,7 +11,6 @@
   <link href="https://fonts.googleapis.com/css2?family=Lalezar&family=Vazirmatn:wght@400;500;600;700&display=swap" rel="stylesheet">
 
   <style>
-
     * {
       box-sizing: border-box;
       margin: 0;
@@ -71,10 +70,9 @@
     .hello,
     .title {
       font-family: "Lalezar", sans-serif;
-      font-size: clamp(40px, 10vw, 60px);
+      font-size: clamp(38px, 9vw, 58px);
       line-height: 1.3;
       margin-bottom: 12px;
-      color: white;
 
       text-shadow:
         0 0 12px rgba(75,247,255,.35),
@@ -95,14 +93,14 @@
     }
 
     .question {
-      font-size: 21px;
+      font-size: 20px;
       font-weight: 600;
       line-height: 2;
-      margin-bottom: 34px;
+      margin-bottom: 30px;
     }
 
     .main-text {
-      font-size: 19px;
+      font-size: 18px;
       line-height: 2;
       font-weight: 500;
       margin-bottom: 26px;
@@ -111,7 +109,7 @@
     .subtitle {
       font-size: 17px;
       line-height: 1.9;
-      opacity: .9;
+      opacity: .92;
       margin-bottom: 24px;
     }
 
@@ -127,7 +125,7 @@
       border-radius: 999px;
       padding: 17px 20px;
       font-family: "Lalezar", sans-serif;
-      font-size: 27px;
+      font-size: 25px;
       cursor: pointer;
       transition: .2s ease;
     }
@@ -138,7 +136,8 @@
 
     .yes-btn,
     .start-btn,
-    .continue-btn {
+    .continue-btn,
+    .final-btn {
       border: 1px solid #60f6ff;
       color: white;
       background: rgba(0,57,67,.78);
@@ -185,10 +184,8 @@
       width: 100%;
       padding: 23px 17px;
       border-radius: 25px;
-
       background: rgba(0,21,31,.38);
       border: 1px solid rgba(101,245,255,.4);
-
       margin-bottom: 28px;
     }
 
@@ -222,7 +219,8 @@
 
     .city-grid,
     .restaurant-grid,
-    .bar-grid {
+    .bar-grid,
+    .activity-grid {
       display: grid;
       grid-template-columns: 1fr;
       gap: 12px;
@@ -234,7 +232,8 @@
     .time-option,
     .city-option,
     .restaurant-option,
-    .bar-option {
+    .bar-option,
+    .activity-option {
       border: 1px solid rgba(103,246,255,.30);
       background: rgba(0,28,38,.58);
       color: white;
@@ -270,40 +269,39 @@
     }
 
     .restaurant-option,
-    .bar-option {
+    .bar-option,
+    .activity-option {
       border-radius: 22px;
       padding: 18px 17px;
       text-align: right;
     }
 
     .restaurant-option strong,
-    .bar-option strong {
+    .bar-option strong,
+    .activity-option strong {
       display: block;
       font-family: "Lalezar", sans-serif;
-      font-size: 23px;
+      font-size: 22px;
       font-weight: 400;
       margin-bottom: 5px;
     }
 
     .restaurant-option span,
-    .bar-option span {
+    .bar-option span,
+    .activity-option span {
       display: block;
       font-size: 14px;
       line-height: 1.8;
-      opacity: .78;
+      opacity: .8;
     }
 
-    .date-option.selected,
-    .time-option.selected,
-    .city-option.selected,
-    .restaurant-option.selected,
-    .bar-option.selected {
-      border-color: #66f7ff;
-      background: rgba(0,105,120,.55);
+    .selected {
+      border-color: #66f7ff !important;
+      background: rgba(0,105,120,.55) !important;
 
       box-shadow:
         0 0 16px rgba(85,245,255,.55),
-        inset 0 0 14px rgba(85,245,255,.12);
+        inset 0 0 14px rgba(85,245,255,.12) !important;
     }
 
     .selected-text {
@@ -323,14 +321,69 @@
       pointer-events: auto;
     }
 
-    @media(max-width:480px) {
+    .consent-box {
+      text-align: right;
+      padding: 22px 18px;
+      border-radius: 24px;
+      background: rgba(0,21,31,.45);
+      border: 1px solid rgba(101,245,255,.4);
+      font-size: 16px;
+      line-height: 2.15;
+      margin: 20px 0 28px;
+    }
 
+    .consent-box strong {
+      color: #67f6ff;
+    }
+
+    .summary {
+      width: 100%;
+      text-align: right;
+      padding: 20px;
+      border-radius: 24px;
+      background: rgba(0,21,31,.48);
+      border: 1px solid rgba(101,245,255,.4);
+      margin: 20px 0 25px;
+    }
+
+    .summary-row {
+      padding: 12px 3px;
+      border-bottom: 1px solid rgba(255,255,255,.10);
+      font-size: 16px;
+      line-height: 1.8;
+    }
+
+    .summary-row:last-child {
+      border-bottom: none;
+    }
+
+    .summary-row strong {
+      color: #67f6ff;
+    }
+
+    .mission {
+      font-family: "Lalezar", sans-serif;
+      font-size: 42px;
+      color: #67f6ff;
+      margin-bottom: 20px;
+      text-shadow: 0 0 20px rgba(75,247,255,.3);
+    }
+
+    .signature {
+      margin-top: 35px;
+      font-size: 15px;
+      line-height: 2;
+      opacity: .8;
+      direction: ltr;
+    }
+
+    @media(max-width:480px) {
       .card {
         padding: 30px 19px;
       }
 
       .question {
-        font-size: 19px;
+        font-size: 18px;
       }
 
       .main-text {
@@ -350,1501 +403,1179 @@
         font-size: 16px;
         padding: 13px 4px;
       }
-
-      .restaurant-option strong,
-      .bar-option strong {
-        font-size: 21px;
-      }
-
-      .restaurant-option span,
-      .bar-option span {
-        font-size: 13px;
-      }
-
     }
-
   </style>
 </head>
 
 <body>
 
+<!-- 1 -->
+<section id="page1" class="page">
+  <div class="card intro-card">
 
-  <!-- صفحه ۱ -->
+    <h1 class="hello">
+      سلام <span class="niloufar">نیلوفر</span>
+    </h1>
 
-  <section id="page1" class="page">
+    <div class="dna">🧬</div>
 
-    <div class="card intro-card">
+    <div class="question">
+      حاضری یه تجربه متفاوت
+      <br>
+      و تکرارنشدنی رو تجربه کنی؟
+    </div>
 
-      <h1 class="hello">
-        سلام <span class="niloufar">نیلوفر</span>
-      </h1>
+    <div class="buttons">
 
-      <div class="dna">🧬</div>
+      <button class="yes-btn" onclick="showPage(2)">
+        آره، بزن بریم ✨
+      </button>
 
-      <div class="question">
-        حاضری یه تجربه متفاوت
-        <br>
-        و تکرارنشدنی رو تجربه کنی؟
+      <button class="no-btn" onclick="brokenButton()">
+        نه، اصلاً 🙃
+      </button>
+
+    </div>
+
+    <div id="errorMessage" class="error-message">
+      این گزینه خرابه 😐
+      <br>
+      یه لحظه اون یکی گزینه رو بزن ببین کار می‌کنه یا نه 😂
+    </div>
+
+  </div>
+</section>
+
+
+<!-- 2 -->
+<section id="page2" class="page">
+  <main class="card">
+
+    <h1 class="title">
+      خوش اومدی <span class="name">نیلوفر</span>
+    </h1>
+
+    <div class="dna">🧬</div>
+
+    <div class="main-text">
+      اینجا کاملاً هدفمند انتخاب شدی
+      <br>
+      تا یه دیت عاشقانه و تکرارنشدنی رو
+      <br>
+      با <span class="mardin">ماردین</span> تجربه کنی. 🤍
+    </div>
+
+    <section class="note">
+
+      <div style="font-size:30px;margin-bottom:8px;">🧪</div>
+
+      <div class="note-title">
+        یه نکته مهم...
       </div>
 
-      <div class="buttons">
-
-        <button
-          class="yes-btn"
-          onclick="showPage(2)"
-        >
-          آره، بزن بریم ✨
-        </button>
-
-        <button
-          class="no-btn"
-          onclick="brokenButton()"
-        >
-          نه، اصلاً 🙃
-        </button>
-
+      <div class="note-text">
+        راستی یادت نره؛
+        <br>
+        این لینک فقط
+        <span class="once">یکبار</span>
+        اعتبار داره،
+        <br>
+        پس دقت کن که انتخابت درست باشه 🫠
       </div>
 
-      <div
-        id="errorMessage"
-        class="error-message"
-      >
-        این گزینه خرابه 😐
-        <br>
-        یه لحظه اون یکی گزینه رو بزن ببین کار می‌کنه یا نه 😂
+    </section>
+
+    <button class="start-btn" onclick="showPage(3)">
+      شروع کنیم 🧪
+    </button>
+
+  </main>
+</section>
+
+
+<!-- 3 تاریخ -->
+<section id="page3" class="page">
+  <main class="card">
+
+    <h1 class="title">یه روز انتخاب کن 📅</h1>
+
+    <div class="subtitle">
+      ببینیم این آزمایش عاشقانه
+      <br>
+      دقیقاً چه روزی باید انجام بشه 🧬
+    </div>
+
+    <div class="date-grid">
+
+      <button class="date-option"
+              data-date="2026-08-14"
+              data-label="جمعه ۱۴ آگوست">
+        جمعه<br>۱۴ آگوست
+      </button>
+
+      <button class="date-option"
+              data-date="2026-08-21"
+              data-label="جمعه ۲۱ آگوست">
+        جمعه<br>۲۱ آگوست
+      </button>
+
+      <button class="date-option"
+              data-date="2026-08-22"
+              data-label="شنبه ۲۲ آگوست">
+        شنبه<br>۲۲ آگوست
+      </button>
+
+      <button class="date-option"
+              data-date="2026-08-28"
+              data-label="جمعه ۲۸ آگوست">
+        جمعه<br>۲۸ آگوست
+      </button>
+
+      <button class="date-option"
+              data-date="2026-08-29"
+              data-label="شنبه ۲۹ آگوست">
+        شنبه<br>۲۹ آگوست
+      </button>
+
+    </div>
+
+    <div id="selectedDateText" class="selected-text">
+      هنوز تاریخی انتخاب نشده
+    </div>
+
+    <button id="dateContinue" class="continue-btn">
+      ادامه 🧬
+    </button>
+
+  </main>
+</section>
+
+
+<!-- 4 ساعت -->
+<section id="page4" class="page">
+  <main class="card">
+
+    <h1 class="title">ساعت رو انتخاب کن 🕐</h1>
+
+    <div class="subtitle">
+      حالا ببینیم عملیات
+      <br>
+      دقیقاً چه ساعتی شروع بشه 😌
+    </div>
+
+    <div class="time-grid">
+
+      <button class="time-option" data-time="17:00">17:00</button>
+      <button class="time-option" data-time="17:15">17:15</button>
+      <button class="time-option" data-time="17:30">17:30</button>
+
+      <button class="time-option" data-time="17:45">17:45</button>
+      <button class="time-option" data-time="18:00">18:00</button>
+      <button class="time-option" data-time="18:15">18:15</button>
+
+      <button class="time-option" data-time="18:30">18:30</button>
+      <button class="time-option" data-time="18:45">18:45</button>
+      <button class="time-option" data-time="19:00">19:00</button>
+
+    </div>
+
+    <div id="selectedTimeText" class="selected-text">
+      هنوز ساعتی انتخاب نشده
+    </div>
+
+    <button id="timeContinue" class="continue-btn">
+      ادامه 🧬
+    </button>
+
+  </main>
+</section>
+
+
+<!-- 5 شهر -->
+<section id="page5" class="page">
+  <main class="card">
+
+    <h1 class="title">خب، حالا کجا بریم؟ 📍</h1>
+
+    <div class="subtitle">
+      یکی از دو شهر رو انتخاب کن
+      <br>
+      تا مسیر آزمایش مشخص بشه 🧬
+    </div>
+
+    <div class="city-grid">
+
+      <button class="city-option" data-city="Köln">
+        🏙️ Köln
+        <span>کلن</span>
+      </button>
+
+      <button class="city-option" data-city="Düsseldorf">
+        🌆 Düsseldorf
+        <span>دوسلدورف</span>
+      </button>
+
+    </div>
+
+    <div id="selectedCityText" class="selected-text">
+      هنوز شهری انتخاب نشده
+    </div>
+
+    <button id="cityContinue" class="continue-btn">
+      ادامه 🧬
+    </button>
+
+  </main>
+</section>
+
+
+<!-- 6 رستوران کلن -->
+<section id="page6" class="page">
+  <main class="card">
+
+    <h1 class="title">خب، چی بخوریم؟ 🍽️</h1>
+
+    <div class="subtitle">
+      چند تا جای خوب تو کلن برات انتخاب کردم 😌
+      <br>
+      ببین کدوم بیشتر به دلت می‌شینه 🤍
+    </div>
+
+    <div class="restaurant-grid">
+
+      <button class="restaurant-option" data-value="Limani">
+        <strong>🇬🇷 Limani</strong>
+        <span>یونانی و مدیترانه‌ای • کنار راین</span>
+      </button>
+
+      <button class="restaurant-option" data-value="NENI Köln">
+        <strong>🌿 NENI Köln</strong>
+        <span>Oriental • Mediterranean • Fusion</span>
+      </button>
+
+      <button class="restaurant-option" data-value="Vetrina">
+        <strong>🇮🇹 Vetrina</strong>
+        <span>ایتالیایی مدرن و خاص 🍝</span>
+      </button>
+
+      <button class="restaurant-option" data-value="Colina Steakhaus">
+        <strong>🥩 Colina Steakhaus</strong>
+        <span>استیک و گوشت‌های خاص 🔥</span>
+      </button>
+
+      <button class="restaurant-option" data-value="Umibar">
+        <strong>🍣 Umibar</strong>
+        <span>Thai • Vietnamese • Japanese • Sushi</span>
+      </button>
+
+      <button class="restaurant-option" data-value="انتخاب نیلوفر">
+        <strong>❤️ هیچکدوم</strong>
+        <span>اگه هیچکدوم به دلت ننشست، خودت یه جا پیشنهاد بده 😉</span>
+      </button>
+
+    </div>
+
+    <div id="restaurantTextK" class="selected-text">
+      هنوز رستورانی انتخاب نشده
+    </div>
+
+    <button id="restaurantContinueK" class="continue-btn">
+      اینو می‌خوام 🧬
+    </button>
+
+  </main>
+</section>
+
+
+<!-- 7 رستوران دوسلدورف -->
+<section id="page7" class="page">
+  <main class="card">
+
+    <h1 class="title">Düsseldorf 🍽️</h1>
+
+    <div class="subtitle">
+      برای دوسلدورف هم چند تا جای خاص پیدا کردم 😌
+      <br>
+      حالا انتخاب با توئه 🤍
+    </div>
+
+    <div class="restaurant-grid">
+
+      <button class="restaurant-option" data-value="Oktopussy">
+        <strong>🐙 Oktopussy</strong>
+        <span>Modern • International • Crossover</span>
+      </button>
+
+      <button class="restaurant-option" data-value="MEERBAR">
+        <strong>🌊 MEERBAR</strong>
+        <span>Mediterranean • Seafood • Sushi</span>
+      </button>
+
+      <button class="restaurant-option" data-value="Estilo Campo">
+        <strong>🥩 Estilo Campo</strong>
+        <span>Argentinian Steakhouse • Meat & Grill 🔥</span>
+      </button>
+
+      <button class="restaurant-option" data-value="King Fusion">
+        <strong>🥢 King Fusion</strong>
+        <span>Asian Fusion • Thai • Vietnamese • Japanese • Sushi</span>
+      </button>
+
+      <button class="restaurant-option" data-value="Da Clà">
+        <strong>🇮🇹 Da Clà</strong>
+        <span>Italian • Pasta • Mediterranean 🍝</span>
+      </button>
+
+      <button class="restaurant-option" data-value="انتخاب نیلوفر">
+        <strong>❤️ هیچکدوم</strong>
+        <span>اگه هیچکدوم به دلت ننشست، خودت یه جا پیشنهاد بده 😉</span>
+      </button>
+
+    </div>
+
+    <div id="restaurantTextD" class="selected-text">
+      هنوز رستورانی انتخاب نشده
+    </div>
+
+    <button id="restaurantContinueD" class="continue-btn">
+      اینو می‌خوام 🧬
+    </button>
+
+  </main>
+</section>
+
+
+<!-- 8 بعد شام -->
+<section id="page8" class="page">
+  <main class="card">
+
+    <h1 class="title">خب... 😌</h1>
+
+    <div class="dna">🍽️</div>
+
+    <div class="question">
+
+      امیدوارم شام بهت خوش گذشته باشه 🤍
+
+      <br><br>
+
+      حالا اگه تا اینجای شب بهت خوش گذشته...
+
+      <br>
+
+      دوست داری ادامه بدیم؟ 😌
+
+    </div>
+
+    <div class="buttons">
+
+      <button class="yes-btn" onclick="continueAfterDinner()">
+        آره، ادامه بدیم ✨
+      </button>
+
+      <button class="no-btn" onclick="dinnerNo()">
+        نه، فکر کنم بسه 🙃
+      </button>
+
+    </div>
+
+    <div id="dinnerNoMessage" class="funny-message">
+
+      مگه میشه بهت خوش نگذره؟ 😐
+
+      <br><br>
+
+      نگران نباش...
+
+      <br>
+
+      اگه بهت خوش نگذشته باشه،
+      من خودم جمع می‌کنم از این کشور میرم 🥲😂
+
+    </div>
+
+  </main>
+</section>
+
+
+<!-- 9 بار کلن -->
+<section id="page9" class="page">
+  <main class="card">
+
+    <h1 class="title">خانم نیلوفر خانم... 😏</h1>
+
+    <div class="subtitle">
+
+      حالا که تا اینجا بهت خوش گذشته،
+
+      <br>
+
+      موافقی بعد از شام بریم یه جایی
+      دو تا شات بزنیم که غذا هم هضم شه؟ 🥃😂
+
+      <br><br>
+
+      ولی مهم‌تر از همه اینه که...
+
+      <br>
+
+      شما چی دوست داری؟ 😌
+
+    </div>
+
+    <div class="bar-grid">
+
+      <button class="bar-option" data-value="ONA MOR">
+        <strong>🍸 ONA MOR</strong>
+        <span>Cocktail Bar • شیک، خاص و مناسب یه شب خوب</span>
+      </button>
+
+      <button class="bar-option" data-value="Bar Rix">
+        <strong>🍷 Bar Rix</strong>
+        <span>Wine Bar • شیک، آروم و مناسب یه لیوان شراب خوب</span>
+      </button>
+
+      <button class="bar-option" data-value="Plüsch Bar & Lounge">
+        <strong>🥃 Plüsch Bar & Lounge</strong>
+        <span>Köln Marriott • بار شیک و آروم برای نشستن و حرف زدن</span>
+      </button>
+
+      <button class="bar-option" data-value="Low Budget">
+        <strong>🍺 Low Budget</strong>
+        <span>
+          یه بار خاک‌خورده و خودمونی 😄
+          <br>
+          محشرترین تکیلای جهان رو داره؛ مستقیم از بشکه سرو میشه
+          و یه جور خاصی خوبه 😂🥃
+        </span>
+      </button>
+
+      <button class="bar-option" data-value="Masons">
+        <strong>💨 Masons</strong>
+        <span>
+          Shisha Lounge • البته با توجه به میگرنت شاید بهترین گزینه نباشه 😅
+          ولی گفتم بذارمش، شاید دوستش داشته باشی
+        </span>
+      </button>
+
+    </div>
+
+    <div id="barTextK" class="selected-text">
+      هنوز چیزی انتخاب نشده
+    </div>
+
+    <button id="barContinueK" class="continue-btn">
+      انتخاب شد 🧬
+    </button>
+
+  </main>
+</section>
+
+
+<!-- 10 بار دوسلدورف -->
+<section id="page10" class="page">
+  <main class="card">
+
+    <h1 class="title">خانم نیلوفر خانم... 😏</h1>
+
+    <div class="subtitle">
+
+      حالا که تا اینجا بهت خوش گذشته،
+
+      <br>
+
+      موافقی بعد از شام بریم یه جایی
+      دو تا شات بزنیم که غذا هم هضم شه؟ 🥃😂
+
+      <br><br>
+
+      ولی مهم‌تر از همه اینه که...
+
+      <br>
+
+      شما چی دوست داری؟ 😌
+
+    </div>
+
+    <div class="bar-grid">
+
+      <button class="bar-option" data-value="Hideaway">
+        <strong>🍸 Hideaway</strong>
+        <span>Cocktail Bar • شیک، تاریک و خاص</span>
+      </button>
+
+      <button class="bar-option" data-value="Vino's Weinbar">
+        <strong>🍷 Vino's Weinbar</strong>
+        <span>Wine Bar • دنج، شیک و مناسب یه لیوان شراب خوب</span>
+      </button>
+
+      <button class="bar-option" data-value="Breidenbacher Hof – Bar & Smoking Lounge">
+        <strong>🥃 Breidenbacher Hof</strong>
+        <span>Bar & Smoking Lounge • یه Hotel Bar لوکس و خیلی آروم</span>
+      </button>
+
+      <button class="bar-option" data-value="Auberge">
+        <strong>🍺 Auberge</strong>
+        <span>Rock Pub • قدیمی، خاک‌خورده، خودمونی و متفاوت 🤘</span>
+      </button>
+
+      <button class="bar-option" data-value="AVIUM">
+        <strong>💨 AVIUM</strong>
+        <span>
+          Shisha & Cocktail Lounge • شیک و خفن
+          <br>
+          البته اینجا هم میگرن رو فراموش نکردم 😅
+        </span>
+      </button>
+
+    </div>
+
+    <div id="barTextD" class="selected-text">
+      هنوز چیزی انتخاب نشده
+    </div>
+
+    <button id="barContinueD" class="continue-btn">
+      انتخاب شد 🧬
+    </button>
+
+  </main>
+</section>
+
+
+<!-- 11 فعالیت کلن -->
+<section id="page11" class="page">
+  <main class="card">
+
+    <h1 class="title">هنوز انرژی داری؟ 😏</h1>
+
+    <div class="subtitle">
+
+      چون من هنوز برنامه دارم 😂
+
+      <br><br>
+
+      حالا وقتشه یه کم از جامون بلند شیم
+      و یه کاری کنیم که بفهمیم کدوممون
+      بیشتر استعداد خرابکاری داره 🫠
+
+      <br><br>
+
+      مرحله بعد رو شما انتخاب کن خانم نیلوفر خانم 😌
+
+    </div>
+
+    <div class="activity-grid">
+
+      <button class="activity-option" data-value="Game Center – Köln Ring">
+        <strong>🕹️ Game Center</strong>
+        <span>Köln Ring • بازی، رقابت و احتمالاً باختن تو 😂</span>
+      </button>
+
+      <button class="activity-option" data-value="West Bowling">
+        <strong>🎳 Bowling</strong>
+        <span>West Bowling • یه رقابت کلاسیک برای آخر شب</span>
+      </button>
+
+      <button class="activity-option" data-value="7th Space Köln – Axtwerfen + VR">
+        <strong>🪓🥽 پرتاب تبر + VR</strong>
+        <span>7th Space Köln • برای بخش کمی خطرناک‌تر آزمایش 🧪😂</span>
+      </button>
+
+      <button class="activity-option" data-value="LaserTag Köln">
+        <strong>🔫 LaserTag</strong>
+        <span>LaserTag Köln • اینجا دیگه دیت رسماً تبدیل به جنگ میشه 😂</span>
+      </button>
+
+      <button class="activity-option" data-value="سینما">
+        <strong>🎬 سینما</strong>
+        <span>یه فیلم خوب برای یه اختتامیه خوب 🎬🤍</span>
+      </button>
+
+    </div>
+
+    <div id="activityTextK" class="selected-text">
+      هنوز چیزی انتخاب نشده
+    </div>
+
+    <button id="activityContinueK" class="continue-btn">
+      بریم مرحله آخر 🤍
+    </button>
+
+  </main>
+</section>
+
+
+<!-- 12 فعالیت دوسلدورف -->
+<section id="page12" class="page">
+  <main class="card">
+
+    <h1 class="title">هنوز انرژی داری؟ 😏</h1>
+
+    <div class="subtitle">
+
+      چون من هنوز برنامه دارم 😂
+
+      <br><br>
+
+      حالا وقتشه یه کم از جامون بلند شیم
+      و یه کاری کنیم که بفهمیم کدوممون
+      بیشتر استعداد خرابکاری داره 🫠
+
+      <br><br>
+
+      مرحله بعد رو شما انتخاب کن خانم نیلوفر خانم 😌
+
+    </div>
+
+    <div class="activity-grid">
+
+      <button class="activity-option" data-value="Gamer Düsseldorf – Die Gameshow">
+        <strong>🎮 Gamer Düsseldorf</strong>
+        <span>Die Gameshow • ببینیم کدوممون تحمل باخت بیشتری داره 😂</span>
+      </button>
+
+      <button class="activity-option" data-value="Bowling Düsseldorf">
+        <strong>🎳 Bowling</strong>
+        <span>یه رقابت کلاسیک برای آخر شب 🎳</span>
+      </button>
+
+      <button class="activity-option" data-value="7th Space Düsseldorf – Axtwerfen + VR">
+        <strong>🪓🥽 پرتاب تبر + VR</strong>
+        <span>7th Space Düsseldorf • VR و پرتاب تبر 🧪😂</span>
+      </button>
+
+      <button class="activity-option" data-value="LaserTag Evolution Düsseldorf">
+        <strong>🔫 LaserTag Evolution</strong>
+        <span>اینجا دیگه دیت رسماً تبدیل به جنگ میشه 😂</span>
+      </button>
+
+      <button class="activity-option" data-value="سینما">
+        <strong>🎬 سینما</strong>
+        <span>یه فیلم خوب برای یه اختتامیه خوب 🎬🤍</span>
+      </button>
+
+    </div>
+
+    <div id="activityTextD" class="selected-text">
+      هنوز چیزی انتخاب نشده
+    </div>
+
+    <button id="activityContinueD" class="continue-btn">
+      بریم مرحله آخر 🤍
+    </button>
+
+  </main>
+</section>
+
+
+<!-- 13 پیام شخصی -->
+<section id="page13" class="page">
+  <main class="card">
+
+    <h1 class="title">قبل از اینکه تأیید کنی... 🤍</h1>
+
+    <div class="consent-box">
+
+      یه چیز برای من از همه این برنامه‌ها مهم‌تره.
+
+      <br><br>
+
+      <strong>«نه» همیشه یعنی نه.</strong>
+
+      <br><br>
+
+      هر لحظه‌ای از دیت خسته شدی،
+      حس خوبی نداشتی،
+      خواستی برنامه رو عوض کنیم
+      یا اصلاً خواستی بری خونه،
+      فقط کافیه بگی.
+
+      <br><br>
+
+      لازم نیست دلیل بیاری
+      یا نگران این باشی که من ناراحت می‌شم.
+
+      <br><br>
+
+      حتی اگه چیزی رو اولش قبول کردی،
+      هر لحظه می‌تونی نظرت رو عوض کنی.
+
+      <br><br>
+
+      این برنامه قرار نیست
+      تعهدی برای هیچ‌کدوممون ایجاد کنه.
+
+      <br><br>
+
+      تنها چیزی که برام مهمه اینه که
+      <strong>هردومون راحت باشیم و بهمون خوش بگذره.</strong> 🤍
+
+      <br><br>
+
+      و خب...
+      بعد از این چند خط جدی،
+      می‌تونیم دوباره برگردیم
+      به برنامه مسخره‌بازی‌هامون 😂🧬
+
+    </div>
+
+    <button class="continue-btn active" onclick="openSummary()">
+      خوندم، بریم برای تأیید نهایی 🤍
+    </button>
+
+  </main>
+</section>
+
+
+<!-- 14 خلاصه -->
+<section id="page14" class="page">
+  <main class="card">
+
+    <h1 class="title">خب نیلوفر... 😌</h1>
+
+    <div class="subtitle">
+      نقشه عملیات آماده‌ست 🧬
+    </div>
+
+    <div class="summary">
+
+      <div class="summary-row">
+        📅 <strong>تاریخ:</strong>
+        <span id="summaryDate"></span>
+      </div>
+
+      <div class="summary-row">
+        🕐 <strong>ساعت:</strong>
+        <span id="summaryTime"></span>
+      </div>
+
+      <div class="summary-row">
+        📍 <strong>شهر:</strong>
+        <span id="summaryCity"></span>
+      </div>
+
+      <div class="summary-row">
+        🍽️ <strong>شام:</strong>
+        <span id="summaryRestaurant"></span>
+      </div>
+
+      <div class="summary-row">
+        🥃 <strong>بعد از شام:</strong>
+        <span id="summaryBar"></span>
+      </div>
+
+      <div class="summary-row">
+        🎯 <strong>اختتامیه:</strong>
+        <span id="summaryActivity"></span>
       </div>
 
     </div>
 
-  </section>
+    <div class="main-text">
 
+      همه اینا رو خودت انتخاب کردی...
 
-  <!-- صفحه ۲ -->
+      <br>
 
-  <section id="page2" class="page">
+      پس بعداً نگو من نقشه کشیده بودم 😂🤍
 
-    <main class="card">
+    </div>
 
-      <h1 class="title">
-        خوش اومدی
-        <span class="name">نیلوفر</span>
-      </h1>
+    <button class="final-btn" onclick="showPage(15)">
+      ❤️ تأیید نهایی دیت
+    </button>
 
-      <div class="dna">🧬</div>
+  </main>
+</section>
 
-      <div class="main-text">
 
-        اینجا کاملاً هدفمند انتخاب شدی
+<!-- 15 پایان -->
+<section id="page15" class="page">
+  <main class="card intro-card">
 
-        <br>
+    <div style="font-size:55px;margin-bottom:18px;">
+      🧬
+    </div>
 
-        تا یه دیت عاشقانه و تکرارنشدنی رو
+    <div class="mission">
+      Mission Accepted
+    </div>
 
-        <br>
+    <div class="main-text">
 
-        با
-        <span class="mardin">ماردین</span>
-        تجربه کنی. 🤍
+      قرارمون قطعی شد 🤍
 
-      </div>
+      <br><br>
 
-      <section class="note">
+      از اینجا به بعد
+      دیگه انتخابی در کار نیست...
 
-        <div style="font-size:30px;margin-bottom:8px;">
-          🧪
-        </div>
+      <br><br>
 
-        <div class="note-title">
-          یه نکته مهم...
-        </div>
+      <span class="highlight">
+        بقیه‌ش سورپرایزه 😉
+      </span>
 
-        <div class="note-text">
+    </div>
 
-          راستی یادت نره؛
+    <div class="signature">
 
-          <br>
+      See you soon, Niloufar 🤍
 
-          این لینک فقط
-          <span class="once">یکبار</span>
-          اعتبار داره،
+      <br>
 
-          <br>
+      — Mardin
 
-          پس دقت کن که انتخابت درست باشه 🫠
+    </div>
 
-        </div>
+  </main>
+</section>
 
-      </section>
 
-      <button
-        class="start-btn"
-        onclick="showPage(3)"
-      >
-        شروع کنیم 🧪
-      </button>
+<script>
 
-    </main>
+  let selectedDate = null;
+  let selectedDateLabel = null;
+  let selectedTime = null;
+  let selectedCity = null;
+  let selectedRestaurant = null;
+  let selectedBar = null;
+  let selectedActivity = null;
 
-  </section>
 
+  function showPage(number) {
 
-  <!-- صفحه ۳ - تاریخ -->
+    document.querySelectorAll(".page").forEach(page => {
+      page.style.display = "none";
+    });
 
-  <section id="page3" class="page">
+    document.getElementById("page" + number).style.display = "flex";
 
-    <main class="card">
+    window.scrollTo({
+      top: 0,
+      behavior: "smooth"
+    });
 
-      <h1 class="title">
-        یه روز انتخاب کن 📅
-      </h1>
+  }
 
-      <div class="subtitle">
-        ببینیم این آزمایش عاشقانه
-        <br>
-        دقیقاً چه روزی باید انجام بشه 🧬
-      </div>
 
-      <div class="date-grid">
+  function brokenButton() {
 
-        <button class="date-option" data-date="2026-08-17">
-          دوشنبه<br>۱۷ اوت
-        </button>
+    const message = document.getElementById("errorMessage");
 
-        <button class="date-option" data-date="2026-08-18">
-          سه‌شنبه<br>۱۸ اوت
-        </button>
+    message.style.display = "block";
+    message.style.animation = "none";
 
-        <button class="date-option" data-date="2026-08-19">
-          چهارشنبه<br>۱۹ اوت
-        </button>
+    void message.offsetWidth;
 
-        <button class="date-option" data-date="2026-08-20">
-          پنج‌شنبه<br>۲۰ اوت
-        </button>
+    message.style.animation = "pop .25s ease";
 
-        <button class="date-option" data-date="2026-08-21">
-          جمعه<br>۲۱ اوت
-        </button>
+  }
 
-        <button class="date-option" data-date="2026-08-22">
-          شنبه<br>۲۲ اوت
-        </button>
 
-        <button class="date-option" data-date="2026-08-23">
-          یکشنبه<br>۲۳ اوت
-        </button>
+  function dinnerNo() {
 
-        <button class="date-option" data-date="2026-08-24">
-          دوشنبه<br>۲۴ اوت
-        </button>
+    const message = document.getElementById("dinnerNoMessage");
 
-        <button class="date-option" data-date="2026-08-25">
-          سه‌شنبه<br>۲۵ اوت
-        </button>
+    message.style.display = "block";
+    message.style.animation = "none";
 
-        <button class="date-option" data-date="2026-08-26">
-          چهارشنبه<br>۲۶ اوت
-        </button>
+    void message.offsetWidth;
 
-        <button class="date-option" data-date="2026-08-27">
-          پنج‌شنبه<br>۲۷ اوت
-        </button>
+    message.style.animation = "pop .25s ease";
 
-        <button class="date-option" data-date="2026-08-28">
-          جمعه<br>۲۸ اوت
-        </button>
+  }
 
-        <button class="date-option" data-date="2026-08-29">
-          شنبه<br>۲۹ اوت
-        </button>
 
-        <button class="date-option" data-date="2026-08-30">
-          یکشنبه<br>۳۰ اوت
-        </button>
+  /* تاریخ */
 
-      </div>
+  const dateButtons = document.querySelectorAll(".date-option");
 
-      <div
-        id="selectedDateText"
-        class="selected-text"
-      >
-        هنوز تاریخی انتخاب نشده
-      </div>
+  dateButtons.forEach(button => {
 
-      <button
-        id="dateContinue"
-        class="continue-btn"
-      >
-        ادامه 🧬
-      </button>
+    button.addEventListener("click", function() {
 
-    </main>
+      dateButtons.forEach(btn => btn.classList.remove("selected"));
 
-  </section>
+      this.classList.add("selected");
 
+      selectedDate = this.dataset.date;
+      selectedDateLabel = this.dataset.label;
 
-  <!-- صفحه ۴ - ساعت -->
+      document.getElementById("selectedDateText").innerText =
+        "انتخابت: " + selectedDateLabel + " ❤️";
 
-  <section id="page4" class="page">
+      document.getElementById("dateContinue").classList.add("active");
 
-    <main class="card">
+    });
 
-      <h1 class="title">
-        ساعت رو انتخاب کن 🕐
-      </h1>
+  });
 
-      <div class="subtitle">
-        حالا ببینیم عملیات
-        <br>
-        دقیقاً چه ساعتی شروع بشه 😌
-      </div>
 
-      <div class="time-grid">
+  document.getElementById("dateContinue").onclick = function() {
 
-        <button class="time-option" data-time="17:00">17:00</button>
-        <button class="time-option" data-time="17:15">17:15</button>
-        <button class="time-option" data-time="17:30">17:30</button>
+    if (!selectedDate) return;
 
-        <button class="time-option" data-time="17:45">17:45</button>
-        <button class="time-option" data-time="18:00">18:00</button>
-        <button class="time-option" data-time="18:15">18:15</button>
+    showPage(4);
 
-        <button class="time-option" data-time="18:30">18:30</button>
-        <button class="time-option" data-time="18:45">18:45</button>
-        <button class="time-option" data-time="19:00">19:00</button>
+  };
 
-      </div>
 
-      <div
-        id="selectedTimeText"
-        class="selected-text"
-      >
-        هنوز ساعتی انتخاب نشده
-      </div>
+  /* ساعت */
 
-      <button
-        id="timeContinue"
-        class="continue-btn"
-      >
-        ادامه 🧬
-      </button>
+  const timeButtons = document.querySelectorAll(".time-option");
 
-    </main>
+  timeButtons.forEach(button => {
 
-  </section>
+    button.addEventListener("click", function() {
 
+      timeButtons.forEach(btn => btn.classList.remove("selected"));
 
-  <!-- صفحه ۵ - شهر -->
+      this.classList.add("selected");
 
-  <section id="page5" class="page">
+      selectedTime = this.dataset.time;
 
-    <main class="card">
+      document.getElementById("selectedTimeText").innerText =
+        "ساعت انتخابی: " + selectedTime + " 🕐";
 
-      <h1 class="title">
-        خب، حالا کجا بریم؟ 📍
-      </h1>
+      document.getElementById("timeContinue").classList.add("active");
 
-      <div class="subtitle">
-        یکی از دو شهر رو انتخاب کن
-        <br>
-        تا مسیر آزمایش مشخص بشه 🧬
-      </div>
+    });
 
-      <div class="city-grid">
+  });
 
-        <button
-          class="city-option"
-          data-city="Köln"
-        >
-          🏙️ Köln
 
-          <span>
-            کلن
-          </span>
-        </button>
+  document.getElementById("timeContinue").onclick = function() {
 
+    if (!selectedTime) return;
 
-        <button
-          class="city-option"
-          data-city="Düsseldorf"
-        >
-          🌆 Düsseldorf
+    showPage(5);
 
-          <span>
-            دوسلدورف
-          </span>
-        </button>
+  };
 
-      </div>
 
-      <div
-        id="selectedCityText"
-        class="selected-text"
-      >
-        هنوز شهری انتخاب نشده
-      </div>
+  /* شهر */
 
-      <button
-        id="cityContinue"
-        class="continue-btn"
-      >
-        ادامه 🧬
-      </button>
+  const cityButtons = document.querySelectorAll(".city-option");
 
-    </main>
+  cityButtons.forEach(button => {
 
-  </section>
+    button.addEventListener("click", function() {
 
+      cityButtons.forEach(btn => btn.classList.remove("selected"));
 
-  <!-- صفحه ۶ - رستوران کلن -->
+      this.classList.add("selected");
 
-  <section id="page6" class="page">
+      selectedCity = this.dataset.city;
 
-    <main class="card">
+      document.getElementById("selectedCityText").innerText =
+        "انتخابت: " + selectedCity + " ❤️";
 
-      <h1 class="title">
-        خب، چی بخوریم؟ 🍽️
-      </h1>
+      document.getElementById("cityContinue").classList.add("active");
 
-      <div class="subtitle">
-        چند تا جای خوب تو کلن برات انتخاب کردم 😌
-        <br>
-        ببین کدوم بیشتر به دلت می‌شینه 🤍
-      </div>
+    });
 
-      <div class="restaurant-grid">
+  });
 
-        <button
-          class="restaurant-option"
-          data-restaurant="Limani"
-        >
-          <strong>
-            🇬🇷 Limani
-          </strong>
 
-          <span>
-            یونانی و مدیترانه‌ای • کنار راین
-          </span>
-        </button>
+  document.getElementById("cityContinue").onclick = function() {
 
+    if (!selectedCity) return;
 
-        <button
-          class="restaurant-option"
-          data-restaurant="NENI Köln"
-        >
-          <strong>
-            🌿 NENI Köln
-          </strong>
-
-          <span>
-            Oriental • Mediterranean • Fusion
-          </span>
-        </button>
-
-
-        <button
-          class="restaurant-option"
-          data-restaurant="Vetrina"
-        >
-          <strong>
-            🇮🇹 Vetrina
-          </strong>
-
-          <span>
-            ایتالیایی مدرن و خاص 🍝
-          </span>
-        </button>
-
-
-        <button
-          class="restaurant-option"
-          data-restaurant="Colina Steakhaus"
-        >
-          <strong>
-            🥩 Colina Steakhaus
-          </strong>
-
-          <span>
-            استیک و گوشت‌های خاص 🔥
-          </span>
-        </button>
-
-
-        <button
-          class="restaurant-option"
-          data-restaurant="Umibar"
-        >
-          <strong>
-            🍣 Umibar
-          </strong>
-
-          <span>
-            Thai • Vietnamese • Japanese • Sushi
-          </span>
-        </button>
-
-
-        <button
-          class="restaurant-option"
-          data-restaurant="انتخاب نیلوفر"
-        >
-          <strong>
-            ❤️ هیچکدوم
-          </strong>
-
-          <span>
-            اگه هیچکدوم به دلت ننشست،
-            خودت یه جا پیشنهاد بده 😉
-          </span>
-        </button>
-
-      </div>
-
-      <div
-        id="selectedRestaurantTextKöln"
-        class="selected-text"
-      >
-        هنوز رستورانی انتخاب نشده
-      </div>
-
-      <button
-        id="restaurantContinueKöln"
-        class="continue-btn"
-      >
-        اینو می‌خوام 🧬
-      </button>
-
-    </main>
-
-  </section>
-
-
-  <!-- صفحه ۷ - رستوران دوسلدورف -->
-
-  <section id="page7" class="page">
-
-    <main class="card">
-
-      <h1 class="title">
-        Düsseldorf 🍽️
-      </h1>
-
-      <div class="subtitle">
-        برای دوسلدورف هم چند تا جای خاص پیدا کردم 😌
-        <br>
-        حالا انتخاب با توئه 🤍
-      </div>
-
-      <div class="restaurant-grid">
-
-        <button
-          class="restaurant-option"
-          data-restaurant="Oktopussy"
-        >
-          <strong>
-            🐙 Oktopussy
-          </strong>
-
-          <span>
-            Modern • International • Crossover
-          </span>
-        </button>
-
-
-        <button
-          class="restaurant-option"
-          data-restaurant="MEERBAR"
-        >
-          <strong>
-            🌊 MEERBAR
-          </strong>
-
-          <span>
-            Mediterranean • Seafood • Sushi
-          </span>
-        </button>
-
-
-        <button
-          class="restaurant-option"
-          data-restaurant="Estilo Campo"
-        >
-          <strong>
-            🥩 Estilo Campo
-          </strong>
-
-          <span>
-            Argentinian Steakhouse • Meat & Grill 🔥
-          </span>
-        </button>
-
-
-        <button
-          class="restaurant-option"
-          data-restaurant="King Fusion"
-        >
-          <strong>
-            🥢 King Fusion
-          </strong>
-
-          <span>
-            Asian Fusion • Thai • Vietnamese • Japanese • Sushi
-          </span>
-        </button>
-
-
-        <button
-          class="restaurant-option"
-          data-restaurant="Da Clà"
-        >
-          <strong>
-            🇮🇹 Da Clà
-          </strong>
-
-          <span>
-            Italian • Pasta • Mediterranean 🍝
-          </span>
-        </button>
-
-
-        <button
-          class="restaurant-option"
-          data-restaurant="انتخاب نیلوفر"
-        >
-          <strong>
-            ❤️ هیچکدوم
-          </strong>
-
-          <span>
-            اگه هیچکدوم به دلت ننشست،
-            خودت یه جا پیشنهاد بده 😉
-          </span>
-        </button>
-
-      </div>
-
-      <div
-        id="selectedRestaurantTextDüsseldorf"
-        class="selected-text"
-      >
-        هنوز رستورانی انتخاب نشده
-      </div>
-
-      <button
-        id="restaurantContinueDüsseldorf"
-        class="continue-btn"
-      >
-        اینو می‌خوام 🧬
-      </button>
-
-    </main>
-
-  </section>
-
-
-  <!-- صفحه ۸ - ادامه شام -->
-
-  <section id="page8" class="page">
-
-    <main class="card">
-
-      <h1 class="title">
-        خب... 😌
-      </h1>
-
-      <div class="dna">
-        🍽️
-      </div>
-
-      <div class="question">
-
-        امیدوارم شام بهت خوش گذشته باشه 🤍
-
-        <br><br>
-
-        حالا اگه تا اینجای شب بهت خوش گذشته...
-
-        <br>
-
-        دوست داری ادامه بدیم؟ 😌
-
-      </div>
-
-      <div class="buttons">
-
-        <button
-          class="yes-btn"
-          onclick="continueAfterDinner()"
-        >
-          آره، ادامه بدیم ✨
-        </button>
-
-        <button
-          class="no-btn"
-          onclick="dinnerNo()"
-        >
-          نه، فکر کنم بسه 🙃
-        </button>
-
-      </div>
-
-      <div
-        id="dinnerNoMessage"
-        class="funny-message"
-      >
-
-        مگه میشه بهت خوش نگذره؟ 😐
-
-        <br><br>
-
-        نگران نباش...
-
-        <br>
-
-        اگه بهت خوش نگذشته باشه،
-        من خودم جمع می‌کنم از این کشور میرم 🥲😂
-
-      </div>
-
-    </main>
-
-  </section>
-
-
-  <!-- صفحه ۹ - بارهای کلن -->
-
-  <section id="page9" class="page">
-
-    <main class="card">
-
-      <h1 class="title">
-        خب خانم نیلوفر خانم... 😏
-      </h1>
-
-      <div class="subtitle">
-
-        حالا که تا اینجا بهت خوش گذشته،
-
-        <br>
-
-        موافقی بعد از شام بریم یه جایی
-        دو تا شات بزنیم که غذا هم هضم شه؟ 🥃😂
-
-        <br><br>
-
-        ولی مهم‌تر از همه اینه که...
-
-        <br>
-
-        شما چی دوست داری؟ 😌
-
-      </div>
-
-
-      <div class="bar-grid">
-
-
-        <button
-          class="bar-option"
-          data-bar="ONA MOR"
-        >
-
-          <strong>
-            🍸 ONA MOR
-          </strong>
-
-          <span>
-            Cocktail Bar • شیک، خاص و مناسب یه شب خوب
-          </span>
-
-        </button>
-
-
-        <button
-          class="bar-option"
-          data-bar="Bar Rix"
-        >
-
-          <strong>
-            🍷 Bar Rix
-          </strong>
-
-          <span>
-            Wine Bar • شیک، آروم و مناسب یه لیوان شراب خوب
-          </span>
-
-        </button>
-
-
-        <button
-          class="bar-option"
-          data-bar="Plüsch Bar & Lounge"
-        >
-
-          <strong>
-            🥃 Plüsch Bar & Lounge
-          </strong>
-
-          <span>
-            Köln Marriott • بار شیک و آروم برای نشستن و حرف زدن
-          </span>
-
-        </button>
-
-
-        <button
-          class="bar-option"
-          data-bar="Low Budget"
-        >
-
-          <strong>
-            🍺 Low Budget
-          </strong>
-
-          <span>
-            یه بار خاک‌خورده و خودمونی 😄
-            <br>
-            محشرترین تکیلای جهان رو داره؛
-            مستقیم از بشکه سرو میشه و یه جور خاصی خوبه 😂🥃
-          </span>
-
-        </button>
-
-
-        <button
-          class="bar-option"
-          data-bar="Masons"
-        >
-
-          <strong>
-            💨 Masons
-          </strong>
-
-          <span>
-            Shisha Lounge • البته با توجه به میگرنت شاید بهترین گزینه نباشه 😅
-            ولی گفتم بذارمش، شاید دوستش داشته باشی
-          </span>
-
-        </button>
-
-
-      </div>
-
-
-      <div
-        id="selectedBarTextKöln"
-        class="selected-text"
-      >
-        هنوز چیزی انتخاب نشده
-      </div>
-
-
-      <button
-        id="barContinueKöln"
-        class="continue-btn"
-      >
-        انتخاب شد 🧬
-      </button>
-
-
-    </main>
-
-  </section>
-
-
-  <!-- صفحه ۱۰ - بارهای دوسلدورف -->
-
-  <section id="page10" class="page">
-
-    <main class="card">
-
-      <h1 class="title">
-        خب خانم نیلوفر خانم... 😏
-      </h1>
-
-      <div class="subtitle">
-
-        حالا که تا اینجا بهت خوش گذشته،
-
-        <br>
-
-        موافقی بعد از شام بریم یه جایی
-        دو تا شات بزنیم که غذا هم هضم شه؟ 🥃😂
-
-        <br><br>
-
-        ولی مهم‌تر از همه اینه که...
-
-        <br>
-
-        شما چی دوست داری؟ 😌
-
-      </div>
-
-
-      <div class="bar-grid">
-
-
-        <button
-          class="bar-option"
-          data-bar="Hideaway"
-        >
-
-          <strong>
-            🍸 Hideaway
-          </strong>
-
-          <span>
-            Cocktail Bar • شیک، تاریک و خاص
-          </span>
-
-        </button>
-
-
-        <button
-          class="bar-option"
-          data-bar="Vino's Weinbar"
-        >
-
-          <strong>
-            🍷 Vino's Weinbar
-          </strong>
-
-          <span>
-            Wine Bar • دنج، شیک و مناسب یه لیوان شراب خوب
-          </span>
-
-        </button>
-
-
-        <button
-          class="bar-option"
-          data-bar="Breidenbacher Hof Bar & Smoking Lounge"
-        >
-
-          <strong>
-            🥃 Breidenbacher Hof
-          </strong>
-
-          <span>
-            Bar & Smoking Lounge • یه Hotel Bar لوکس و خیلی آروم
-          </span>
-
-        </button>
-
-
-        <button
-          class="bar-option"
-          data-bar="Auberge"
-        >
-
-          <strong>
-            🍺 Auberge
-          </strong>
-
-          <span>
-            Rock Pub • قدیمی، خاک‌خورده، خودمونی و متفاوت 🤘
-          </span>
-
-        </button>
-
-
-        <button
-          class="bar-option"
-          data-bar="AVIUM"
-        >
-
-          <strong>
-            💨 AVIUM
-          </strong>
-
-          <span>
-            Shisha & Cocktail Lounge • شیک و خفن
-            <br>
-            البته اینجا هم میگرن رو فراموش نکردم 😅
-          </span>
-
-        </button>
-
-
-      </div>
-
-
-      <div
-        id="selectedBarTextDüsseldorf"
-        class="selected-text"
-      >
-        هنوز چیزی انتخاب نشده
-      </div>
-
-
-      <button
-        id="barContinueDüsseldorf"
-        class="continue-btn"
-      >
-        انتخاب شد 🧬
-      </button>
-
-
-    </main>
-
-  </section>
-
-
-  <script>
-
-    let selectedDate = null;
-    let selectedTime = null;
-    let selectedCity = null;
-    let selectedRestaurant = null;
-    let selectedBar = null;
-
-
-    /* =========================
-       نمایش صفحات
-    ========================= */
-
-    function showPage(pageNumber) {
-
-      document
-        .querySelectorAll(".page")
-        .forEach(page => {
-
-          page.style.display = "none";
-
-        });
-
-
-      document
-        .getElementById("page" + pageNumber)
-        .style.display = "flex";
-
-
-      window.scrollTo({
-        top: 0,
-        behavior: "smooth"
-      });
-
+    if (selectedCity === "Köln") {
+      showPage(6);
+    } else {
+      showPage(7);
     }
 
-
-    /* =========================
-       دکمه نه اول سایت
-    ========================= */
-
-    function brokenButton() {
-
-      const message =
-        document.getElementById("errorMessage");
+  };
 
 
-      message.style.display = "block";
+  /* انتخاب عمومی */
 
-      message.style.animation = "none";
+  function setupSelection(pageId, selector, textId, continueId, variableSetter) {
 
-      void message.offsetWidth;
+    const buttons = document.querySelectorAll("#" + pageId + " " + selector);
+    const text = document.getElementById(textId);
+    const continueButton = document.getElementById(continueId);
 
-      message.style.animation = "pop .25s ease";
+    buttons.forEach(button => {
 
+      button.addEventListener("click", function() {
+
+        buttons.forEach(btn => btn.classList.remove("selected"));
+
+        this.classList.add("selected");
+
+        const value = this.dataset.value;
+
+        variableSetter(value);
+
+        text.innerText = "انتخابت: " + value + " ❤️";
+
+        continueButton.classList.add("active");
+
+      });
+
+    });
+
+  }
+
+
+  /* رستوران‌ها */
+
+  setupSelection(
+    "page6",
+    ".restaurant-option",
+    "restaurantTextK",
+    "restaurantContinueK",
+    value => selectedRestaurant = value
+  );
+
+
+  setupSelection(
+    "page7",
+    ".restaurant-option",
+    "restaurantTextD",
+    "restaurantContinueD",
+    value => selectedRestaurant = value
+  );
+
+
+  document.getElementById("restaurantContinueK").onclick = function() {
+
+    if (!selectedRestaurant) return;
+
+    showPage(8);
+
+  };
+
+
+  document.getElementById("restaurantContinueD").onclick = function() {
+
+    if (!selectedRestaurant) return;
+
+    showPage(8);
+
+  };
+
+
+  /* بعد شام */
+
+  function continueAfterDinner() {
+
+    if (selectedCity === "Köln") {
+      showPage(9);
+    } else {
+      showPage(10);
     }
 
+  }
 
-    /* =========================
-       انتخاب تاریخ
-    ========================= */
 
-    const dateButtons =
-      document.querySelectorAll(".date-option");
+  /* بار */
 
+  setupSelection(
+    "page9",
+    ".bar-option",
+    "barTextK",
+    "barContinueK",
+    value => selectedBar = value
+  );
 
-    dateButtons.forEach(button => {
 
-      button.addEventListener("click", function() {
+  setupSelection(
+    "page10",
+    ".bar-option",
+    "barTextD",
+    "barContinueD",
+    value => selectedBar = value
+  );
 
-        dateButtons.forEach(btn => {
 
-          btn.classList.remove("selected");
+  document.getElementById("barContinueK").onclick = function() {
 
-        });
+    if (!selectedBar) return;
 
+    showPage(11);
 
-        this.classList.add("selected");
+  };
 
 
-        selectedDate =
-          this.getAttribute("data-date");
+  document.getElementById("barContinueD").onclick = function() {
 
+    if (!selectedBar) return;
 
-        const visibleDate =
-          this.innerText.replace(/\n/g, " ");
+    showPage(12);
 
+  };
 
-        document
-          .getElementById("selectedDateText")
-          .innerText =
-          "انتخابت: " +
-          visibleDate +
-          " ❤️";
 
+  /* فعالیت */
 
-        document
-          .getElementById("dateContinue")
-          .classList
-          .add("active");
+  setupSelection(
+    "page11",
+    ".activity-option",
+    "activityTextK",
+    "activityContinueK",
+    value => selectedActivity = value
+  );
 
-      });
 
-    });
+  setupSelection(
+    "page12",
+    ".activity-option",
+    "activityTextD",
+    "activityContinueD",
+    value => selectedActivity = value
+  );
 
 
-    document
-      .getElementById("dateContinue")
-      .addEventListener("click", function() {
+  document.getElementById("activityContinueK").onclick = function() {
 
-        if (!selectedDate) return;
+    if (!selectedActivity) return;
 
-        showPage(4);
+    showPage(13);
 
-      });
+  };
 
 
-    /* =========================
-       انتخاب ساعت
-    ========================= */
+  document.getElementById("activityContinueD").onclick = function() {
 
-    const timeButtons =
-      document.querySelectorAll(".time-option");
+    if (!selectedActivity) return;
 
+    showPage(13);
 
-    timeButtons.forEach(button => {
+  };
 
-      button.addEventListener("click", function() {
 
-        timeButtons.forEach(btn => {
+  /* خلاصه */
 
-          btn.classList.remove("selected");
+  function openSummary() {
 
-        });
+    document.getElementById("summaryDate").innerText =
+      selectedDateLabel;
 
+    document.getElementById("summaryTime").innerText =
+      selectedTime;
 
-        this.classList.add("selected");
+    document.getElementById("summaryCity").innerText =
+      selectedCity;
 
+    document.getElementById("summaryRestaurant").innerText =
+      selectedRestaurant;
 
-        selectedTime =
-          this.getAttribute("data-time");
+    document.getElementById("summaryBar").innerText =
+      selectedBar;
 
+    document.getElementById("summaryActivity").innerText =
+      selectedActivity;
 
-        document
-          .getElementById("selectedTimeText")
-          .innerText =
-          "ساعت انتخابی: " +
-          selectedTime +
-          " 🕐";
+    showPage(14);
 
+  }
 
-        document
-          .getElementById("timeContinue")
-          .classList
-          .add("active");
-
-      });
-
-    });
-
-
-    document
-      .getElementById("timeContinue")
-      .addEventListener("click", function() {
-
-        if (!selectedTime) return;
-
-        showPage(5);
-
-      });
-
-
-    /* =========================
-       انتخاب شهر
-    ========================= */
-
-    const cityButtons =
-      document.querySelectorAll(".city-option");
-
-
-    cityButtons.forEach(button => {
-
-      button.addEventListener("click", function() {
-
-        cityButtons.forEach(btn => {
-
-          btn.classList.remove("selected");
-
-        });
-
-
-        this.classList.add("selected");
-
-
-        selectedCity =
-          this.getAttribute("data-city");
-
-
-        document
-          .getElementById("selectedCityText")
-          .innerText =
-          "انتخابت: " +
-          selectedCity +
-          " ❤️";
-
-
-        document
-          .getElementById("cityContinue")
-          .classList
-          .add("active");
-
-      });
-
-    });
-
-
-    document
-      .getElementById("cityContinue")
-      .addEventListener("click", function() {
-
-        if (!selectedCity) return;
-
-
-        selectedRestaurant = null;
-
-
-        if (selectedCity === "Köln") {
-
-          showPage(6);
-
-        }
-
-
-        if (selectedCity === "Düsseldorf") {
-
-          showPage(7);
-
-        }
-
-      });
-
-
-    /* =========================
-       انتخاب رستوران کلن
-    ========================= */
-
-    const kölnRestaurantButtons =
-      document.querySelectorAll(
-        "#page6 .restaurant-option"
-      );
-
-
-    kölnRestaurantButtons.forEach(button => {
-
-      button.addEventListener("click", function() {
-
-        kölnRestaurantButtons.forEach(btn => {
-
-          btn.classList.remove("selected");
-
-        });
-
-
-        this.classList.add("selected");
-
-
-        selectedRestaurant =
-          this.getAttribute("data-restaurant");
-
-
-        document
-          .getElementById("selectedRestaurantTextKöln")
-          .innerText =
-          "انتخابت: " +
-          selectedRestaurant +
-          " ❤️";
-
-
-        document
-          .getElementById("restaurantContinueKöln")
-          .classList
-          .add("active");
-
-      });
-
-    });
-
-
-    document
-      .getElementById("restaurantContinueKöln")
-      .addEventListener("click", function() {
-
-        if (!selectedRestaurant) return;
-
-        showPage(8);
-
-      });
-
-
-    /* =========================
-       انتخاب رستوران دوسلدورف
-    ========================= */
-
-    const düsseldorfRestaurantButtons =
-      document.querySelectorAll(
-        "#page7 .restaurant-option"
-      );
-
-
-    düsseldorfRestaurantButtons.forEach(button => {
-
-      button.addEventListener("click", function() {
-
-        düsseldorfRestaurantButtons.forEach(btn => {
-
-          btn.classList.remove("selected");
-
-        });
-
-
-        this.classList.add("selected");
-
-
-        selectedRestaurant =
-          this.getAttribute("data-restaurant");
-
-
-        document
-          .getElementById("selectedRestaurantTextDüsseldorf")
-          .innerText =
-          "انتخابت: " +
-          selectedRestaurant +
-          " ❤️";
-
-
-        document
-          .getElementById("restaurantContinueDüsseldorf")
-          .classList
-          .add("active");
-
-      });
-
-    });
-
-
-    document
-      .getElementById("restaurantContinueDüsseldorf")
-      .addEventListener("click", function() {
-
-        if (!selectedRestaurant) return;
-
-        showPage(8);
-
-      });
-
-
-    /* =========================
-       بعد از شام
-    ========================= */
-
-    function continueAfterDinner() {
-
-      selectedBar = null;
-
-
-      if (selectedCity === "Köln") {
-
-        showPage(9);
-
-      }
-
-
-      if (selectedCity === "Düsseldorf") {
-
-        showPage(10);
-
-      }
-
-    }
-
-
-    function dinnerNo() {
-
-      const message =
-        document.getElementById(
-          "dinnerNoMessage"
-        );
-
-
-      message.style.display = "block";
-
-      message.style.animation = "none";
-
-      void message.offsetWidth;
-
-      message.style.animation = "pop .25s ease";
-
-    }
-
-
-    /* =========================
-       انتخاب بار کلن
-    ========================= */
-
-    const kölnBarButtons =
-      document.querySelectorAll(
-        "#page9 .bar-option"
-      );
-
-
-    kölnBarButtons.forEach(button => {
-
-      button.addEventListener("click", function() {
-
-        kölnBarButtons.forEach(btn => {
-
-          btn.classList.remove("selected");
-
-        });
-
-
-        this.classList.add("selected");
-
-
-        selectedBar =
-          this.getAttribute("data-bar");
-
-
-        document
-          .getElementById("selectedBarTextKöln")
-          .innerText =
-          "انتخابت: " +
-          selectedBar +
-          " ❤️";
-
-
-        document
-          .getElementById("barContinueKöln")
-          .classList
-          .add("active");
-
-      });
-
-    });
-
-
-    document
-      .getElementById("barContinueKöln")
-      .addEventListener("click", function() {
-
-        if (!selectedBar) return;
-
-        showCurrentResult();
-
-      });
-
-
-    /* =========================
-       انتخاب بار دوسلدورف
-    ========================= */
-
-    const düsseldorfBarButtons =
-      document.querySelectorAll(
-        "#page10 .bar-option"
-      );
-
-
-    düsseldorfBarButtons.forEach(button => {
-
-      button.addEventListener("click", function() {
-
-        düsseldorfBarButtons.forEach(btn => {
-
-          btn.classList.remove("selected");
-
-        });
-
-
-        this.classList.add("selected");
-
-
-        selectedBar =
-          this.getAttribute("data-bar");
-
-
-        document
-          .getElementById("selectedBarTextDüsseldorf")
-          .innerText =
-          "انتخابت: " +
-          selectedBar +
-          " ❤️";
-
-
-        document
-          .getElementById("barContinueDüsseldorf")
-          .classList
-          .add("active");
-
-      });
-
-    });
-
-
-    document
-      .getElementById("barContinueDüsseldorf")
-      .addEventListener("click", function() {
-
-        if (!selectedBar) return;
-
-        showCurrentResult();
-
-      });
-
-
-    /* =========================
-       نتیجه موقت
-    ========================= */
-
-    function showCurrentResult() {
-
-      alert(
-
-        "تا اینجای عملیات 😌🧬" +
-
-        "\n\n" +
-
-        "📅 تاریخ: " +
-        selectedDate +
-
-        "\n" +
-
-        "🕐 ساعت: " +
-        selectedTime +
-
-        "\n" +
-
-        "📍 شهر: " +
-        selectedCity +
-
-        "\n" +
-
-        "🍽️ رستوران: " +
-        selectedRestaurant +
-
-        "\n" +
-
-        "🥃 بعد از شام: " +
-        selectedBar
-
-      );
-
-    }
-
-  </script>
+</script>
 
 </body>
 </html>
