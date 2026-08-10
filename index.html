@@ -1,20 +1,55 @@
 <!DOCTYPE html>
 <html lang="fa" dir="rtl">
+
 <head>
+
   <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <meta
+    name="viewport"
+    content="width=device-width, initial-scale=1.0"
+  >
 
   <title>نیلوفر 🧬</title>
 
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Lalezar&family=Vazirmatn:wght@400;500;600;700&display=swap" rel="stylesheet">
+
+  <link
+    rel="preconnect"
+    href="https://fonts.googleapis.com"
+  >
+
+  <link
+    rel="preconnect"
+    href="https://fonts.gstatic.com"
+    crossorigin
+  >
+
+  <link
+    href="https://fonts.googleapis.com/css2?family=Lalezar&family=Vazirmatn:wght@400;500;600;700&display=swap"
+    rel="stylesheet"
+  >
+
 
   <style>
+
+    :root {
+      --accent: #67f6ff;
+      --accent-soft: rgba(103,246,255,.35);
+      --accent-medium: rgba(103,246,255,.55);
+      --card-bg: rgba(0,25,35,.30);
+      --option-bg: rgba(0,28,38,.58);
+      --selected-bg: rgba(0,105,120,.55);
+      --page-overlay: rgba(0,15,25,.12);
+    }
+
     * {
       box-sizing: border-box;
       margin: 0;
       padding: 0;
+    }
+
+    html {
+      scroll-behavior: smooth;
     }
 
     body {
@@ -23,10 +58,48 @@
       color: white;
 
       background:
-        linear-gradient(rgba(0,15,25,.12), rgba(0,15,25,.12)),
+        linear-gradient(
+          var(--page-overlay),
+          var(--page-overlay)
+        ),
         url("801C359D-7508-4B42-A0EF-754424692A7E.png")
         center center / cover no-repeat fixed;
+
+      transition:
+        background .7s ease,
+        color .7s ease;
     }
+
+
+    /* =========================
+       تم Köln
+    ========================= */
+
+    body.theme-koeln {
+      --accent: #ffd36a;
+      --accent-soft: rgba(255,211,106,.28);
+      --accent-medium: rgba(255,211,106,.58);
+      --card-bg: rgba(24,17,12,.54);
+      --option-bg: rgba(37,27,18,.68);
+      --selected-bg: rgba(128,86,20,.58);
+      --page-overlay: rgba(38,18,4,.45);
+    }
+
+
+    /* =========================
+       تم Düsseldorf
+    ========================= */
+
+    body.theme-duesseldorf {
+      --accent: #d98cff;
+      --accent-soft: rgba(217,140,255,.28);
+      --accent-medium: rgba(217,140,255,.58);
+      --card-bg: rgba(23,12,39,.53);
+      --option-bg: rgba(31,17,49,.67);
+      --selected-bg: rgba(103,39,142,.60);
+      --page-overlay: rgba(22,6,40,.46);
+    }
+
 
     .page {
       min-height: 100vh;
@@ -47,16 +120,21 @@
       text-align: center;
       padding: 36px 24px;
 
-      background: rgba(0,25,35,.30);
-      border: 1px solid rgba(103,246,255,.55);
+      background: var(--card-bg);
+      border: 1px solid var(--accent-medium);
       border-radius: 34px;
 
-      backdrop-filter: blur(8px);
-      -webkit-backdrop-filter: blur(8px);
+      backdrop-filter: blur(9px);
+      -webkit-backdrop-filter: blur(9px);
 
       box-shadow:
-        0 0 30px rgba(0,236,255,.18),
-        inset 0 0 35px rgba(0,236,255,.08);
+        0 0 30px var(--accent-soft),
+        inset 0 0 35px rgba(255,255,255,.04);
+
+      transition:
+        background .6s ease,
+        border-color .6s ease,
+        box-shadow .6s ease;
     }
 
     .intro-card {
@@ -73,10 +151,11 @@
       font-size: clamp(38px, 9vw, 58px);
       line-height: 1.3;
       margin-bottom: 12px;
+      color: white;
 
       text-shadow:
-        0 0 12px rgba(75,247,255,.35),
-        0 0 25px rgba(75,247,255,.15);
+        0 0 12px var(--accent-soft),
+        0 0 25px rgba(255,255,255,.07);
     }
 
     .niloufar,
@@ -84,7 +163,7 @@
     .mardin,
     .once,
     .highlight {
-      color: #67f6ff;
+      color: var(--accent);
     }
 
     .dna {
@@ -108,9 +187,21 @@
 
     .subtitle {
       font-size: 17px;
-      line-height: 1.9;
-      opacity: .92;
+      line-height: 1.95;
+      opacity: .94;
       margin-bottom: 24px;
+    }
+
+    .city-theme-badge {
+      display: inline-block;
+      margin-bottom: 16px;
+      padding: 7px 16px;
+      border-radius: 999px;
+      border: 1px solid var(--accent-medium);
+      color: var(--accent);
+      background: rgba(0,0,0,.20);
+      font-size: 13px;
+      font-weight: 600;
     }
 
     .buttons {
@@ -138,13 +229,27 @@
     .start-btn,
     .continue-btn,
     .final-btn {
-      border: 1px solid #60f6ff;
+      border: 1px solid var(--accent);
       color: white;
-      background: rgba(0,57,67,.78);
+      background: rgba(0,42,52,.78);
 
       box-shadow:
-        0 0 17px rgba(70,244,255,.55),
-        inset 0 0 15px rgba(70,244,255,.10);
+        0 0 17px var(--accent-soft),
+        inset 0 0 15px rgba(255,255,255,.05);
+    }
+
+    body.theme-koeln .yes-btn,
+    body.theme-koeln .start-btn,
+    body.theme-koeln .continue-btn,
+    body.theme-koeln .final-btn {
+      background: rgba(72,46,8,.76);
+    }
+
+    body.theme-duesseldorf .yes-btn,
+    body.theme-duesseldorf .start-btn,
+    body.theme-duesseldorf .continue-btn,
+    body.theme-duesseldorf .final-btn {
+      background: rgba(67,24,91,.78);
     }
 
     .no-btn {
@@ -162,9 +267,8 @@
       line-height: 1.9;
 
       background: rgba(0,15,25,.70);
-      border: 1px solid rgba(96,246,255,.35);
+      border: 1px solid var(--accent-soft);
       border-radius: 18px;
-
       animation: pop .25s ease;
     }
 
@@ -185,14 +289,14 @@
       padding: 23px 17px;
       border-radius: 25px;
       background: rgba(0,21,31,.38);
-      border: 1px solid rgba(101,245,255,.4);
+      border: 1px solid var(--accent-soft);
       margin-bottom: 28px;
     }
 
     .note-title {
       font-family: "Lalezar", sans-serif;
       font-size: 26px;
-      color: #64f7ff;
+      color: var(--accent);
       margin-bottom: 10px;
     }
 
@@ -203,15 +307,21 @@
 
     .date-grid {
       display: grid;
-      grid-template-columns: repeat(2, 1fr);
+      grid-template-columns: repeat(2,1fr);
       gap: 11px;
       width: 100%;
       margin-bottom: 24px;
     }
 
+    .first-date {
+      grid-column: 1 / -1;
+      width: calc(50% - 6px);
+      justify-self: center;
+    }
+
     .time-grid {
       display: grid;
-      grid-template-columns: repeat(3, 1fr);
+      grid-template-columns: repeat(3,1fr);
       gap: 10px;
       width: 100%;
       margin-bottom: 24px;
@@ -234,8 +344,8 @@
     .restaurant-option,
     .bar-option,
     .activity-option {
-      border: 1px solid rgba(103,246,255,.30);
-      background: rgba(0,28,38,.58);
+      border: 1px solid var(--accent-soft);
+      background: var(--option-bg);
       color: white;
       font-family: "Vazirmatn", sans-serif;
       box-shadow: none;
@@ -292,23 +402,23 @@
       display: block;
       font-size: 14px;
       line-height: 1.8;
-      opacity: .8;
+      opacity: .82;
     }
 
     .selected {
-      border-color: #66f7ff !important;
-      background: rgba(0,105,120,.55) !important;
+      border-color: var(--accent) !important;
+      background: var(--selected-bg) !important;
 
       box-shadow:
-        0 0 16px rgba(85,245,255,.55),
-        inset 0 0 14px rgba(85,245,255,.12) !important;
+        0 0 16px var(--accent-soft),
+        inset 0 0 14px rgba(255,255,255,.07) !important;
     }
 
     .selected-text {
       min-height: 30px;
       margin-bottom: 18px;
       font-size: 16px;
-      color: #72f7ff;
+      color: var(--accent);
     }
 
     .continue-btn {
@@ -326,14 +436,14 @@
       padding: 22px 18px;
       border-radius: 24px;
       background: rgba(0,21,31,.45);
-      border: 1px solid rgba(101,245,255,.4);
+      border: 1px solid var(--accent-soft);
       font-size: 16px;
       line-height: 2.15;
       margin: 20px 0 28px;
     }
 
     .consent-box strong {
-      color: #67f6ff;
+      color: var(--accent);
     }
 
     .summary {
@@ -342,7 +452,7 @@
       padding: 20px;
       border-radius: 24px;
       background: rgba(0,21,31,.48);
-      border: 1px solid rgba(101,245,255,.4);
+      border: 1px solid var(--accent-soft);
       margin: 20px 0 25px;
     }
 
@@ -358,15 +468,15 @@
     }
 
     .summary-row strong {
-      color: #67f6ff;
+      color: var(--accent);
     }
 
     .mission {
       font-family: "Lalezar", sans-serif;
       font-size: 42px;
-      color: #67f6ff;
+      color: var(--accent);
       margin-bottom: 20px;
-      text-shadow: 0 0 20px rgba(75,247,255,.3);
+      text-shadow: 0 0 20px var(--accent-soft);
     }
 
     .signature {
@@ -404,163 +514,281 @@
         padding: 13px 4px;
       }
     }
+
   </style>
+
 </head>
+
 
 <body>
 
-<!-- 1 -->
+
+<!-- صفحه ۱ -->
+
 <section id="page1" class="page">
+
   <div class="card intro-card">
 
     <h1 class="hello">
-      سلام <span class="niloufar">نیلوفر</span>
+      سلام
+      <span class="niloufar">
+        نیلوفر
+      </span>
     </h1>
 
-    <div class="dna">🧬</div>
+    <div class="dna">
+      🧬
+    </div>
 
     <div class="question">
-      حاضری یه تجربه متفاوت
+      برای یه آزمایش کاملاً غیرعلمی
       <br>
-      و تکرارنشدنی رو تجربه کنی؟
+      ولی به‌شدت مهم آماده‌ای؟ 🧪
     </div>
 
     <div class="buttons">
 
-      <button class="yes-btn" onclick="showPage(2)">
+      <button
+        class="yes-btn"
+        onclick="showPage(2)"
+      >
         آره، بزن بریم ✨
       </button>
 
-      <button class="no-btn" onclick="brokenButton()">
+      <button
+        class="no-btn"
+        onclick="brokenButton()"
+      >
         نه، اصلاً 🙃
       </button>
 
     </div>
 
-    <div id="errorMessage" class="error-message">
-      این گزینه خرابه 😐
+    <div
+      id="errorMessage"
+      class="error-message"
+    >
+      ⚠️ خطای آزمایشگاه
+      <br><br>
+      این گزینه در نمونه‌ی نیلوفر مشاهده نشد.
       <br>
-      یه لحظه اون یکی گزینه رو بزن ببین کار می‌کنه یا نه 😂
+      لطفاً گزینه‌ی دیگه رو امتحان کنید 😂🧪
     </div>
 
   </div>
+
 </section>
 
 
-<!-- 2 -->
+
+<!-- صفحه ۲ -->
+
 <section id="page2" class="page">
+
   <main class="card">
 
     <h1 class="title">
-      خوش اومدی <span class="name">نیلوفر</span>
+      خوش اومدی
+      <span class="name">
+        نیلوفر
+      </span>
     </h1>
 
-    <div class="dna">🧬</div>
+    <div class="dna">
+      🧬
+    </div>
 
     <div class="main-text">
+
+      تبریک!
+      <br>
+      نمونه موردنظر با موفقیت شناسایی شد 😂🧪
+
+      <br><br>
+
       اینجا کاملاً هدفمند انتخاب شدی
       <br>
-      تا یه دیت عاشقانه و تکرارنشدنی رو
+      تا ببینیم ترکیب
+
+      <span class="mardin">
+        نیلوفر + ماردین
+      </span>
+
       <br>
-      با <span class="mardin">ماردین</span> تجربه کنی. 🤍
+
+      در شرایط کنترل‌شده چه نتایجی میده 😂🧪
+
     </div>
 
     <section class="note">
 
-      <div style="font-size:30px;margin-bottom:8px;">🧪</div>
+      <div style="font-size:30px;margin-bottom:8px;">
+        🧪
+      </div>
 
       <div class="note-title">
         یه نکته مهم...
       </div>
 
       <div class="note-text">
-        راستی یادت نره؛
+
+        طبق پروتکل آزمایشگاه،
         <br>
         این لینک فقط
-        <span class="once">یکبار</span>
-        اعتبار داره،
+
+        <span class="once">
+          یک‌بار
+        </span>
+
+        اعتبار داره.
+
+        <br><br>
+
+        پس خانم دانشمند،
         <br>
-        پس دقت کن که انتخابت درست باشه 🫠
+        لطفاً پارامترها رو با دقت انتخاب کن؛
+        <br>
+        مسئولیت نتایج آزمایش با خودته 😂🧬
+
       </div>
 
     </section>
 
-    <button class="start-btn" onclick="showPage(3)">
-      شروع کنیم 🧪
+    <button
+      class="start-btn"
+      onclick="showPage(3)"
+    >
+      شروع آزمایش 🧪
     </button>
 
   </main>
+
 </section>
 
 
-<!-- 3 تاریخ -->
+
+<!-- صفحه ۳ - تاریخ -->
+
 <section id="page3" class="page">
+
   <main class="card">
 
-    <h1 class="title">یه روز انتخاب کن 📅</h1>
+    <h1 class="title">
+      یه روز انتخاب کن 📅
+    </h1>
 
     <div class="subtitle">
-      ببینیم این آزمایش عاشقانه
+
+      اولین پارامتر آزمایش:
+      <strong>
+        زمان 🧪
+      </strong>
+
       <br>
-      دقیقاً چه روزی باید انجام بشه 🧬
+
+      ببینیم واکنش نیلوفر + ماردین
+      <br>
+      دقیقاً چه روزی باید شروع بشه 🧬
+
     </div>
 
     <div class="date-grid">
 
-      <button class="date-option"
-              data-date="2026-08-14"
-              data-label="جمعه ۱۴ آگوست">
-        جمعه<br>۱۴ آگوست
+      <button
+        class="date-option first-date"
+        data-date="2026-08-14"
+        data-label="جمعه ۱۴ آگوست"
+      >
+        جمعه
+        <br>
+        ۱۴ آگوست
       </button>
 
-      <button class="date-option"
-              data-date="2026-08-21"
-              data-label="جمعه ۲۱ آگوست">
-        جمعه<br>۲۱ آگوست
+      <button
+        class="date-option"
+        data-date="2026-08-21"
+        data-label="جمعه ۲۱ آگوست"
+      >
+        جمعه
+        <br>
+        ۲۱ آگوست
       </button>
 
-      <button class="date-option"
-              data-date="2026-08-22"
-              data-label="شنبه ۲۲ آگوست">
-        شنبه<br>۲۲ آگوست
+      <button
+        class="date-option"
+        data-date="2026-08-22"
+        data-label="شنبه ۲۲ آگوست"
+      >
+        شنبه
+        <br>
+        ۲۲ آگوست
       </button>
 
-      <button class="date-option"
-              data-date="2026-08-28"
-              data-label="جمعه ۲۸ آگوست">
-        جمعه<br>۲۸ آگوست
+      <button
+        class="date-option"
+        data-date="2026-08-28"
+        data-label="جمعه ۲۸ آگوست"
+      >
+        جمعه
+        <br>
+        ۲۸ آگوست
       </button>
 
-      <button class="date-option"
-              data-date="2026-08-29"
-              data-label="شنبه ۲۹ آگوست">
-        شنبه<br>۲۹ آگوست
+      <button
+        class="date-option"
+        data-date="2026-08-29"
+        data-label="شنبه ۲۹ آگوست"
+      >
+        شنبه
+        <br>
+        ۲۹ آگوست
       </button>
 
     </div>
 
-    <div id="selectedDateText" class="selected-text">
-      هنوز تاریخی انتخاب نشده
+    <div
+      id="selectedDateText"
+      class="selected-text"
+    >
+      هنوز تاریخی ثبت نشده
     </div>
 
-    <button id="dateContinue" class="continue-btn">
-      ادامه 🧬
+    <button
+      id="dateContinue"
+      class="continue-btn"
+    >
+      ثبت و ادامه آزمایش 🧪
     </button>
 
   </main>
+
 </section>
 
 
-<!-- 4 ساعت -->
+
+<!-- صفحه ۴ - ساعت -->
+
 <section id="page4" class="page">
+
   <main class="card">
 
-    <h1 class="title">ساعت رو انتخاب کن 🕐</h1>
+    <h1 class="title">
+      ساعت رو انتخاب کن 🕐
+    </h1>
 
     <div class="subtitle">
-      حالا ببینیم عملیات
+
+      پارامتر دوم آزمایش:
+      <strong>
+        زمان ⏱️
+      </strong>
+
       <br>
-      دقیقاً چه ساعتی شروع بشه 😌
+
+      ببینیم واکنش نیلوفر + ماردین
+      <br>
+      دقیقاً از چه ساعتی شروع بشه 🧪
+
     </div>
 
     <div class="time-grid">
@@ -579,179 +807,351 @@
 
     </div>
 
-    <div id="selectedTimeText" class="selected-text">
-      هنوز ساعتی انتخاب نشده
+    <div
+      id="selectedTimeText"
+      class="selected-text"
+    >
+      هنوز ساعتی ثبت نشده
     </div>
 
-    <button id="timeContinue" class="continue-btn">
-      ادامه 🧬
+    <button
+      id="timeContinue"
+      class="continue-btn"
+    >
+      ثبت و ادامه آزمایش 🧪
     </button>
 
   </main>
+
 </section>
 
 
-<!-- 5 شهر -->
+
+<!-- صفحه ۵ - انتخاب شهر -->
+
 <section id="page5" class="page">
+
   <main class="card">
 
-    <h1 class="title">خب، حالا کجا بریم؟ 📍</h1>
+    <h1 class="title">
+      خب، حالا کجا بریم؟ 📍
+    </h1>
 
     <div class="subtitle">
-      یکی از دو شهر رو انتخاب کن
+
+      پارامتر سوم آزمایش:
+      <strong>
+        لوکیشن 🧪
+      </strong>
+
       <br>
-      تا مسیر آزمایش مشخص بشه 🧬
+
+      ببینیم این آزمایش باید
+      <br>
+      در کدوم شهر انجام بشه 🧬
+
     </div>
 
     <div class="city-grid">
 
-      <button class="city-option" data-city="Köln">
+      <button
+        class="city-option"
+        data-city="Köln"
+      >
         🏙️ Köln
-        <span>کلن</span>
+        <span>
+          کلن
+        </span>
       </button>
 
-      <button class="city-option" data-city="Düsseldorf">
+      <button
+        class="city-option"
+        data-city="Düsseldorf"
+      >
         🌆 Düsseldorf
-        <span>دوسلدورف</span>
+        <span>
+          دوسلدورف
+        </span>
       </button>
 
     </div>
 
-    <div id="selectedCityText" class="selected-text">
-      هنوز شهری انتخاب نشده
+    <div
+      id="selectedCityText"
+      class="selected-text"
+    >
+      هنوز شهری ثبت نشده
     </div>
 
-    <button id="cityContinue" class="continue-btn">
-      ادامه 🧬
+    <button
+      id="cityContinue"
+      class="continue-btn"
+    >
+      ثبت و ادامه آزمایش 🧪
     </button>
 
   </main>
+
 </section>
 
 
-<!-- 6 رستوران کلن -->
+
+<!-- صفحه ۶ - رستوران Köln -->
+
 <section id="page6" class="page">
+
   <main class="card">
 
-    <h1 class="title">خب، چی بخوریم؟ 🍽️</h1>
+    <div class="city-theme-badge">
+      🏙️ KÖLN PROTOCOL
+    </div>
+
+    <h1 class="title">
+      خب، چی بخوریم؟ 🍽️
+    </h1>
 
     <div class="subtitle">
-      چند تا جای خوب تو کلن برات انتخاب کردم 😌
+      وارد شاخه‌ی Köln شدیم 🧬
       <br>
-      ببین کدوم بیشتر به دلت می‌شینه 🤍
+      چند تا گزینه برای مرحله‌ی غذایی آزمایش آماده کردم 😌
+      <br>
+      ببین کدوم بیشتر به دلت می‌شینه.
     </div>
 
     <div class="restaurant-grid">
 
-      <button class="restaurant-option" data-value="Limani">
-        <strong>🇬🇷 Limani</strong>
-        <span>یونانی و مدیترانه‌ای • کنار راین</span>
+      <button
+        class="restaurant-option"
+        data-value="Limani"
+      >
+        <strong>
+          🇬🇷 Limani
+        </strong>
+        <span>
+          یونانی و مدیترانه‌ای • کنار راین
+        </span>
       </button>
 
-      <button class="restaurant-option" data-value="NENI Köln">
-        <strong>🌿 NENI Köln</strong>
-        <span>Oriental • Mediterranean • Fusion</span>
+      <button
+        class="restaurant-option"
+        data-value="NENI Köln"
+      >
+        <strong>
+          🌿 NENI Köln
+        </strong>
+        <span>
+          Oriental • Mediterranean • Fusion
+        </span>
       </button>
 
-      <button class="restaurant-option" data-value="Vetrina">
-        <strong>🇮🇹 Vetrina</strong>
-        <span>ایتالیایی مدرن و خاص 🍝</span>
+      <button
+        class="restaurant-option"
+        data-value="Vetrina"
+      >
+        <strong>
+          🇮🇹 Vetrina
+        </strong>
+        <span>
+          ایتالیایی مدرن و خاص 🍝
+        </span>
       </button>
 
-      <button class="restaurant-option" data-value="Colina Steakhaus">
-        <strong>🥩 Colina Steakhaus</strong>
-        <span>استیک و گوشت‌های خاص 🔥</span>
+      <button
+        class="restaurant-option"
+        data-value="Colina Steakhaus"
+      >
+        <strong>
+          🥩 Colina Steakhaus
+        </strong>
+        <span>
+          استیک و گوشت‌های خاص 🔥
+        </span>
       </button>
 
-      <button class="restaurant-option" data-value="Umibar">
-        <strong>🍣 Umibar</strong>
-        <span>Thai • Vietnamese • Japanese • Sushi</span>
+      <button
+        class="restaurant-option"
+        data-value="Umibar"
+      >
+        <strong>
+          🍣 Umibar
+        </strong>
+        <span>
+          Thai • Vietnamese • Japanese • Sushi
+        </span>
       </button>
 
-      <button class="restaurant-option" data-value="انتخاب نیلوفر">
-        <strong>❤️ هیچکدوم</strong>
-        <span>اگه هیچکدوم به دلت ننشست، خودت یه جا پیشنهاد بده 😉</span>
+      <button
+        class="restaurant-option"
+        data-value="انتخاب نیلوفر"
+      >
+        <strong>
+          ❤️ هیچکدوم
+        </strong>
+        <span>
+          اگه هیچکدوم به دلت ننشست،
+          خودت یه جا پیشنهاد بده 😉
+        </span>
       </button>
 
     </div>
 
-    <div id="restaurantTextK" class="selected-text">
-      هنوز رستورانی انتخاب نشده
+    <div
+      id="restaurantTextK"
+      class="selected-text"
+    >
+      هنوز گزینه‌ای ثبت نشده
     </div>
 
-    <button id="restaurantContinueK" class="continue-btn">
-      اینو می‌خوام 🧬
+    <button
+      id="restaurantContinueK"
+      class="continue-btn"
+    >
+      ثبت پارامتر غذایی 🧪
     </button>
 
   </main>
+
 </section>
 
 
-<!-- 7 رستوران دوسلدورف -->
+
+<!-- صفحه ۷ - رستوران Düsseldorf -->
+
 <section id="page7" class="page">
+
   <main class="card">
 
-    <h1 class="title">Düsseldorf 🍽️</h1>
+    <div class="city-theme-badge">
+      🌆 DÜSSELDORF PROTOCOL
+    </div>
+
+    <h1 class="title">
+      خب، چی بخوریم؟ 🍽️
+    </h1>
 
     <div class="subtitle">
-      برای دوسلدورف هم چند تا جای خاص پیدا کردم 😌
+      وارد شاخه‌ی Düsseldorf شدیم 🧬
       <br>
-      حالا انتخاب با توئه 🤍
+      برای مرحله‌ی غذایی آزمایش چند گزینه‌ی متفاوت داریم 😌
+      <br>
+      انتخاب با خانم دانشمنده.
     </div>
 
     <div class="restaurant-grid">
 
-      <button class="restaurant-option" data-value="Oktopussy">
-        <strong>🐙 Oktopussy</strong>
-        <span>Modern • International • Crossover</span>
+      <button
+        class="restaurant-option"
+        data-value="Oktopussy"
+      >
+        <strong>
+          🐙 Oktopussy
+        </strong>
+        <span>
+          Modern • International • Crossover
+        </span>
       </button>
 
-      <button class="restaurant-option" data-value="MEERBAR">
-        <strong>🌊 MEERBAR</strong>
-        <span>Mediterranean • Seafood • Sushi</span>
+      <button
+        class="restaurant-option"
+        data-value="MEERBAR"
+      >
+        <strong>
+          🌊 MEERBAR
+        </strong>
+        <span>
+          Mediterranean • Seafood • Sushi
+        </span>
       </button>
 
-      <button class="restaurant-option" data-value="Estilo Campo">
-        <strong>🥩 Estilo Campo</strong>
-        <span>Argentinian Steakhouse • Meat & Grill 🔥</span>
+      <button
+        class="restaurant-option"
+        data-value="Estilo Campo"
+      >
+        <strong>
+          🥩 Estilo Campo
+        </strong>
+        <span>
+          Argentinian Steakhouse • Meat & Grill 🔥
+        </span>
       </button>
 
-      <button class="restaurant-option" data-value="King Fusion">
-        <strong>🥢 King Fusion</strong>
-        <span>Asian Fusion • Thai • Vietnamese • Japanese • Sushi</span>
+      <button
+        class="restaurant-option"
+        data-value="King Fusion"
+      >
+        <strong>
+          🥢 King Fusion
+        </strong>
+        <span>
+          Asian Fusion • Thai • Vietnamese • Japanese • Sushi
+        </span>
       </button>
 
-      <button class="restaurant-option" data-value="Da Clà">
-        <strong>🇮🇹 Da Clà</strong>
-        <span>Italian • Pasta • Mediterranean 🍝</span>
+      <button
+        class="restaurant-option"
+        data-value="Da Clà"
+      >
+        <strong>
+          🇮🇹 Da Clà
+        </strong>
+        <span>
+          Italian • Pasta • Mediterranean 🍝
+        </span>
       </button>
 
-      <button class="restaurant-option" data-value="انتخاب نیلوفر">
-        <strong>❤️ هیچکدوم</strong>
-        <span>اگه هیچکدوم به دلت ننشست، خودت یه جا پیشنهاد بده 😉</span>
+      <button
+        class="restaurant-option"
+        data-value="انتخاب نیلوفر"
+      >
+        <strong>
+          ❤️ هیچکدوم
+        </strong>
+        <span>
+          اگه هیچکدوم به دلت ننشست،
+          خودت یه جا پیشنهاد بده 😉
+        </span>
       </button>
 
     </div>
 
-    <div id="restaurantTextD" class="selected-text">
-      هنوز رستورانی انتخاب نشده
+    <div
+      id="restaurantTextD"
+      class="selected-text"
+    >
+      هنوز گزینه‌ای ثبت نشده
     </div>
 
-    <button id="restaurantContinueD" class="continue-btn">
-      اینو می‌خوام 🧬
+    <button
+      id="restaurantContinueD"
+      class="continue-btn"
+    >
+      ثبت پارامتر غذایی 🧪
     </button>
 
   </main>
+
 </section>
 
 
-<!-- 8 بعد شام -->
+
+<!-- صفحه ۸ - بعد شام -->
+
 <section id="page8" class="page">
+
   <main class="card">
 
-    <h1 class="title">خب... 😌</h1>
+    <div
+      id="afterDinnerBadge"
+      class="city-theme-badge"
+    ></div>
 
-    <div class="dna">🍽️</div>
+    <h1 class="title">
+      نتایج اولیه... 🧪
+    </h1>
+
+    <div class="dna">
+      🍽️
+    </div>
 
     <div class="question">
 
@@ -763,23 +1163,32 @@
 
       <br>
 
-      دوست داری ادامه بدیم؟ 😌
+      دوست داری آزمایش وارد فاز دوم بشه؟ 😌🧬
 
     </div>
 
     <div class="buttons">
 
-      <button class="yes-btn" onclick="continueAfterDinner()">
+      <button
+        class="yes-btn"
+        onclick="continueAfterDinner()"
+      >
         آره، ادامه بدیم ✨
       </button>
 
-      <button class="no-btn" onclick="dinnerNo()">
+      <button
+        class="no-btn"
+        onclick="dinnerNo()"
+      >
         نه، فکر کنم بسه 🙃
       </button>
 
     </div>
 
-    <div id="dinnerNoMessage" class="funny-message">
+    <div
+      id="dinnerNoMessage"
+      class="funny-message"
+    >
 
       مگه میشه بهت خوش نگذره؟ 😐
 
@@ -790,297 +1199,537 @@
       <br>
 
       اگه بهت خوش نگذشته باشه،
-      من خودم جمع می‌کنم از این کشور میرم 🥲😂
+      <br>
+      من خودم جمع می‌کنم
+      از این کشور میرم 🥲😂
 
     </div>
 
   </main>
+
 </section>
 
 
-<!-- 9 بار کلن -->
+
+<!-- صفحه ۹ - بار Köln -->
+
 <section id="page9" class="page">
+
   <main class="card">
 
-    <h1 class="title">خانم نیلوفر خانم... 😏</h1>
+    <div class="city-theme-badge">
+      🏙️ KÖLN • PHASE II
+    </div>
+
+    <h1 class="title">
+      فاز دوم آزمایش 🥃
+    </h1>
 
     <div class="subtitle">
 
-      حالا که تا اینجا بهت خوش گذشته،
+      حالا که نتایج اولیه امیدوارکننده‌ست 😌
 
       <br>
 
-      موافقی بعد از شام بریم یه جایی
-      دو تا شات بزنیم که غذا هم هضم شه؟ 🥃😂
+      موافقی بریم یه جایی دو تا شات بزنیم
+
+      <br>
+
+      که نمونه‌ی غذایی هم بهتر هضم بشه؟ 😂🧪
 
       <br><br>
 
-      ولی مهم‌تر از همه اینه که...
+      مهم‌تر از همه:
 
       <br>
 
-      شما چی دوست داری؟ 😌
+      خانم نیلوفر خانم، شما چی دوست داری؟
 
     </div>
 
     <div class="bar-grid">
 
-      <button class="bar-option" data-value="ONA MOR">
-        <strong>🍸 ONA MOR</strong>
-        <span>Cocktail Bar • شیک، خاص و مناسب یه شب خوب</span>
+      <button
+        class="bar-option"
+        data-value="ONA MOR"
+      >
+        <strong>
+          🍸 ONA MOR
+        </strong>
+        <span>
+          Cocktail Bar • شیک، خاص و مناسب یه شب خوب
+        </span>
       </button>
 
-      <button class="bar-option" data-value="Bar Rix">
-        <strong>🍷 Bar Rix</strong>
-        <span>Wine Bar • شیک، آروم و مناسب یه لیوان شراب خوب</span>
+      <button
+        class="bar-option"
+        data-value="Bar Rix"
+      >
+        <strong>
+          🍷 Bar Rix
+        </strong>
+        <span>
+          Wine Bar • شیک، آروم و مناسب یه لیوان شراب خوب
+        </span>
       </button>
 
-      <button class="bar-option" data-value="Plüsch Bar & Lounge">
-        <strong>🥃 Plüsch Bar & Lounge</strong>
-        <span>Köln Marriott • بار شیک و آروم برای نشستن و حرف زدن</span>
+      <button
+        class="bar-option"
+        data-value="Plüsch Bar & Lounge"
+      >
+        <strong>
+          🥃 Plüsch Bar & Lounge
+        </strong>
+        <span>
+          Köln Marriott • بار شیک و آروم برای نشستن و حرف زدن
+        </span>
       </button>
 
-      <button class="bar-option" data-value="Low Budget">
-        <strong>🍺 Low Budget</strong>
+      <button
+        class="bar-option"
+        data-value="Low Budget"
+      >
+        <strong>
+          🍺 Low Budget
+        </strong>
+
         <span>
           یه بار خاک‌خورده و خودمونی 😄
           <br>
-          محشرترین تکیلای جهان رو داره؛ مستقیم از بشکه سرو میشه
+          محشرترین تکیلای جهان رو داره؛
+          مستقیم از بشکه سرو میشه
           و یه جور خاصی خوبه 😂🥃
         </span>
+
       </button>
 
-      <button class="bar-option" data-value="Masons">
-        <strong>💨 Masons</strong>
+      <button
+        class="bar-option"
+        data-value="Masons"
+      >
+        <strong>
+          💨 Masons
+        </strong>
+
         <span>
-          Shisha Lounge • البته با توجه به میگرنت شاید بهترین گزینه نباشه 😅
-          ولی گفتم بذارمش، شاید دوستش داشته باشی
+          Shisha Lounge
+          <br>
+          ⚠️ کنترل کیفیت:
+          با توجه به میگرنت شاید بهترین گزینه نباشه 😅
+          ولی گفتم بذارمش، شاید دوستش داشته باشی.
         </span>
+
       </button>
 
     </div>
 
-    <div id="barTextK" class="selected-text">
-      هنوز چیزی انتخاب نشده
+    <div
+      id="barTextK"
+      class="selected-text"
+    >
+      هنوز پارامتری ثبت نشده
     </div>
 
-    <button id="barContinueK" class="continue-btn">
-      انتخاب شد 🧬
+    <button
+      id="barContinueK"
+      class="continue-btn"
+    >
+      ثبت و ورود به فاز بعد 🧬
     </button>
 
   </main>
+
 </section>
 
 
-<!-- 10 بار دوسلدورف -->
+
+<!-- صفحه ۱۰ - بار Düsseldorf -->
+
 <section id="page10" class="page">
+
   <main class="card">
 
-    <h1 class="title">خانم نیلوفر خانم... 😏</h1>
+    <div class="city-theme-badge">
+      🌆 DÜSSELDORF • PHASE II
+    </div>
+
+    <h1 class="title">
+      فاز دوم آزمایش 🥃
+    </h1>
 
     <div class="subtitle">
 
-      حالا که تا اینجا بهت خوش گذشته،
+      حالا که نتایج اولیه امیدوارکننده‌ست 😌
 
       <br>
 
-      موافقی بعد از شام بریم یه جایی
-      دو تا شات بزنیم که غذا هم هضم شه؟ 🥃😂
+      موافقی بریم یه جایی دو تا شات بزنیم
+
+      <br>
+
+      که نمونه‌ی غذایی هم بهتر هضم بشه؟ 😂🧪
 
       <br><br>
 
-      ولی مهم‌تر از همه اینه که...
+      مهم‌تر از همه:
 
       <br>
 
-      شما چی دوست داری؟ 😌
+      خانم نیلوفر خانم، شما چی دوست داری؟
 
     </div>
 
     <div class="bar-grid">
 
-      <button class="bar-option" data-value="Hideaway">
-        <strong>🍸 Hideaway</strong>
-        <span>Cocktail Bar • شیک، تاریک و خاص</span>
+      <button
+        class="bar-option"
+        data-value="Hideaway"
+      >
+        <strong>
+          🍸 Hideaway
+        </strong>
+        <span>
+          Cocktail Bar • شیک، تاریک و خاص
+        </span>
       </button>
 
-      <button class="bar-option" data-value="Vino's Weinbar">
-        <strong>🍷 Vino's Weinbar</strong>
-        <span>Wine Bar • دنج، شیک و مناسب یه لیوان شراب خوب</span>
+      <button
+        class="bar-option"
+        data-value="Vino's Weinbar"
+      >
+        <strong>
+          🍷 Vino's Weinbar
+        </strong>
+        <span>
+          Wine Bar • دنج، شیک و مناسب یه لیوان شراب خوب
+        </span>
       </button>
 
-      <button class="bar-option" data-value="Breidenbacher Hof – Bar & Smoking Lounge">
-        <strong>🥃 Breidenbacher Hof</strong>
-        <span>Bar & Smoking Lounge • یه Hotel Bar لوکس و خیلی آروم</span>
+      <button
+        class="bar-option"
+        data-value="Breidenbacher Hof – Bar & Smoking Lounge"
+      >
+        <strong>
+          🥃 Breidenbacher Hof
+        </strong>
+        <span>
+          Bar & Smoking Lounge • یه Hotel Bar لوکس و خیلی آروم
+        </span>
       </button>
 
-      <button class="bar-option" data-value="Auberge">
-        <strong>🍺 Auberge</strong>
-        <span>Rock Pub • قدیمی، خاک‌خورده، خودمونی و متفاوت 🤘</span>
+      <button
+        class="bar-option"
+        data-value="Auberge"
+      >
+        <strong>
+          🍺 Auberge
+        </strong>
+        <span>
+          Rock Pub • قدیمی، خاک‌خورده، خودمونی و متفاوت 🤘
+        </span>
       </button>
 
-      <button class="bar-option" data-value="AVIUM">
-        <strong>💨 AVIUM</strong>
+      <button
+        class="bar-option"
+        data-value="AVIUM"
+      >
+        <strong>
+          💨 AVIUM
+        </strong>
+
         <span>
           Shisha & Cocktail Lounge • شیک و خفن
           <br>
-          البته اینجا هم میگرن رو فراموش نکردم 😅
+          ⚠️ کنترل کیفیت:
+          اینجا هم میگرنت رو فراموش نکردم 😅
+        </span>
+
+      </button>
+
+    </div>
+
+    <div
+      id="barTextD"
+      class="selected-text"
+    >
+      هنوز پارامتری ثبت نشده
+    </div>
+
+    <button
+      id="barContinueD"
+      class="continue-btn"
+    >
+      ثبت و ورود به فاز بعد 🧬
+    </button>
+
+  </main>
+
+</section>
+
+
+
+<!-- صفحه ۱۱ - فعالیت Köln -->
+
+<section id="page11" class="page">
+
+  <main class="card">
+
+    <div class="city-theme-badge">
+      🏙️ KÖLN • FINAL PHASE
+    </div>
+
+    <h1 class="title">
+      سطح انرژی سلولی؟ ⚡🧬
+    </h1>
+
+    <div class="subtitle">
+
+      هنوز انرژی داری؟ 😏
+
+      <br>
+
+      چون من هنوز برنامه دارم 😂
+
+      <br><br>
+
+      وقتشه از حالت نشسته خارج بشیم
+
+      <br>
+
+      و ببینیم کدوممون استعداد بیشتری
+      در تخریب نتایج آزمایش داره 🫠🧪
+
+    </div>
+
+    <div class="activity-grid">
+
+      <button
+        class="activity-option"
+        data-value="Game Center – Köln Ring"
+      >
+        <strong>
+          🕹️ Game Center
+        </strong>
+        <span>
+          Köln Ring • بازی، رقابت و احتمالاً باختن تو 😂
+        </span>
+      </button>
+
+      <button
+        class="activity-option"
+        data-value="West Bowling"
+      >
+        <strong>
+          🎳 Bowling
+        </strong>
+        <span>
+          West Bowling • یه رقابت کلاسیک برای آخر شب
+        </span>
+      </button>
+
+      <button
+        class="activity-option"
+        data-value="7th Space Köln – Axtwerfen + VR"
+      >
+        <strong>
+          🪓🥽 پرتاب تبر + VR
+        </strong>
+        <span>
+          7th Space Köln • بخش کمی خطرناک‌تر آزمایش 😂
+        </span>
+      </button>
+
+      <button
+        class="activity-option"
+        data-value="LaserTag Köln"
+      >
+        <strong>
+          🔫 LaserTag
+        </strong>
+        <span>
+          LaserTag Köln • اینجا دیگه آزمایش رسماً تبدیل به جنگ میشه 😂
+        </span>
+      </button>
+
+      <button
+        class="activity-option"
+        data-value="سینما"
+      >
+        <strong>
+          🎬 سینما
+        </strong>
+        <span>
+          یه فیلم خوب برای یه اختتامیه خوب 🎬🤍
         </span>
       </button>
 
     </div>
 
-    <div id="barTextD" class="selected-text">
-      هنوز چیزی انتخاب نشده
+    <div
+      id="activityTextK"
+      class="selected-text"
+    >
+      پروتکل اختتامیه هنوز انتخاب نشده
     </div>
 
-    <button id="barContinueD" class="continue-btn">
-      انتخاب شد 🧬
+    <button
+      id="activityContinueK"
+      class="continue-btn"
+    >
+      ثبت پروتکل نهایی 🧬
     </button>
 
   </main>
+
 </section>
 
 
-<!-- 11 فعالیت کلن -->
-<section id="page11" class="page">
-  <main class="card">
 
-    <h1 class="title">هنوز انرژی داری؟ 😏</h1>
+<!-- صفحه ۱۲ - فعالیت Düsseldorf -->
 
-    <div class="subtitle">
-
-      چون من هنوز برنامه دارم 😂
-
-      <br><br>
-
-      حالا وقتشه یه کم از جامون بلند شیم
-      و یه کاری کنیم که بفهمیم کدوممون
-      بیشتر استعداد خرابکاری داره 🫠
-
-      <br><br>
-
-      مرحله بعد رو شما انتخاب کن خانم نیلوفر خانم 😌
-
-    </div>
-
-    <div class="activity-grid">
-
-      <button class="activity-option" data-value="Game Center – Köln Ring">
-        <strong>🕹️ Game Center</strong>
-        <span>Köln Ring • بازی، رقابت و احتمالاً باختن تو 😂</span>
-      </button>
-
-      <button class="activity-option" data-value="West Bowling">
-        <strong>🎳 Bowling</strong>
-        <span>West Bowling • یه رقابت کلاسیک برای آخر شب</span>
-      </button>
-
-      <button class="activity-option" data-value="7th Space Köln – Axtwerfen + VR">
-        <strong>🪓🥽 پرتاب تبر + VR</strong>
-        <span>7th Space Köln • برای بخش کمی خطرناک‌تر آزمایش 🧪😂</span>
-      </button>
-
-      <button class="activity-option" data-value="LaserTag Köln">
-        <strong>🔫 LaserTag</strong>
-        <span>LaserTag Köln • اینجا دیگه دیت رسماً تبدیل به جنگ میشه 😂</span>
-      </button>
-
-      <button class="activity-option" data-value="سینما">
-        <strong>🎬 سینما</strong>
-        <span>یه فیلم خوب برای یه اختتامیه خوب 🎬🤍</span>
-      </button>
-
-    </div>
-
-    <div id="activityTextK" class="selected-text">
-      هنوز چیزی انتخاب نشده
-    </div>
-
-    <button id="activityContinueK" class="continue-btn">
-      بریم مرحله آخر 🤍
-    </button>
-
-  </main>
-</section>
-
-
-<!-- 12 فعالیت دوسلدورف -->
 <section id="page12" class="page">
+
   <main class="card">
 
-    <h1 class="title">هنوز انرژی داری؟ 😏</h1>
+    <div class="city-theme-badge">
+      🌆 DÜSSELDORF • FINAL PHASE
+    </div>
+
+    <h1 class="title">
+      سطح انرژی سلولی؟ ⚡🧬
+    </h1>
 
     <div class="subtitle">
+
+      هنوز انرژی داری؟ 😏
+
+      <br>
 
       چون من هنوز برنامه دارم 😂
 
       <br><br>
 
-      حالا وقتشه یه کم از جامون بلند شیم
-      و یه کاری کنیم که بفهمیم کدوممون
-      بیشتر استعداد خرابکاری داره 🫠
+      وقتشه از حالت نشسته خارج بشیم
 
-      <br><br>
+      <br>
 
-      مرحله بعد رو شما انتخاب کن خانم نیلوفر خانم 😌
+      و ببینیم کدوممون استعداد بیشتری
+      در تخریب نتایج آزمایش داره 🫠🧪
 
     </div>
 
     <div class="activity-grid">
 
-      <button class="activity-option" data-value="Gamer Düsseldorf – Die Gameshow">
-        <strong>🎮 Gamer Düsseldorf</strong>
-        <span>Die Gameshow • ببینیم کدوممون تحمل باخت بیشتری داره 😂</span>
+      <button
+        class="activity-option"
+        data-value="Gamer Düsseldorf – Die Gameshow"
+      >
+        <strong>
+          🎮 Gamer Düsseldorf
+        </strong>
+        <span>
+          Die Gameshow • ببینیم کدوممون تحمل باخت بیشتری داره 😂
+        </span>
       </button>
 
-      <button class="activity-option" data-value="Bowling Düsseldorf">
-        <strong>🎳 Bowling</strong>
-        <span>یه رقابت کلاسیک برای آخر شب 🎳</span>
+      <button
+        class="activity-option"
+        data-value="Bowling Düsseldorf"
+      >
+        <strong>
+          🎳 Bowling
+        </strong>
+        <span>
+          یه رقابت کلاسیک برای آخر شب 🎳
+        </span>
       </button>
 
-      <button class="activity-option" data-value="7th Space Düsseldorf – Axtwerfen + VR">
-        <strong>🪓🥽 پرتاب تبر + VR</strong>
-        <span>7th Space Düsseldorf • VR و پرتاب تبر 🧪😂</span>
+      <button
+        class="activity-option"
+        data-value="7th Space Düsseldorf – Axtwerfen + VR"
+      >
+        <strong>
+          🪓🥽 پرتاب تبر + VR
+        </strong>
+        <span>
+          7th Space Düsseldorf • VR و پرتاب تبر 🧪😂
+        </span>
       </button>
 
-      <button class="activity-option" data-value="LaserTag Evolution Düsseldorf">
-        <strong>🔫 LaserTag Evolution</strong>
-        <span>اینجا دیگه دیت رسماً تبدیل به جنگ میشه 😂</span>
+      <button
+        class="activity-option"
+        data-value="LaserTag Evolution Düsseldorf"
+      >
+        <strong>
+          🔫 LaserTag Evolution
+        </strong>
+        <span>
+          اینجا دیگه آزمایش رسماً تبدیل به جنگ میشه 😂
+        </span>
       </button>
 
-      <button class="activity-option" data-value="سینما">
-        <strong>🎬 سینما</strong>
-        <span>یه فیلم خوب برای یه اختتامیه خوب 🎬🤍</span>
+      <button
+        class="activity-option"
+        data-value="سینما"
+      >
+        <strong>
+          🎬 سینما
+        </strong>
+        <span>
+          یه فیلم خوب برای یه اختتامیه خوب 🎬🤍
+        </span>
       </button>
 
     </div>
 
-    <div id="activityTextD" class="selected-text">
-      هنوز چیزی انتخاب نشده
+    <div
+      id="activityTextD"
+      class="selected-text"
+    >
+      پروتکل اختتامیه هنوز انتخاب نشده
     </div>
 
-    <button id="activityContinueD" class="continue-btn">
-      بریم مرحله آخر 🤍
+    <button
+      id="activityContinueD"
+      class="continue-btn"
+    >
+      ثبت پروتکل نهایی 🧬
     </button>
 
   </main>
+
 </section>
 
 
-<!-- 13 پیام شخصی -->
+
+<!-- صفحه ۱۳ - پیام شخصی -->
+
 <section id="page13" class="page">
+
   <main class="card">
 
-    <h1 class="title">قبل از اینکه تأیید کنی... 🤍</h1>
+    <div
+      id="personalBadge"
+      class="city-theme-badge"
+    ></div>
+
+    <h1 class="title">
+      قبل از ثبت نهایی... 🤍
+    </h1>
 
     <div class="consent-box">
 
-      یه چیز برای من از همه این برنامه‌ها مهم‌تره.
+      این قسمت دیگه شوخی آزمایشگاهی نیست.
 
       <br><br>
 
-      <strong>«نه» همیشه یعنی نه.</strong>
+      یه چیز برای من از همه‌ی این برنامه‌ها مهم‌تره.
+
+      <br><br>
+
+      <strong>
+        «نه» همیشه یعنی نه.
+      </strong>
 
       <br><br>
 
@@ -1093,7 +1742,8 @@
       <br><br>
 
       لازم نیست دلیل بیاری
-      یا نگران این باشی که من ناراحت می‌شم.
+      یا نگران این باشی
+      که من ناراحت می‌شم.
 
       <br><br>
 
@@ -1108,64 +1758,104 @@
       <br><br>
 
       تنها چیزی که برام مهمه اینه که
-      <strong>هردومون راحت باشیم و بهمون خوش بگذره.</strong> 🤍
+
+      <strong>
+        هردومون راحت باشیم و بهمون خوش بگذره.
+      </strong>
+
+      🤍
 
       <br><br>
 
       و خب...
+
+      <br>
+
       بعد از این چند خط جدی،
       می‌تونیم دوباره برگردیم
-      به برنامه مسخره‌بازی‌هامون 😂🧬
+      به آزمایش‌های غیرعلمی‌مون 😂🧬
 
     </div>
 
-    <button class="continue-btn active" onclick="openSummary()">
-      خوندم، بریم برای تأیید نهایی 🤍
+    <button
+      class="continue-btn active"
+      onclick="openSummary()"
+    >
+      خوندم، ثبت نهایی رو ببینیم 🤍
     </button>
 
   </main>
+
 </section>
 
 
-<!-- 14 خلاصه -->
+
+<!-- صفحه ۱۴ - خلاصه -->
+
 <section id="page14" class="page">
+
   <main class="card">
 
-    <h1 class="title">خب نیلوفر... 😌</h1>
+    <div
+      id="summaryBadge"
+      class="city-theme-badge"
+    ></div>
+
+    <h1 class="title">
+      گزارش نهایی آزمایش 🧬
+    </h1>
 
     <div class="subtitle">
-      نقشه عملیات آماده‌ست 🧬
+      پارامترهای انتخاب‌شده آماده‌ی بررسی نهایی هستن 🧪
     </div>
 
     <div class="summary">
 
       <div class="summary-row">
-        📅 <strong>تاریخ:</strong>
+        📅
+        <strong>
+          تاریخ:
+        </strong>
         <span id="summaryDate"></span>
       </div>
 
       <div class="summary-row">
-        🕐 <strong>ساعت:</strong>
+        🕐
+        <strong>
+          ساعت:
+        </strong>
         <span id="summaryTime"></span>
       </div>
 
       <div class="summary-row">
-        📍 <strong>شهر:</strong>
+        📍
+        <strong>
+          محیط آزمایش:
+        </strong>
         <span id="summaryCity"></span>
       </div>
 
       <div class="summary-row">
-        🍽️ <strong>شام:</strong>
+        🍽️
+        <strong>
+          فاز غذایی:
+        </strong>
         <span id="summaryRestaurant"></span>
       </div>
 
       <div class="summary-row">
-        🥃 <strong>بعد از شام:</strong>
+        🥃
+        <strong>
+          فاز دوم:
+        </strong>
         <span id="summaryBar"></span>
       </div>
 
       <div class="summary-row">
-        🎯 <strong>اختتامیه:</strong>
+        🎯
+        <strong>
+          اختتامیه:
+        </strong>
         <span id="summaryActivity"></span>
       </div>
 
@@ -1173,24 +1863,31 @@
 
     <div class="main-text">
 
-      همه اینا رو خودت انتخاب کردی...
+      همه این پارامترها رو خودت انتخاب کردی...
 
       <br>
 
-      پس بعداً نگو من نقشه کشیده بودم 😂🤍
+      پس بعداً نگو من نتایج آزمایش رو دستکاری کردم 😂🤍
 
     </div>
 
-    <button class="final-btn" onclick="showPage(15)">
-      ❤️ تأیید نهایی دیت
+    <button
+      class="final-btn"
+      onclick="showPage(15)"
+    >
+      تأیید و ثبت آزمایش ❤️🧬
     </button>
 
   </main>
+
 </section>
 
 
-<!-- 15 پایان -->
+
+<!-- صفحه ۱۵ - پایان -->
+
 <section id="page15" class="page">
+
   <main class="card intro-card">
 
     <div style="font-size:55px;margin-bottom:18px;">
@@ -1198,12 +1895,20 @@
     </div>
 
     <div class="mission">
-      Mission Accepted
+      Experiment Approved
     </div>
 
     <div class="main-text">
 
-      قرارمون قطعی شد 🤍
+      پروتکل
+
+      <span class="highlight">
+        نیلوفر + ماردین
+      </span>
+
+      <br>
+
+      با موفقیت ثبت شد 🧪
 
       <br><br>
 
@@ -1220,6 +1925,10 @@
 
     <div class="signature">
 
+      Status: Ready for Experiment 🧪
+
+      <br><br>
+
       See you soon, Niloufar 🤍
 
       <br>
@@ -1229,7 +1938,9 @@
     </div>
 
   </main>
+
 </section>
+
 
 
 <script>
@@ -1245,11 +1956,18 @@
 
   function showPage(number) {
 
-    document.querySelectorAll(".page").forEach(page => {
-      page.style.display = "none";
-    });
+    document
+      .querySelectorAll(".page")
+      .forEach(page => {
+        page.style.display = "none";
+      });
 
-    document.getElementById("page" + number).style.display = "flex";
+    const target =
+      document.getElementById(
+        "page" + number
+      );
+
+    target.style.display = "flex";
 
     window.scrollTo({
       top: 0,
@@ -1261,161 +1979,381 @@
 
   function brokenButton() {
 
-    const message = document.getElementById("errorMessage");
+    const message =
+      document.getElementById(
+        "errorMessage"
+      );
 
     message.style.display = "block";
     message.style.animation = "none";
 
     void message.offsetWidth;
 
-    message.style.animation = "pop .25s ease";
+    message.style.animation =
+      "pop .25s ease";
 
   }
 
 
   function dinnerNo() {
 
-    const message = document.getElementById("dinnerNoMessage");
+    const message =
+      document.getElementById(
+        "dinnerNoMessage"
+      );
 
     message.style.display = "block";
     message.style.animation = "none";
 
     void message.offsetWidth;
 
-    message.style.animation = "pop .25s ease";
+    message.style.animation =
+      "pop .25s ease";
 
   }
 
 
   /* تاریخ */
 
-  const dateButtons = document.querySelectorAll(".date-option");
+  const dateButtons =
+    document.querySelectorAll(
+      ".date-option"
+    );
 
   dateButtons.forEach(button => {
 
-    button.addEventListener("click", function() {
+    button.addEventListener(
+      "click",
+      function() {
 
-      dateButtons.forEach(btn => btn.classList.remove("selected"));
+        dateButtons.forEach(btn => {
+          btn.classList.remove(
+            "selected"
+          );
+        });
 
-      this.classList.add("selected");
+        this.classList.add(
+          "selected"
+        );
 
-      selectedDate = this.dataset.date;
-      selectedDateLabel = this.dataset.label;
+        selectedDate =
+          this.dataset.date;
 
-      document.getElementById("selectedDateText").innerText =
-        "انتخابت: " + selectedDateLabel + " ❤️";
+        selectedDateLabel =
+          this.dataset.label;
 
-      document.getElementById("dateContinue").classList.add("active");
+        document
+          .getElementById(
+            "selectedDateText"
+          )
+          .innerText =
 
-    });
+          "✓ پارامتر اول ثبت شد: " +
+          selectedDateLabel +
+          " 🧬";
+
+        document
+          .getElementById(
+            "dateContinue"
+          )
+          .classList.add(
+            "active"
+          );
+
+      }
+    );
 
   });
 
 
-  document.getElementById("dateContinue").onclick = function() {
+  document
+    .getElementById(
+      "dateContinue"
+    )
+    .onclick =
+    function() {
 
-    if (!selectedDate) return;
+      if (!selectedDate)
+        return;
 
-    showPage(4);
+      showPage(4);
 
-  };
+    };
 
 
   /* ساعت */
 
-  const timeButtons = document.querySelectorAll(".time-option");
+  const timeButtons =
+    document.querySelectorAll(
+      ".time-option"
+    );
 
   timeButtons.forEach(button => {
 
-    button.addEventListener("click", function() {
+    button.addEventListener(
+      "click",
+      function() {
 
-      timeButtons.forEach(btn => btn.classList.remove("selected"));
+        timeButtons.forEach(btn => {
+          btn.classList.remove(
+            "selected"
+          );
+        });
 
-      this.classList.add("selected");
+        this.classList.add(
+          "selected"
+        );
 
-      selectedTime = this.dataset.time;
+        selectedTime =
+          this.dataset.time;
 
-      document.getElementById("selectedTimeText").innerText =
-        "ساعت انتخابی: " + selectedTime + " 🕐";
+        document
+          .getElementById(
+            "selectedTimeText"
+          )
+          .innerText =
 
-      document.getElementById("timeContinue").classList.add("active");
+          "✓ پارامتر دوم ثبت شد: " +
+          selectedTime +
+          " 🧬";
 
-    });
+        document
+          .getElementById(
+            "timeContinue"
+          )
+          .classList.add(
+            "active"
+          );
+
+      }
+    );
 
   });
 
 
-  document.getElementById("timeContinue").onclick = function() {
+  document
+    .getElementById(
+      "timeContinue"
+    )
+    .onclick =
+    function() {
 
-    if (!selectedTime) return;
+      if (!selectedTime)
+        return;
 
-    showPage(5);
+      showPage(5);
 
-  };
+    };
 
 
   /* شهر */
 
-  const cityButtons = document.querySelectorAll(".city-option");
+  const cityButtons =
+    document.querySelectorAll(
+      ".city-option"
+    );
 
   cityButtons.forEach(button => {
 
-    button.addEventListener("click", function() {
+    button.addEventListener(
+      "click",
+      function() {
 
-      cityButtons.forEach(btn => btn.classList.remove("selected"));
+        cityButtons.forEach(btn => {
+          btn.classList.remove(
+            "selected"
+          );
+        });
 
-      this.classList.add("selected");
+        this.classList.add(
+          "selected"
+        );
 
-      selectedCity = this.dataset.city;
+        selectedCity =
+          this.dataset.city;
 
-      document.getElementById("selectedCityText").innerText =
-        "انتخابت: " + selectedCity + " ❤️";
+        document
+          .getElementById(
+            "selectedCityText"
+          )
+          .innerText =
 
-      document.getElementById("cityContinue").classList.add("active");
+          "✓ پارامتر سوم ثبت شد: " +
+          selectedCity +
+          " 🧬";
 
-    });
+        document
+          .getElementById(
+            "cityContinue"
+          )
+          .classList.add(
+            "active"
+          );
+
+      }
+    );
 
   });
 
 
-  document.getElementById("cityContinue").onclick = function() {
+  function activateCityTheme() {
 
-    if (!selectedCity) return;
+    document.body.classList.remove(
+      "theme-koeln",
+      "theme-duesseldorf"
+    );
 
-    if (selectedCity === "Köln") {
-      showPage(6);
-    } else {
-      showPage(7);
+    if (
+      selectedCity ===
+      "Köln"
+    ) {
+
+      document.body.classList.add(
+        "theme-koeln"
+      );
+
+      document
+        .getElementById(
+          "afterDinnerBadge"
+        )
+        .innerText =
+        "🏙️ KÖLN PROTOCOL";
+
+      document
+        .getElementById(
+          "personalBadge"
+        )
+        .innerText =
+        "🏙️ KÖLN PROTOCOL";
+
+      document
+        .getElementById(
+          "summaryBadge"
+        )
+        .innerText =
+        "🏙️ KÖLN • FINAL REPORT";
+
     }
 
-  };
+    else {
+
+      document.body.classList.add(
+        "theme-duesseldorf"
+      );
+
+      document
+        .getElementById(
+          "afterDinnerBadge"
+        )
+        .innerText =
+        "🌆 DÜSSELDORF PROTOCOL";
+
+      document
+        .getElementById(
+          "personalBadge"
+        )
+        .innerText =
+        "🌆 DÜSSELDORF PROTOCOL";
+
+      document
+        .getElementById(
+          "summaryBadge"
+        )
+        .innerText =
+        "🌆 DÜSSELDORF • FINAL REPORT";
+
+    }
+
+  }
 
 
-  /* انتخاب عمومی */
+  document
+    .getElementById(
+      "cityContinue"
+    )
+    .onclick =
+    function() {
 
-  function setupSelection(pageId, selector, textId, continueId, variableSetter) {
+      if (!selectedCity)
+        return;
 
-    const buttons = document.querySelectorAll("#" + pageId + " " + selector);
-    const text = document.getElementById(textId);
-    const continueButton = document.getElementById(continueId);
+      activateCityTheme();
+
+      if (
+        selectedCity ===
+        "Köln"
+      ) {
+        showPage(6);
+      }
+
+      else {
+        showPage(7);
+      }
+
+    };
+
+
+  function setupSelection(
+    pageId,
+    selector,
+    textId,
+    continueId,
+    variableSetter
+  ) {
+
+    const buttons =
+      document.querySelectorAll(
+        "#" +
+        pageId +
+        " " +
+        selector
+      );
+
+    const text =
+      document.getElementById(
+        textId
+      );
+
+    const continueButton =
+      document.getElementById(
+        continueId
+      );
 
     buttons.forEach(button => {
 
-      button.addEventListener("click", function() {
+      button.addEventListener(
+        "click",
+        function() {
 
-        buttons.forEach(btn => btn.classList.remove("selected"));
+          buttons.forEach(btn => {
+            btn.classList.remove(
+              "selected"
+            );
+          });
 
-        this.classList.add("selected");
+          this.classList.add(
+            "selected"
+          );
 
-        const value = this.dataset.value;
+          const value =
+            this.dataset.value;
 
-        variableSetter(value);
+          variableSetter(
+            value
+          );
 
-        text.innerText = "انتخابت: " + value + " ❤️";
+          text.innerText =
+            "✓ داده ثبت شد: " +
+            value +
+            " 🧬";
 
-        continueButton.classList.add("active");
+          continueButton
+            .classList.add(
+              "active"
+            );
 
-      });
+        }
+      );
 
     });
 
@@ -1429,146 +2367,220 @@
     ".restaurant-option",
     "restaurantTextK",
     "restaurantContinueK",
-    value => selectedRestaurant = value
+    value =>
+      selectedRestaurant =
+      value
   );
-
 
   setupSelection(
     "page7",
     ".restaurant-option",
     "restaurantTextD",
     "restaurantContinueD",
-    value => selectedRestaurant = value
+    value =>
+      selectedRestaurant =
+      value
   );
 
 
-  document.getElementById("restaurantContinueK").onclick = function() {
+  document
+    .getElementById(
+      "restaurantContinueK"
+    )
+    .onclick =
+    function() {
 
-    if (!selectedRestaurant) return;
+      if (!selectedRestaurant)
+        return;
 
-    showPage(8);
+      showPage(8);
 
-  };
+    };
 
 
-  document.getElementById("restaurantContinueD").onclick = function() {
+  document
+    .getElementById(
+      "restaurantContinueD"
+    )
+    .onclick =
+    function() {
 
-    if (!selectedRestaurant) return;
+      if (!selectedRestaurant)
+        return;
 
-    showPage(8);
+      showPage(8);
 
-  };
+    };
 
 
   /* بعد شام */
 
   function continueAfterDinner() {
 
-    if (selectedCity === "Köln") {
+    if (
+      selectedCity ===
+      "Köln"
+    ) {
       showPage(9);
-    } else {
+    }
+
+    else {
       showPage(10);
     }
 
   }
 
 
-  /* بار */
+  /* بارها */
 
   setupSelection(
     "page9",
     ".bar-option",
     "barTextK",
     "barContinueK",
-    value => selectedBar = value
+    value =>
+      selectedBar =
+      value
   );
-
 
   setupSelection(
     "page10",
     ".bar-option",
     "barTextD",
     "barContinueD",
-    value => selectedBar = value
+    value =>
+      selectedBar =
+      value
   );
 
 
-  document.getElementById("barContinueK").onclick = function() {
+  document
+    .getElementById(
+      "barContinueK"
+    )
+    .onclick =
+    function() {
 
-    if (!selectedBar) return;
+      if (!selectedBar)
+        return;
 
-    showPage(11);
+      showPage(11);
 
-  };
-
-
-  document.getElementById("barContinueD").onclick = function() {
-
-    if (!selectedBar) return;
-
-    showPage(12);
-
-  };
+    };
 
 
-  /* فعالیت */
+  document
+    .getElementById(
+      "barContinueD"
+    )
+    .onclick =
+    function() {
+
+      if (!selectedBar)
+        return;
+
+      showPage(12);
+
+    };
+
+
+  /* فعالیت‌ها */
 
   setupSelection(
     "page11",
     ".activity-option",
     "activityTextK",
     "activityContinueK",
-    value => selectedActivity = value
+    value =>
+      selectedActivity =
+      value
   );
-
 
   setupSelection(
     "page12",
     ".activity-option",
     "activityTextD",
     "activityContinueD",
-    value => selectedActivity = value
+    value =>
+      selectedActivity =
+      value
   );
 
 
-  document.getElementById("activityContinueK").onclick = function() {
+  document
+    .getElementById(
+      "activityContinueK"
+    )
+    .onclick =
+    function() {
 
-    if (!selectedActivity) return;
+      if (!selectedActivity)
+        return;
 
-    showPage(13);
+      showPage(13);
 
-  };
+    };
 
 
-  document.getElementById("activityContinueD").onclick = function() {
+  document
+    .getElementById(
+      "activityContinueD"
+    )
+    .onclick =
+    function() {
 
-    if (!selectedActivity) return;
+      if (!selectedActivity)
+        return;
 
-    showPage(13);
+      showPage(13);
 
-  };
+    };
 
 
   /* خلاصه */
 
   function openSummary() {
 
-    document.getElementById("summaryDate").innerText =
+    document
+      .getElementById(
+        "summaryDate"
+      )
+      .innerText =
       selectedDateLabel;
 
-    document.getElementById("summaryTime").innerText =
+    document
+      .getElementById(
+        "summaryTime"
+      )
+      .innerText =
       selectedTime;
 
-    document.getElementById("summaryCity").innerText =
+    document
+      .getElementById(
+        "summaryCity"
+      )
+      .innerText =
       selectedCity;
 
-    document.getElementById("summaryRestaurant").innerText =
+    document
+      .getElementById(
+        "summaryRestaurant"
+      )
+      .innerText =
       selectedRestaurant;
 
-    document.getElementById("summaryBar").innerText =
+    document
+      .getElementById(
+        "summaryBar"
+      )
+      .innerText =
       selectedBar;
 
-    document.getElementById("summaryActivity").innerText =
+    document
+      .getElementById(
+        "summaryActivity"
+      )
+      .innerText =
       selectedActivity;
 
     showPage(14);
@@ -1577,5 +2589,7 @@
 
 </script>
 
+
 </body>
+
 </html>
