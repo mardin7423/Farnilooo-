@@ -12,11 +12,7 @@
 
   <title>نیلوفر 🧬</title>
 
-
-  <link
-    rel="preconnect"
-    href="https://fonts.googleapis.com"
-  >
+  <link rel="preconnect" href="https://fonts.googleapis.com">
 
   <link
     rel="preconnect"
@@ -29,17 +25,18 @@
     rel="stylesheet"
   >
 
-
   <style>
 
     :root {
+
       --accent: #67f6ff;
       --accent-soft: rgba(103,246,255,.35);
       --accent-medium: rgba(103,246,255,.55);
+
       --card-bg: rgba(0,25,35,.30);
       --option-bg: rgba(0,28,38,.58);
       --selected-bg: rgba(0,105,120,.55);
-      --page-overlay: rgba(0,15,25,.12);
+
     }
 
     * {
@@ -53,14 +50,19 @@
     }
 
     body {
+
       min-height: 100vh;
-      font-family: "Vazirmatn", sans-serif;
+
+      font-family:
+        "Vazirmatn",
+        sans-serif;
+
       color: white;
 
       background:
         linear-gradient(
-          var(--page-overlay),
-          var(--page-overlay)
+          rgba(0,15,25,.12),
+          rgba(0,15,25,.12)
         ),
         url("801C359D-7508-4B42-A0EF-754424692A7E.png")
         center center / cover no-repeat fixed;
@@ -68,62 +70,77 @@
       transition:
         background .7s ease,
         color .7s ease;
+
     }
 
 
-    /* =========================
-       تم Köln
-    ========================= */
+    /* ==========================================
+       KÖLN
+    ========================================== */
 
     body.theme-koeln {
-  --accent: #52ffd0;
-  --accent-soft: rgba(82,255,208,.30);
-  --accent-medium: rgba(82,255,208,.60);
-  --card-bg: rgba(0,35,31,.52);
-  --option-bg: rgba(0,45,39,.62);
-  --selected-bg: rgba(0,120,95,.60);
-  --page-overlay: rgba(0,25,20,.35);
 
-  background:
-    linear-gradient(
-      rgba(0,25,20,.30),
-      rgba(0,25,20,.38)
-    ),
-    url("B9231F57-057A-44E1-8E2A-7D08217A8592.png")
-    center center / cover no-repeat fixed;
-}
+      --accent: #52ffd0;
+      --accent-soft: rgba(82,255,208,.30);
+      --accent-medium: rgba(82,255,208,.60);
+
+      --card-bg: rgba(0,35,31,.52);
+      --option-bg: rgba(0,45,39,.62);
+      --selected-bg: rgba(0,120,95,.60);
+
+      background:
+        linear-gradient(
+          rgba(0,25,20,.30),
+          rgba(0,25,20,.38)
+        ),
+        url("B9231F57-057A-44E1-8E2A-7D08217A8592.png")
+        center center / cover no-repeat fixed;
+
+    }
 
 
-    /* =========================
-       تم Düsseldorf
-    ========================= */
+    /* ==========================================
+       DÜSSELDORF
+    ========================================== */
 
-body.theme-duesseldorf {
-  --accent: #9b5cff;
-  --accent-soft: rgba(155,92,255,.30);
-  --accent-medium: rgba(155,92,255,.60);
-  --card-bg: rgba(18,8,38,.55);
-  --option-bg: rgba(28,12,55,.65);
-  --selected-bg: rgba(92,35,170,.60);
-  --page-overlay: rgba(12,4,32,.32);
+    body.theme-duesseldorf {
 
-  background:
-    linear-gradient(
-      rgba(12,4,32,.28),
-      rgba(12,4,32,.38)
-    ),
-    url("E94E9898-367C-4B8A-A483-C4EFDFAF863C.png")
-    center center / cover no-repeat fixed;
-}
+      --accent: #9b5cff;
+      --accent-soft: rgba(155,92,255,.30);
+      --accent-medium: rgba(155,92,255,.60);
 
+      --card-bg: rgba(18,8,38,.55);
+      --option-bg: rgba(28,12,55,.65);
+      --selected-bg: rgba(92,35,170,.60);
+
+      background:
+        linear-gradient(
+          rgba(12,4,32,.28),
+          rgba(12,4,32,.38)
+        ),
+        url("E94E9898-367C-4B8A-A483-C4EFDFAF863C.png")
+        center center / cover no-repeat fixed;
+
+    }
+
+
+    /* ==========================================
+       GENERAL
+    ========================================== */
 
     .page {
+
       min-height: 100vh;
+
       width: 100%;
+
       display: none;
+
       align-items: center;
       justify-content: center;
+
       padding: 22px 16px;
+
     }
 
     #page1 {
@@ -131,13 +148,20 @@ body.theme-duesseldorf {
     }
 
     .card {
+
       width: 100%;
       max-width: 470px;
+
       text-align: center;
+
       padding: 36px 24px;
 
       background: var(--card-bg);
-      border: 1px solid var(--accent-medium);
+
+      border:
+        1px solid
+        var(--accent-medium);
+
       border-radius: 34px;
 
       backdrop-filter: blur(9px);
@@ -151,208 +175,487 @@ body.theme-duesseldorf {
         background .6s ease,
         border-color .6s ease,
         box-shadow .6s ease;
+
     }
 
     .intro-card {
+
       min-height: 62vh;
+
       display: flex;
+
       flex-direction: column;
+
       justify-content: center;
       align-items: center;
+
     }
 
     .hello,
     .title {
-      font-family: "Lalezar", sans-serif;
-      font-size: clamp(38px, 9vw, 58px);
+
+      font-family:
+        "Lalezar",
+        sans-serif;
+
+      font-size:
+        clamp(38px,9vw,58px);
+
       line-height: 1.3;
+
       margin-bottom: 12px;
+
       color: white;
 
       text-shadow:
         0 0 12px var(--accent-soft),
         0 0 25px rgba(255,255,255,.07);
+
     }
+
+
+    /* ==========================================
+       اسم نیلوفر + قلب‌های ریز
+    ========================================== */
+
+    .heart-name {
+
+      position: relative;
+
+      display: inline-block;
+
+      color: var(--accent);
+
+    }
+
+    .heart-name::before {
+
+      content: "♥";
+
+      position: absolute;
+
+      color: #ffffff;
+
+      font-family: Arial, sans-serif;
+
+      font-size: .16em;
+
+      top: -.09em;
+      right: 1.1em;
+
+      filter:
+        drop-shadow(
+          0 0 3px
+          var(--accent)
+        );
+
+    }
+
+    .heart-name::after {
+
+      content: "♥";
+
+      position: absolute;
+
+      color: #ffffff;
+
+      font-family: Arial, sans-serif;
+
+      font-size: .15em;
+
+      top: -.07em;
+      right: 2.15em;
+
+      filter:
+        drop-shadow(
+          0 0 3px
+          var(--accent)
+        );
+
+    }
+
 
     .niloufar,
     .name,
     .mardin,
     .once,
     .highlight {
-      color: var(--accent);
+
+      color:
+        var(--accent);
+
     }
 
     .dna {
+
       font-size: 42px;
-      margin: 7px 0 26px;
+
+      margin:
+        7px 0 26px;
+
     }
 
     .question {
+
       font-size: 20px;
+
       font-weight: 600;
+
       line-height: 2;
+
       margin-bottom: 30px;
+
     }
 
     .main-text {
+
       font-size: 18px;
+
       line-height: 2;
+
       font-weight: 500;
+
       margin-bottom: 26px;
+
     }
 
     .subtitle {
+
       font-size: 17px;
+
       line-height: 1.95;
+
       opacity: .94;
+
       margin-bottom: 24px;
+
     }
+
+
+    /* ==========================================
+       BADGE
+    ========================================== */
 
     .city-theme-badge {
+
       display: inline-block;
+
       margin-bottom: 16px;
-      padding: 7px 16px;
+
+      padding:
+        7px 16px;
+
       border-radius: 999px;
-      border: 1px solid var(--accent-medium);
-      color: var(--accent);
-      background: rgba(0,0,0,.20);
+
+      border:
+        1px solid
+        var(--accent-medium);
+
+      color:
+        var(--accent);
+
+      background:
+        rgba(0,0,0,.20);
+
       font-size: 13px;
+
       font-weight: 600;
+
+      direction: ltr;
+
     }
 
+
+    /* ==========================================
+       BUTTONS
+    ========================================== */
+
     .buttons {
+
       width: 100%;
+
       display: flex;
+
       flex-direction: column;
+
       gap: 14px;
+
     }
 
     button {
+
       width: 100%;
+
       border-radius: 999px;
-      padding: 17px 20px;
-      font-family: "Lalezar", sans-serif;
+
+      padding:
+        17px 20px;
+
+      font-family:
+        "Lalezar",
+        sans-serif;
+
       font-size: 25px;
+
       cursor: pointer;
+
       transition: .2s ease;
+
     }
 
     button:active {
-      transform: scale(.97);
+
+      transform:
+        scale(.97);
+
     }
 
     .yes-btn,
     .start-btn,
     .continue-btn,
     .final-btn {
-      border: 1px solid var(--accent);
+
+      border:
+        1px solid
+        var(--accent);
+
       color: white;
-      background: rgba(0,42,52,.78);
+
+      background:
+        rgba(0,42,52,.78);
 
       box-shadow:
         0 0 17px var(--accent-soft),
         inset 0 0 15px rgba(255,255,255,.05);
+
     }
 
-    body.theme-koeln .yes-btn,
-    body.theme-koeln .start-btn,
-    body.theme-koeln .continue-btn,
-    body.theme-koeln .final-btn {
-      background: rgba(72,46,8,.76);
+    body.theme-koeln
+    .yes-btn,
+
+    body.theme-koeln
+    .start-btn,
+
+    body.theme-koeln
+    .continue-btn,
+
+    body.theme-koeln
+    .final-btn {
+
+      background:
+        rgba(0,60,48,.74);
+
     }
 
-    body.theme-duesseldorf .yes-btn,
-    body.theme-duesseldorf .start-btn,
-    body.theme-duesseldorf .continue-btn,
-    body.theme-duesseldorf .final-btn {
-      background: rgba(67,24,91,.78);
+    body.theme-duesseldorf
+    .yes-btn,
+
+    body.theme-duesseldorf
+    .start-btn,
+
+    body.theme-duesseldorf
+    .continue-btn,
+
+    body.theme-duesseldorf
+    .final-btn {
+
+      background:
+        rgba(65,22,105,.76);
+
     }
 
     .no-btn {
-      border: 1px solid rgba(255,255,255,.35);
-      color: rgba(255,255,255,.88);
-      background: rgba(5,25,32,.68);
+
+      border:
+        1px solid
+        rgba(255,255,255,.35);
+
+      color:
+        rgba(255,255,255,.88);
+
+      background:
+        rgba(5,25,32,.68);
+
     }
+
+
+    /* ==========================================
+       MESSAGE
+    ========================================== */
 
     .error-message,
     .funny-message {
+
       display: none;
+
       margin-top: 20px;
-      padding: 16px 18px;
+
+      padding:
+        16px 18px;
+
       font-size: 16px;
+
       line-height: 1.9;
 
-      background: rgba(0,15,25,.70);
-      border: 1px solid var(--accent-soft);
+      background:
+        rgba(0,15,25,.70);
+
+      border:
+        1px solid
+        var(--accent-soft);
+
       border-radius: 18px;
-      animation: pop .25s ease;
+
+      animation:
+        pop .25s ease;
+
     }
 
     @keyframes pop {
+
       from {
+
         opacity: 0;
-        transform: scale(.92);
+
+        transform:
+          scale(.92);
+
       }
 
       to {
+
         opacity: 1;
-        transform: scale(1);
+
+        transform:
+          scale(1);
+
       }
+
     }
 
+
+    /* ==========================================
+       NOTE
+    ========================================== */
+
     .note {
+
       width: 100%;
-      padding: 23px 17px;
+
+      padding:
+        23px 17px;
+
       border-radius: 25px;
-      background: rgba(0,21,31,.38);
-      border: 1px solid var(--accent-soft);
+
+      background:
+        rgba(0,21,31,.38);
+
+      border:
+        1px solid
+        var(--accent-soft);
+
       margin-bottom: 28px;
+
     }
 
     .note-title {
-      font-family: "Lalezar", sans-serif;
+
+      font-family:
+        "Lalezar",
+        sans-serif;
+
       font-size: 26px;
-      color: var(--accent);
+
+      color:
+        var(--accent);
+
       margin-bottom: 10px;
+
     }
 
     .note-text {
+
       font-size: 17px;
+
       line-height: 2;
+
     }
 
+
+    /* ==========================================
+       DATE
+    ========================================== */
+
     .date-grid {
+
       display: grid;
-      grid-template-columns: repeat(2,1fr);
+
+      grid-template-columns:
+        repeat(2,1fr);
+
       gap: 11px;
+
       width: 100%;
+
       margin-bottom: 24px;
+
     }
 
     .first-date {
-      grid-column: 1 / -1;
-      width: calc(50% - 6px);
-      justify-self: center;
+
+      grid-column:
+        1 / -1;
+
+      width:
+        calc(50% - 6px);
+
+      justify-self:
+        center;
+
     }
 
+
+    /* ==========================================
+       TIME
+    ========================================== */
+
     .time-grid {
+
       display: grid;
-      grid-template-columns: repeat(3,1fr);
+
+      grid-template-columns:
+        repeat(3,1fr);
+
       gap: 10px;
+
       width: 100%;
+
       margin-bottom: 24px;
+
     }
+
+
+    /* ==========================================
+       GRIDS
+    ========================================== */
 
     .city-grid,
     .restaurant-grid,
     .bar-grid,
     .activity-grid {
+
       display: grid;
+
       grid-template-columns: 1fr;
+
       gap: 12px;
+
       width: 100%;
+
       margin-bottom: 24px;
+
     }
+
 
     .date-option,
     .time-option,
@@ -360,175 +663,414 @@ body.theme-duesseldorf {
     .restaurant-option,
     .bar-option,
     .activity-option {
-      border: 1px solid var(--accent-soft);
-      background: var(--option-bg);
+
+      border:
+        1px solid
+        var(--accent-soft);
+
+      background:
+        var(--option-bg);
+
       color: white;
-      font-family: "Vazirmatn", sans-serif;
+
+      font-family:
+        "Vazirmatn",
+        sans-serif;
+
       box-shadow: none;
+
     }
 
     .date-option {
+
       border-radius: 18px;
-      padding: 15px 8px;
+
+      padding:
+        15px 8px;
+
       font-size: 15px;
+
     }
 
     .time-option {
+
       border-radius: 18px;
-      padding: 15px 5px;
+
+      padding:
+        15px 5px;
+
       font-size: 18px;
+
     }
 
     .city-option {
+
       border-radius: 18px;
-      padding: 22px 15px;
+
+      padding:
+        22px 15px;
+
       font-size: 23px;
+
       font-weight: 700;
+
     }
 
     .city-option span {
+
       display: block;
+
       font-size: 14px;
+
       font-weight: 400;
+
       opacity: .75;
+
       margin-top: 4px;
+
     }
+
+
+    /* ==========================================
+       OPTION CARDS
+    ========================================== */
 
     .restaurant-option,
     .bar-option,
     .activity-option {
+
       border-radius: 22px;
-      padding: 18px 17px;
+
+      padding:
+        18px 17px;
+
       text-align: right;
+
     }
 
-    .restaurant-option strong,
-    .bar-option strong,
-    .activity-option strong {
+    .option-name {
+
       display: block;
-      font-family: "Lalezar", sans-serif;
-      font-size: 22px;
+
+      font-family:
+        "Lalezar",
+        sans-serif;
+
+      font-size: 23px;
+
       font-weight: 400;
-      margin-bottom: 5px;
+
+      margin-bottom: 8px;
+
+      direction: ltr;
+
+      text-align: left;
+
     }
 
-    .restaurant-option span,
-    .bar-option span,
-    .activity-option span {
+    .option-desc {
+
       display: block;
+
+      direction: rtl;
+
+      text-align: right;
+
       font-size: 14px;
-      line-height: 1.8;
-      opacity: .82;
+
+      line-height: 1.9;
+
+      opacity: .88;
+
     }
+
+    .option-science {
+
+      display: block;
+
+      direction: rtl;
+
+      text-align: right;
+
+      font-size: 13px;
+
+      line-height: 1.85;
+
+      margin-top: 6px;
+
+      opacity: .68;
+
+    }
+
 
     .selected {
-      border-color: var(--accent) !important;
-      background: var(--selected-bg) !important;
+
+      border-color:
+        var(--accent)
+        !important;
+
+      background:
+        var(--selected-bg)
+        !important;
 
       box-shadow:
         0 0 16px var(--accent-soft),
-        inset 0 0 14px rgba(255,255,255,.07) !important;
+        inset 0 0 14px rgba(255,255,255,.07)
+        !important;
+
     }
 
     .selected-text {
+
       min-height: 30px;
+
       margin-bottom: 18px;
+
       font-size: 16px;
-      color: var(--accent);
+
+      color:
+        var(--accent);
+
     }
 
     .continue-btn {
+
       opacity: .4;
-      pointer-events: none;
+
+      pointer-events:
+        none;
+
     }
 
     .continue-btn.active {
+
       opacity: 1;
-      pointer-events: auto;
+
+      pointer-events:
+        auto;
+
     }
 
+
+    /* ==========================================
+       PERSONAL
+    ========================================== */
+
     .consent-box {
+
       text-align: right;
-      padding: 22px 18px;
+
+      padding:
+        22px 18px;
+
       border-radius: 24px;
-      background: rgba(0,21,31,.45);
-      border: 1px solid var(--accent-soft);
+
+      background:
+        rgba(0,21,31,.45);
+
+      border:
+        1px solid
+        var(--accent-soft);
+
       font-size: 16px;
+
       line-height: 2.15;
-      margin: 20px 0 28px;
+
+      margin:
+        20px 0 28px;
+
     }
 
     .consent-box strong {
-      color: var(--accent);
+
+      color:
+        var(--accent);
+
     }
 
+
+    /* ==========================================
+       SUMMARY
+    ========================================== */
+
     .summary {
+
       width: 100%;
+
       text-align: right;
+
       padding: 20px;
+
       border-radius: 24px;
-      background: rgba(0,21,31,.48);
-      border: 1px solid var(--accent-soft);
-      margin: 20px 0 25px;
+
+      background:
+        rgba(0,21,31,.48);
+
+      border:
+        1px solid
+        var(--accent-soft);
+
+      margin:
+        20px 0 25px;
+
     }
 
     .summary-row {
-      padding: 12px 3px;
-      border-bottom: 1px solid rgba(255,255,255,.10);
+
+      padding:
+        12px 3px;
+
+      border-bottom:
+        1px solid
+        rgba(255,255,255,.10);
+
       font-size: 16px;
+
       line-height: 1.8;
+
     }
 
     .summary-row:last-child {
-      border-bottom: none;
+
+      border-bottom:
+        none;
+
     }
 
     .summary-row strong {
-      color: var(--accent);
+
+      color:
+        var(--accent);
+
     }
 
+
+    /* ==========================================
+       SECURITY
+    ========================================== */
+
+    .security-box {
+
+      width: 100%;
+
+      padding:
+        18px 16px;
+
+      margin:
+        5px 0 25px;
+
+      border-radius: 22px;
+
+      border:
+        1px solid
+        var(--accent-soft);
+
+      background:
+        rgba(0,0,0,.20);
+
+      font-size: 15px;
+
+      line-height: 2;
+
+    }
+
+    .security-title {
+
+      color:
+        var(--accent);
+
+      font-weight: 700;
+
+      margin-bottom: 8px;
+
+    }
+
+
+    /* ==========================================
+       FINAL
+    ========================================== */
+
     .mission {
-      font-family: "Lalezar", sans-serif;
-      font-size: 42px;
-      color: var(--accent);
-      margin-bottom: 20px;
-      text-shadow: 0 0 20px var(--accent-soft);
+
+      font-family:
+        "Lalezar",
+        sans-serif;
+
+      font-size: 44px;
+
+      color:
+        var(--accent);
+
+      margin-bottom: 22px;
+
+      text-shadow:
+        0 0 20px
+        var(--accent-soft);
+
+      direction: ltr;
+
     }
 
     .signature {
-      margin-top: 35px;
-      font-size: 15px;
-      line-height: 2;
-      opacity: .8;
+
+      margin-top: 32px;
+
+      font-size: 16px;
+
+      line-height: 2.2;
+
+      opacity: .9;
+
       direction: ltr;
+
     }
 
+
     @media(max-width:480px) {
+
       .card {
-        padding: 30px 19px;
+
+        padding:
+          30px 19px;
+
       }
 
       .question {
+
         font-size: 18px;
+
       }
 
       .main-text {
+
         font-size: 17px;
+
       }
 
       .note-text {
+
         font-size: 16px;
+
       }
 
       .date-option {
+
         font-size: 14px;
-        padding: 13px 6px;
+
+        padding:
+          13px 6px;
+
       }
 
       .time-option {
+
         font-size: 16px;
-        padding: 13px 4px;
+
+        padding:
+          13px 4px;
+
       }
+
     }
 
   </style>
@@ -539,17 +1081,26 @@ body.theme-duesseldorf {
 <body>
 
 
-<!-- صفحه ۱ -->
 
-<section id="page1" class="page">
+<!-- =====================================================
+     PAGE 1
+===================================================== -->
+
+<section
+  id="page1"
+  class="page"
+>
 
   <div class="card intro-card">
 
     <h1 class="hello">
+
       سلام
-      <span class="niloufar">
+
+      <span class="heart-name">
         نیلوفر
       </span>
+
     </h1>
 
     <div class="dna">
@@ -557,9 +1108,13 @@ body.theme-duesseldorf {
     </div>
 
     <div class="question">
+
       برای یه آزمایش کاملاً غیرعلمی
+
       <br>
+
       ولی به‌شدت مهم آماده‌ای؟ 🧪
+
     </div>
 
     <div class="buttons">
@@ -584,11 +1139,17 @@ body.theme-duesseldorf {
       id="errorMessage"
       class="error-message"
     >
+
       ⚠️ خطای آزمایشگاه
+
       <br><br>
+
       این گزینه در نمونه‌ی نیلوفر مشاهده نشد.
+
       <br>
-      لطفاً گزینه‌ی دیگه رو امتحان کنید 😂🧪
+
+      لطفاً گزینه‌ی دیگه رو امتحان کنید 🧬
+
     </div>
 
   </div>
@@ -597,17 +1158,25 @@ body.theme-duesseldorf {
 
 
 
-<!-- صفحه ۲ -->
+<!-- =====================================================
+     PAGE 2
+===================================================== -->
 
-<section id="page2" class="page">
+<section
+  id="page2"
+  class="page"
+>
 
   <main class="card">
 
     <h1 class="title">
+
       خوش اومدی
+
       <span class="name">
         نیلوفر
       </span>
+
     </h1>
 
     <div class="dna">
@@ -617,13 +1186,17 @@ body.theme-duesseldorf {
     <div class="main-text">
 
       تبریک!
+
       <br>
-      نمونه موردنظر با موفقیت شناسایی شد 😂🧪
+
+      نمونه موردنظر با موفقیت شناسایی شد. ✓
 
       <br><br>
 
       اینجا کاملاً هدفمند انتخاب شدی
+
       <br>
+
       تا ببینیم ترکیب
 
       <span class="mardin">
@@ -632,15 +1205,11 @@ body.theme-duesseldorf {
 
       <br>
 
-      در شرایط کنترل‌شده چه نتایجی میده 😂🧪
+      در شرایط کنترل‌شده چه نتایجی می‌ده. 🔬
 
     </div>
 
     <section class="note">
-
-      <div style="font-size:30px;margin-bottom:8px;">
-        🧪
-      </div>
 
       <div class="note-title">
         یه نکته مهم...
@@ -649,7 +1218,9 @@ body.theme-duesseldorf {
       <div class="note-text">
 
         طبق پروتکل آزمایشگاه،
+
         <br>
+
         این لینک فقط
 
         <span class="once">
@@ -661,10 +1232,14 @@ body.theme-duesseldorf {
         <br><br>
 
         پس خانم دانشمند،
+
         <br>
+
         لطفاً پارامترها رو با دقت انتخاب کن؛
+
         <br>
-        مسئولیت نتایج آزمایش با خودته 😂🧬
+
+        مسئولیت نتایج آزمایش با خودته. 😉
 
       </div>
 
@@ -674,7 +1249,7 @@ body.theme-duesseldorf {
       class="start-btn"
       onclick="showPage(3)"
     >
-      شروع آزمایش 🧪
+      شروع آزمایش 🧬
     </button>
 
   </main>
@@ -683,9 +1258,14 @@ body.theme-duesseldorf {
 
 
 
-<!-- صفحه ۳ - تاریخ -->
+<!-- =====================================================
+     PAGE 3 - DATE
+===================================================== -->
 
-<section id="page3" class="page">
+<section
+  id="page3"
+  class="page"
+>
 
   <main class="card">
 
@@ -697,13 +1277,15 @@ body.theme-duesseldorf {
 
       اولین پارامتر آزمایش:
       <strong>
-        زمان 🧪
+        زمان
       </strong>
 
       <br>
 
       ببینیم واکنش نیلوفر + ماردین
+
       <br>
+
       دقیقاً چه روزی باید شروع بشه 🧬
 
     </div>
@@ -715,9 +1297,11 @@ body.theme-duesseldorf {
         data-date="2026-08-14"
         data-label="جمعه ۱۴ آگوست"
       >
+
         جمعه
         <br>
         ۱۴ آگوست
+
       </button>
 
       <button
@@ -725,9 +1309,11 @@ body.theme-duesseldorf {
         data-date="2026-08-21"
         data-label="جمعه ۲۱ آگوست"
       >
+
         جمعه
         <br>
         ۲۱ آگوست
+
       </button>
 
       <button
@@ -735,9 +1321,11 @@ body.theme-duesseldorf {
         data-date="2026-08-22"
         data-label="شنبه ۲۲ آگوست"
       >
+
         شنبه
         <br>
         ۲۲ آگوست
+
       </button>
 
       <button
@@ -745,9 +1333,11 @@ body.theme-duesseldorf {
         data-date="2026-08-28"
         data-label="جمعه ۲۸ آگوست"
       >
+
         جمعه
         <br>
         ۲۸ آگوست
+
       </button>
 
       <button
@@ -755,9 +1345,11 @@ body.theme-duesseldorf {
         data-date="2026-08-29"
         data-label="شنبه ۲۹ آگوست"
       >
+
         شنبه
         <br>
         ۲۹ آگوست
+
       </button>
 
     </div>
@@ -773,7 +1365,7 @@ body.theme-duesseldorf {
       id="dateContinue"
       class="continue-btn"
     >
-      ثبت و ادامه آزمایش 🧪
+      ثبت و ادامه آزمایش 🧬
     </button>
 
   </main>
@@ -782,9 +1374,14 @@ body.theme-duesseldorf {
 
 
 
-<!-- صفحه ۴ - ساعت -->
+<!-- =====================================================
+     PAGE 4 - TIME
+===================================================== -->
 
-<section id="page4" class="page">
+<section
+  id="page4"
+  class="page"
+>
 
   <main class="card">
 
@@ -796,30 +1393,83 @@ body.theme-duesseldorf {
 
       پارامتر دوم آزمایش:
       <strong>
-        زمان ⏱️
+        زمان
       </strong>
 
       <br>
 
       ببینیم واکنش نیلوفر + ماردین
+
       <br>
-      دقیقاً از چه ساعتی شروع بشه 🧪
+
+      دقیقاً از چه ساعتی شروع بشه 🧬
 
     </div>
 
     <div class="time-grid">
 
-      <button class="time-option" data-time="17:00">17:00</button>
-      <button class="time-option" data-time="17:15">17:15</button>
-      <button class="time-option" data-time="17:30">17:30</button>
+      <button
+        class="time-option"
+        data-time="17:00"
+      >
+        17:00
+      </button>
 
-      <button class="time-option" data-time="17:45">17:45</button>
-      <button class="time-option" data-time="18:00">18:00</button>
-      <button class="time-option" data-time="18:15">18:15</button>
+      <button
+        class="time-option"
+        data-time="17:15"
+      >
+        17:15
+      </button>
 
-      <button class="time-option" data-time="18:30">18:30</button>
-      <button class="time-option" data-time="18:45">18:45</button>
-      <button class="time-option" data-time="19:00">19:00</button>
+      <button
+        class="time-option"
+        data-time="17:30"
+      >
+        17:30
+      </button>
+
+      <button
+        class="time-option"
+        data-time="17:45"
+      >
+        17:45
+      </button>
+
+      <button
+        class="time-option"
+        data-time="18:00"
+      >
+        18:00
+      </button>
+
+      <button
+        class="time-option"
+        data-time="18:15"
+      >
+        18:15
+      </button>
+
+      <button
+        class="time-option"
+        data-time="18:30"
+      >
+        18:30
+      </button>
+
+      <button
+        class="time-option"
+        data-time="18:45"
+      >
+        18:45
+      </button>
+
+      <button
+        class="time-option"
+        data-time="19:00"
+      >
+        19:00
+      </button>
 
     </div>
 
@@ -834,7 +1484,7 @@ body.theme-duesseldorf {
       id="timeContinue"
       class="continue-btn"
     >
-      ثبت و ادامه آزمایش 🧪
+      ثبت و ادامه آزمایش 🧬
     </button>
 
   </main>
@@ -843,9 +1493,14 @@ body.theme-duesseldorf {
 
 
 
-<!-- صفحه ۵ - انتخاب شهر -->
+<!-- =====================================================
+     PAGE 5 - CITY
+===================================================== -->
 
-<section id="page5" class="page">
+<section
+  id="page5"
+  class="page"
+>
 
   <main class="card">
 
@@ -856,14 +1511,17 @@ body.theme-duesseldorf {
     <div class="subtitle">
 
       پارامتر سوم آزمایش:
+
       <strong>
-        لوکیشن 🧪
+        لوکیشن
       </strong>
 
       <br>
 
       ببینیم این آزمایش باید
+
       <br>
+
       در کدوم شهر انجام بشه 🧬
 
     </div>
@@ -874,20 +1532,26 @@ body.theme-duesseldorf {
         class="city-option"
         data-city="Köln"
       >
+
         🏙️ Köln
+
         <span>
           کلن
         </span>
+
       </button>
 
       <button
         class="city-option"
         data-city="Düsseldorf"
       >
+
         🌆 Düsseldorf
+
         <span>
           دوسلدورف
         </span>
+
       </button>
 
     </div>
@@ -903,7 +1567,7 @@ body.theme-duesseldorf {
       id="cityContinue"
       class="continue-btn"
     >
-      ثبت و ادامه آزمایش 🧪
+      ثبت و ادامه آزمایش 🧬
     </button>
 
   </main>
@@ -912,102 +1576,161 @@ body.theme-duesseldorf {
 
 
 
-<!-- صفحه ۶ - رستوران Köln -->
+<!-- =====================================================
+     PAGE 6 - KÖLN RESTAURANTS
+===================================================== -->
 
-<section id="page6" class="page">
+<section
+  id="page6"
+  class="page"
+>
 
   <main class="card">
 
     <div class="city-theme-badge">
-      🏙️ KÖLN PROTOCOL
+      🧫 CELL CULTURE • KÖLN
     </div>
 
     <h1 class="title">
-      خب، چی بخوریم؟ 🍽️
+      مرحله‌ی آزمایش غذایی 🧫
     </h1>
 
     <div class="subtitle">
-      وارد شاخه‌ی Köln شدیم 🧬
+
+      وارد آزمایشگاه Köln شدیم 🧬
+
       <br>
-      چند تا گزینه برای مرحله‌ی غذایی آزمایش آماده کردم 😌
+
+      چند نمونه برای بررسی آماده‌ست...
+
       <br>
-      ببین کدوم بیشتر به دلت می‌شینه.
+
+      ببین کدوم بیشتر با سلول‌های چشاییت سازگاره 😌
+
     </div>
 
     <div class="restaurant-grid">
+
 
       <button
         class="restaurant-option"
         data-value="Limani"
       >
-        <strong>
+
+        <span class="option-name">
           🇬🇷 Limani
-        </strong>
-        <span>
-          یونانی و مدیترانه‌ای • کنار راین
         </span>
+
+        <span class="option-desc">
+          رستوران یونانی کنار راین
+        </span>
+
+        <span class="option-science">
+          نمونه‌ی مدیترانه‌ای با شرایط پایدار و محیط مناسب برای شروع آزمایش.
+        </span>
+
       </button>
+
 
       <button
         class="restaurant-option"
-        data-value="NENI Köln"
+        data-value="NENI"
       >
-        <strong>
-          🌿 NENI Köln
-        </strong>
-        <span>
-          Oriental • Mediterranean • Fusion
+
+        <span class="option-name">
+          🇮🇱 NENI
         </span>
+
+        <span class="option-desc">
+          رستوران اسرائیلی
+        </span>
+
+        <span class="option-science">
+          ترکیب خاورمیانه‌ای با چند متغیر خوش‌طعم؛ مناسب برای بررسی واکنش‌های اولیه.
+        </span>
+
       </button>
+
 
       <button
         class="restaurant-option"
         data-value="Vetrina"
       >
-        <strong>
+
+        <span class="option-name">
           🇮🇹 Vetrina
-        </strong>
-        <span>
-          ایتالیایی مدرن و خاص 🍝
         </span>
+
+        <span class="option-desc">
+          رستوران ایتالیایی
+        </span>
+
+        <span class="option-science">
+          کربوهیدرات‌های کنترل‌شده، سس‌های حساب‌شده و احتمال بالای رضایت سلول‌های چشایی.
+        </span>
+
       </button>
+
 
       <button
         class="restaurant-option"
         data-value="Colina Steakhaus"
       >
-        <strong>
+
+        <span class="option-name">
           🥩 Colina Steakhaus
-        </strong>
-        <span>
-          استیک و گوشت‌های خاص 🔥
         </span>
+
+        <span class="option-desc">
+          یه استیک خفن
+        </span>
+
+        <span class="option-science">
+          نمونه‌ی پروتئینی با غلظت بالا؛ مناسب برای آزمایش‌های سنگین‌تر.
+        </span>
+
       </button>
+
 
       <button
         class="restaurant-option"
         data-value="Umibar"
       >
-        <strong>
-          🍣 Umibar
-        </strong>
-        <span>
-          Thai • Vietnamese • Japanese • Sushi
+
+        <span class="option-name">
+          🥢 Umibar
         </span>
+
+        <span class="option-desc">
+          سوشی و مخلفات
+        </span>
+
+        <span class="option-science">
+          نمونه‌ی آسیایی با چند زیرگروه؛ سوشی برای نیلوفر، گزینه‌های امن‌تر برای ماردین.
+        </span>
+
       </button>
+
 
       <button
         class="restaurant-option"
         data-value="انتخاب نیلوفر"
       >
-        <strong>
-          ❤️ هیچکدوم
-        </strong>
-        <span>
-          اگه هیچکدوم به دلت ننشست،
-          خودت یه جا پیشنهاد بده 😉
+
+        <span class="option-name">
+          🧪 Unknown Sample
         </span>
+
+        <span class="option-desc">
+          هیچکدوم؟
+        </span>
+
+        <span class="option-science">
+          اگه هیچ‌کدوم با شرایط آزمایش سازگار نبود، خودت یه نمونه‌ی مناسب‌تر معرفی کن.
+        </span>
+
       </button>
+
 
     </div>
 
@@ -1022,7 +1745,7 @@ body.theme-duesseldorf {
       id="restaurantContinueK"
       class="continue-btn"
     >
-      ثبت پارامتر غذایی 🧪
+      ثبت پارامتر غذایی 🧬
     </button>
 
   </main>
@@ -1031,26 +1754,34 @@ body.theme-duesseldorf {
 
 
 
-<!-- صفحه ۷ - رستوران Düsseldorf -->
+<!-- =====================================================
+     PAGE 7 - DÜSSELDORF RESTAURANTS
+     فعلاً نسخه پایه
+===================================================== -->
 
-<section id="page7" class="page">
+<section
+  id="page7"
+  class="page"
+>
 
   <main class="card">
 
     <div class="city-theme-badge">
-      🌆 DÜSSELDORF PROTOCOL
+      🔬 SAMPLE PATH B • DÜSSELDORF
     </div>
 
     <h1 class="title">
-      خب، چی بخوریم؟ 🍽️
+      مرحله‌ی آزمایش غذایی 🧫
     </h1>
 
     <div class="subtitle">
-      وارد شاخه‌ی Düsseldorf شدیم 🧬
+
+      وارد شاخه‌ی Düsseldorf شدیم.
+
       <br>
-      برای مرحله‌ی غذایی آزمایش چند گزینه‌ی متفاوت داریم 😌
-      <br>
-      انتخاب با خانم دانشمنده.
+
+      این بخش رو مرحله بعد باهم نهایی می‌کنیم 🧬
+
     </div>
 
     <div class="restaurant-grid">
@@ -1059,73 +1790,90 @@ body.theme-duesseldorf {
         class="restaurant-option"
         data-value="Oktopussy"
       >
-        <strong>
+
+        <span class="option-name">
           🐙 Oktopussy
-        </strong>
-        <span>
+        </span>
+
+        <span class="option-desc">
           Modern • International • Crossover
         </span>
+
       </button>
 
       <button
         class="restaurant-option"
         data-value="MEERBAR"
       >
-        <strong>
+
+        <span class="option-name">
           🌊 MEERBAR
-        </strong>
-        <span>
+        </span>
+
+        <span class="option-desc">
           Mediterranean • Seafood • Sushi
         </span>
+
       </button>
 
       <button
         class="restaurant-option"
         data-value="Estilo Campo"
       >
-        <strong>
+
+        <span class="option-name">
           🥩 Estilo Campo
-        </strong>
-        <span>
-          Argentinian Steakhouse • Meat & Grill 🔥
         </span>
+
+        <span class="option-desc">
+          Argentinian Steakhouse
+        </span>
+
       </button>
 
       <button
         class="restaurant-option"
         data-value="King Fusion"
       >
-        <strong>
+
+        <span class="option-name">
           🥢 King Fusion
-        </strong>
-        <span>
-          Asian Fusion • Thai • Vietnamese • Japanese • Sushi
         </span>
+
+        <span class="option-desc">
+          Asian Fusion • Sushi
+        </span>
+
       </button>
 
       <button
         class="restaurant-option"
         data-value="Da Clà"
       >
-        <strong>
+
+        <span class="option-name">
           🇮🇹 Da Clà
-        </strong>
-        <span>
-          Italian • Pasta • Mediterranean 🍝
         </span>
+
+        <span class="option-desc">
+          Italian • Pasta • Mediterranean
+        </span>
+
       </button>
 
       <button
         class="restaurant-option"
         data-value="انتخاب نیلوفر"
       >
-        <strong>
-          ❤️ هیچکدوم
-        </strong>
-        <span>
-          اگه هیچکدوم به دلت ننشست،
-          خودت یه جا پیشنهاد بده 😉
+
+        <span class="option-name">
+          🧪 Unknown Sample
         </span>
+
+        <span class="option-desc">
+          خودت یه گزینه پیشنهاد بده
+        </span>
+
       </button>
 
     </div>
@@ -1141,7 +1889,7 @@ body.theme-duesseldorf {
       id="restaurantContinueD"
       class="continue-btn"
     >
-      ثبت پارامتر غذایی 🧪
+      ثبت پارامتر غذایی 🧬
     </button>
 
   </main>
@@ -1150,9 +1898,14 @@ body.theme-duesseldorf {
 
 
 
-<!-- صفحه ۸ - بعد شام -->
+<!-- =====================================================
+     PAGE 8 - AFTER DINNER
+===================================================== -->
 
-<section id="page8" class="page">
+<section
+  id="page8"
+  class="page"
+>
 
   <main class="card">
 
@@ -1171,6 +1924,10 @@ body.theme-duesseldorf {
 
     <div class="question">
 
+      فاز اول آزمایش با موفقیت تکمیل شد.
+
+      <br><br>
+
       امیدوارم شام بهت خوش گذشته باشه 🤍
 
       <br><br>
@@ -1179,7 +1936,13 @@ body.theme-duesseldorf {
 
       <br>
 
-      دوست داری آزمایش وارد فاز دوم بشه؟ 😌🧬
+      دوست داری وارد
+
+      <span class="highlight">
+        فاز دوم آزمایش
+      </span>
+
+      بشیم؟ 🧬
 
     </div>
 
@@ -1189,14 +1952,14 @@ body.theme-duesseldorf {
         class="yes-btn"
         onclick="continueAfterDinner()"
       >
-        آره، ادامه بدیم ✨
+        ✨ آره، بریم فاز دوم
       </button>
 
       <button
         class="no-btn"
         onclick="dinnerNo()"
       >
-        نه، فکر کنم بسه 🙃
+        🙃 نه، فکر کنم بسه
       </button>
 
     </div>
@@ -1206,7 +1969,7 @@ body.theme-duesseldorf {
       class="funny-message"
     >
 
-      مگه میشه بهت خوش نگذره؟ 😐
+      😐 مگه میشه بهت خوش نگذره؟
 
       <br><br>
 
@@ -1215,9 +1978,10 @@ body.theme-duesseldorf {
       <br>
 
       اگه بهت خوش نگذشته باشه،
+
       <br>
-      من خودم جمع می‌کنم
-      از این کشور میرم 🥲😂
+
+      من خودم جمع می‌کنم از این کشور میرم 🥲
 
     </div>
 
@@ -1227,14 +1991,19 @@ body.theme-duesseldorf {
 
 
 
-<!-- صفحه ۹ - بار Köln -->
+<!-- =====================================================
+     PAGE 9 - KÖLN PHASE II
+===================================================== -->
 
-<section id="page9" class="page">
+<section
+  id="page9"
+  class="page"
+>
 
   <main class="card">
 
     <div class="city-theme-badge">
-      🏙️ KÖLN • PHASE II
+      KÖLN • PHASE II
     </div>
 
     <h1 class="title">
@@ -1251,91 +2020,111 @@ body.theme-duesseldorf {
 
       <br>
 
-      که نمونه‌ی غذایی هم بهتر هضم بشه؟ 😂🧪
+      که نمونه‌ی غذایی هم بهتر هضم بشه؟ 🧪
 
       <br><br>
 
-      مهم‌تر از همه:
+      <strong>
+        مهم‌تر از همه:
+      </strong>
 
       <br>
 
-      خانم نیلوفر خانم، شما چی دوست داری؟
+      خانم نیلوفر، شما چی دوست داری؟
 
     </div>
 
+
     <div class="bar-grid">
+
 
       <button
         class="bar-option"
         data-value="ONA MOR"
       >
-        <strong>
+
+        <span class="option-name">
           🍸 ONA MOR
-        </strong>
-        <span>
-          Cocktail Bar • شیک، خاص و مناسب یه شب خوب
         </span>
+
+        <span class="option-desc">
+          کوکتل‌بار شیک و خاص؛ برای وقتی که هنوز می‌خوایم باکلاس رفتار کنیم.
+        </span>
+
       </button>
+
 
       <button
         class="bar-option"
         data-value="Bar Rix"
       >
-        <strong>
+
+        <span class="option-name">
           🍷 Bar Rix
-        </strong>
-        <span>
-          Wine Bar • شیک، آروم و مناسب یه لیوان شراب خوب
         </span>
+
+        <span class="option-desc">
+          واین‌بار آروم و شیک؛ یه لیوان شراب و یکم حرف زدن.
+        </span>
+
       </button>
+
 
       <button
         class="bar-option"
         data-value="Plüsch Bar & Lounge"
       >
-        <strong>
+
+        <span class="option-name">
           🥃 Plüsch Bar & Lounge
-        </strong>
-        <span>
-          Köln Marriott • بار شیک و آروم برای نشستن و حرف زدن
         </span>
+
+        <span class="option-desc">
+          یه بار شیک و آروم؛ مناسب نشستن، نوشیدن و ادامه‌ی بازجویی از همدیگه.
+        </span>
+
       </button>
+
 
       <button
         class="bar-option"
         data-value="Low Budget"
       >
-        <strong>
-          🍺 Low Budget
-        </strong>
 
-        <span>
-          یه بار خاک‌خورده و خودمونی 😄
-          <br>
-          محشرترین تکیلای جهان رو داره؛
-          مستقیم از بشکه سرو میشه
-          و یه جور خاصی خوبه 😂🥃
+        <span class="option-name">
+          🍺 Low Budget
+        </span>
+
+        <span class="option-desc">
+          تکیلا طلایی، پرتقال و دارچین 🍊🥃
+        </span>
+
+        <span class="option-science">
+          اینجا کلاس رو دم در تحویل می‌دیم؛ بعضی آزمایش‌ها با تکیلا نتایج دقیق‌تری میدن.
         </span>
 
       </button>
+
 
       <button
         class="bar-option"
         data-value="Masons"
       >
-        <strong>
-          💨 Masons
-        </strong>
 
-        <span>
-          Shisha Lounge
-          <br>
-          ⚠️ کنترل کیفیت:
-          با توجه به میگرنت شاید بهترین گزینه نباشه 😅
-          ولی گفتم بذارمش، شاید دوستش داشته باشی.
+        <span class="option-name">
+          🫧 Masons
+        </span>
+
+        <span class="option-desc">
+          شیشا لانژ
+        </span>
+
+        <span class="option-science">
+          ⚠️ با توجه به میگرنت شاید انتخاب خیلی عاقلانه‌ای نباشه؛ ولی وظیفه‌ی من بود گزینه‌ها رو کامل بذارم، تصمیم با خانم نیلوفره.
         </span>
 
       </button>
+
 
     </div>
 
@@ -1359,14 +2148,20 @@ body.theme-duesseldorf {
 
 
 
-<!-- صفحه ۱۰ - بار Düsseldorf -->
+<!-- =====================================================
+     PAGE 10 - DÜSSELDORF PHASE II
+     فعلاً پایه
+===================================================== -->
 
-<section id="page10" class="page">
+<section
+  id="page10"
+  class="page"
+>
 
   <main class="card">
 
     <div class="city-theme-badge">
-      🌆 DÜSSELDORF • PHASE II
+      DÜSSELDORF • PHASE II
     </div>
 
     <h1 class="title">
@@ -1375,23 +2170,7 @@ body.theme-duesseldorf {
 
     <div class="subtitle">
 
-      حالا که نتایج اولیه امیدوارکننده‌ست 😌
-
-      <br>
-
-      موافقی بریم یه جایی دو تا شات بزنیم
-
-      <br>
-
-      که نمونه‌ی غذایی هم بهتر هضم بشه؟ 😂🧪
-
-      <br><br>
-
-      مهم‌تر از همه:
-
-      <br>
-
-      خانم نیلوفر خانم، شما چی دوست داری؟
+      این بخش Düsseldorf رو مرحله بعد باهم نهایی می‌کنیم. 🧬
 
     </div>
 
@@ -1401,63 +2180,73 @@ body.theme-duesseldorf {
         class="bar-option"
         data-value="Hideaway"
       >
-        <strong>
+
+        <span class="option-name">
           🍸 Hideaway
-        </strong>
-        <span>
-          Cocktail Bar • شیک، تاریک و خاص
         </span>
+
+        <span class="option-desc">
+          Cocktail Bar
+        </span>
+
       </button>
 
       <button
         class="bar-option"
         data-value="Vino's Weinbar"
       >
-        <strong>
+
+        <span class="option-name">
           🍷 Vino's Weinbar
-        </strong>
-        <span>
-          Wine Bar • دنج، شیک و مناسب یه لیوان شراب خوب
         </span>
+
+        <span class="option-desc">
+          Wine Bar
+        </span>
+
       </button>
 
       <button
         class="bar-option"
-        data-value="Breidenbacher Hof – Bar & Smoking Lounge"
+        data-value="Breidenbacher Hof"
       >
-        <strong>
+
+        <span class="option-name">
           🥃 Breidenbacher Hof
-        </strong>
-        <span>
-          Bar & Smoking Lounge • یه Hotel Bar لوکس و خیلی آروم
         </span>
+
+        <span class="option-desc">
+          Hotel Bar & Smoking Lounge
+        </span>
+
       </button>
 
       <button
         class="bar-option"
         data-value="Auberge"
       >
-        <strong>
+
+        <span class="option-name">
           🍺 Auberge
-        </strong>
-        <span>
-          Rock Pub • قدیمی، خاک‌خورده، خودمونی و متفاوت 🤘
         </span>
+
+        <span class="option-desc">
+          Rock Pub
+        </span>
+
       </button>
 
       <button
         class="bar-option"
         data-value="AVIUM"
       >
-        <strong>
-          💨 AVIUM
-        </strong>
 
-        <span>
-          Shisha & Cocktail Lounge • شیک و خفن
-          <br>
-          ⚠️ کنترل کیفیت:
-          اینجا هم میگرنت رو فراموش نکردم 😅
+        <span class="option-name">
+          🫧 AVIUM
+        </span>
+
+        <span class="option-desc">
+          Shisha & Cocktail Lounge
         </span>
 
       </button>
@@ -1484,18 +2273,23 @@ body.theme-duesseldorf {
 
 
 
-<!-- صفحه ۱۱ - فعالیت Köln -->
+<!-- =====================================================
+     PAGE 11 - KÖLN FINAL PHASE
+===================================================== -->
 
-<section id="page11" class="page">
+<section
+  id="page11"
+  class="page"
+>
 
   <main class="card">
 
     <div class="city-theme-badge">
-      🏙️ KÖLN • FINAL PHASE
+      KÖLN • FINAL PHASE
     </div>
 
     <h1 class="title">
-      سطح انرژی سلولی؟ ⚡🧬
+      سطح انرژی سلولی؟ ⚡
     </h1>
 
     <div class="subtitle">
@@ -1504,7 +2298,7 @@ body.theme-duesseldorf {
 
       <br>
 
-      چون من هنوز برنامه دارم 😂
+      چون من هنوز برنامه دارم.
 
       <br><br>
 
@@ -1512,72 +2306,102 @@ body.theme-duesseldorf {
 
       <br>
 
-      و ببینیم کدوممون استعداد بیشتری
-      در تخریب نتایج آزمایش داره 🫠🧪
+      و ببینیم کدوممون استعداد بیشتری در
+
+      <strong>
+        تخریب نتایج آزمایش
+      </strong>
+
+      داره 🧪
+
+      <br><br>
+
+      خانم نیلوفر، مرحله‌ی آخر رو شما انتخاب کنید:
 
     </div>
 
     <div class="activity-grid">
 
+
       <button
         class="activity-option"
-        data-value="Game Center – Köln Ring"
+        data-value="GIGA Center"
       >
-        <strong>
-          🕹️ Game Center
-        </strong>
-        <span>
-          Köln Ring • بازی، رقابت و احتمالاً باختن تو 😂
+
+        <span class="option-name">
+          🕹️ GIGA Center
         </span>
+
+        <span class="option-desc">
+          بازی، رقابت و فرصتی علمی برای مشخص شدن اینکه کدوممون باخت رو بدتر تحمل می‌کنه.
+        </span>
+
       </button>
+
 
       <button
         class="activity-option"
         data-value="West Bowling"
       >
-        <strong>
+
+        <span class="option-name">
           🎳 Bowling
-        </strong>
-        <span>
-          West Bowling • یه رقابت کلاسیک برای آخر شب
         </span>
+
+        <span class="option-desc">
+          یه رقابت کلاسیک؛ ببینیم بعد از فاز دوم هنوز نشونه‌گیری‌مون کار می‌کنه یا نه.
+        </span>
+
       </button>
+
 
       <button
         class="activity-option"
         data-value="7th Space Köln – Axtwerfen + VR"
       >
-        <strong>
-          🪓🥽 پرتاب تبر + VR
-        </strong>
-        <span>
-          7th Space Köln • بخش کمی خطرناک‌تر آزمایش 😂
+
+        <span class="option-name">
+          🥽 VR + پرتاب تبر 🪓
         </span>
+
+        <span class="option-desc">
+          7th Space Köln؛ این قسمت آزمایش یکم خطرناک‌تره، ولی حداقل حوصله‌مون سر نمی‌ره.
+        </span>
+
       </button>
+
 
       <button
         class="activity-option"
         data-value="LaserTag Köln"
       >
-        <strong>
+
+        <span class="option-name">
           🔫 LaserTag
-        </strong>
-        <span>
-          LaserTag Köln • اینجا دیگه آزمایش رسماً تبدیل به جنگ میشه 😂
         </span>
+
+        <span class="option-desc">
+          اینجا دیگه آزمایش رسماً تبدیل به جنگ میشه؛ اتحاد دو نفره فعلاً لغو میشه.
+        </span>
+
       </button>
+
 
       <button
         class="activity-option"
         data-value="سینما"
       >
-        <strong>
-          🎬 سینما
-        </strong>
-        <span>
-          یه فیلم خوب برای یه اختتامیه خوب 🎬🤍
+
+        <span class="option-name">
+          🎬 Cinema
         </span>
+
+        <span class="option-desc">
+          اگه باتری اجتماعی‌مون تموم شده، یه فیلم خوب و پایان آروم برای شب. 🤍
+        </span>
+
       </button>
+
 
     </div>
 
@@ -1601,36 +2425,28 @@ body.theme-duesseldorf {
 
 
 
-<!-- صفحه ۱۲ - فعالیت Düsseldorf -->
+<!-- =====================================================
+     PAGE 12 - DÜSSELDORF FINAL PHASE
+===================================================== -->
 
-<section id="page12" class="page">
+<section
+  id="page12"
+  class="page"
+>
 
   <main class="card">
 
     <div class="city-theme-badge">
-      🌆 DÜSSELDORF • FINAL PHASE
+      DÜSSELDORF • FINAL PHASE
     </div>
 
     <h1 class="title">
-      سطح انرژی سلولی؟ ⚡🧬
+      سطح انرژی سلولی؟ ⚡
     </h1>
 
     <div class="subtitle">
 
-      هنوز انرژی داری؟ 😏
-
-      <br>
-
-      چون من هنوز برنامه دارم 😂
-
-      <br><br>
-
-      وقتشه از حالت نشسته خارج بشیم
-
-      <br>
-
-      و ببینیم کدوممون استعداد بیشتری
-      در تخریب نتایج آزمایش داره 🫠🧪
+      این بخش Düsseldorf رو مرحله بعد باهم نهایی می‌کنیم. 🧬
 
     </div>
 
@@ -1638,62 +2454,77 @@ body.theme-duesseldorf {
 
       <button
         class="activity-option"
-        data-value="Gamer Düsseldorf – Die Gameshow"
+        data-value="Gamer Düsseldorf"
       >
-        <strong>
+
+        <span class="option-name">
           🎮 Gamer Düsseldorf
-        </strong>
-        <span>
-          Die Gameshow • ببینیم کدوممون تحمل باخت بیشتری داره 😂
         </span>
+
+        <span class="option-desc">
+          Die Gameshow
+        </span>
+
       </button>
 
       <button
         class="activity-option"
         data-value="Bowling Düsseldorf"
       >
-        <strong>
+
+        <span class="option-name">
           🎳 Bowling
-        </strong>
-        <span>
-          یه رقابت کلاسیک برای آخر شب 🎳
         </span>
+
+        <span class="option-desc">
+          Bowling Düsseldorf
+        </span>
+
       </button>
 
       <button
         class="activity-option"
-        data-value="7th Space Düsseldorf – Axtwerfen + VR"
+        data-value="7th Space Düsseldorf"
       >
-        <strong>
-          🪓🥽 پرتاب تبر + VR
-        </strong>
-        <span>
-          7th Space Düsseldorf • VR و پرتاب تبر 🧪😂
+
+        <span class="option-name">
+          🥽 VR + پرتاب تبر 🪓
         </span>
+
+        <span class="option-desc">
+          7th Space Düsseldorf
+        </span>
+
       </button>
 
       <button
         class="activity-option"
-        data-value="LaserTag Evolution Düsseldorf"
+        data-value="LaserTag Evolution"
       >
-        <strong>
+
+        <span class="option-name">
           🔫 LaserTag Evolution
-        </strong>
-        <span>
-          اینجا دیگه آزمایش رسماً تبدیل به جنگ میشه 😂
         </span>
+
+        <span class="option-desc">
+          LaserTag Düsseldorf
+        </span>
+
       </button>
 
       <button
         class="activity-option"
         data-value="سینما"
       >
-        <strong>
-          🎬 سینما
-        </strong>
-        <span>
-          یه فیلم خوب برای یه اختتامیه خوب 🎬🤍
+
+        <span class="option-name">
+          🎬 Cinema
         </span>
+
+        <span class="option-desc">
+          یه فیلم خوب برای اختتامیه.
+        </span>
+
       </button>
 
     </div>
@@ -1718,9 +2549,14 @@ body.theme-duesseldorf {
 
 
 
-<!-- صفحه ۱۳ - پیام شخصی -->
+<!-- =====================================================
+     PAGE 13 - PERSONAL
+===================================================== -->
 
-<section id="page13" class="page">
+<section
+  id="page13"
+  class="page"
+>
 
   <main class="card">
 
@@ -1739,47 +2575,171 @@ body.theme-duesseldorf {
 
       <br><br>
 
-      یه چیز برای من از همه‌ی این برنامه‌ها مهم‌تره.
+      درسته که هنوز همدیگه رو از نزدیک ندیدیم،
 
-      <br><br>
+      <br>
 
-      <strong>
-        «نه» همیشه یعنی نه.
-      </strong>
-
-      <br><br>
-
-      هر لحظه‌ای از دیت خسته شدی،
-      حس خوبی نداشتی،
-      خواستی برنامه رو عوض کنیم
-      یا اصلاً خواستی بری خونه،
-      فقط کافیه بگی.
-
-      <br><br>
-
-      لازم نیست دلیل بیاری
-      یا نگران این باشی
-      که من ناراحت می‌شم.
-
-      <br><br>
-
-      حتی اگه چیزی رو اولش قبول کردی،
-      هر لحظه می‌تونی نظرت رو عوض کنی.
-
-      <br><br>
-
-      این برنامه قرار نیست
-      تعهدی برای هیچ‌کدوممون ایجاد کنه.
-
-      <br><br>
-
-      تنها چیزی که برام مهمه اینه که
+      ولی خب خودت می‌دونی که
 
       <strong>
-        هردومون راحت باشیم و بهمون خوش بگذره.
+        روت کراش زدم.
       </strong>
 
       🤍
+
+      <br><br>
+
+      و واقعاً دوست دارم شبی که باهم می‌ریم بیرون،
+
+      <br>
+
+      یکی از اون شب‌هایی باشه که بعدها با لبخند یادت بیاد.
+
+      <br><br>
+
+      منم سعی می‌کنم
+
+      <strong>
+        صدِ خودمو بذارم
+      </strong>
+
+      که بهت خوش بگذره،
+
+      <br>
+
+      چون این شب بیشتر از هر چیزی قراره
+
+      <strong>
+        شبِ تو باشه.
+      </strong>
+
+      <br><br>
+
+      نگران هیچی نباش.
+
+      <br>
+
+      رها باش، خودت باش،
+
+      <br>
+
+      بدون هیچ نقاب و ماسکی.
+
+      <br><br>
+
+      دلت خواست حرف بزن،
+
+      غر بزن،
+
+      بخند،
+
+      داد بزن،
+
+      نظرت رو عوض کن
+
+      یا کلاً برنامه رو به هم بریز.
+
+      <br><br>
+
+      هر کاری که باعث می‌شه اون شب
+
+      بیشتر خودت باشی
+
+      و بیشتر بهت خوش بگذره.
+
+      <br><br>
+
+      و یه چیز دیگه...
+
+      <br><br>
+
+      امیدوارم این همه برنامه‌ریزی
+
+      این حس رو بهت نداده باشه
+
+      که قراره من از صفر تا صد شب رو بچینم
+
+      و همه‌چی رو کنترل کنم.
+
+      <br><br>
+
+      اتفاقاً برعکس.
+
+      <br><br>
+
+      من فقط خواستم چندتا چیز آماده کرده باشم
+
+      که مجبور نباشیم وسط شب هی فکر کنیم:
+
+      <br>
+
+      «خب حالا کجا بریم؟» 😌
+
+      <br><br>
+
+      <strong>
+        هیچ‌کدوم از این برنامه‌ها قانون نیست.
+      </strong>
+
+      <br><br>
+
+      هر لحظه گفتی «نه»، یعنی نه.
+
+      <br>
+
+      گفتی «این نه، یه چیز دیگه»، عوضش می‌کنیم.
+
+      <br>
+
+      گفتی «خسته شدم»، استراحت می‌کنیم.
+
+      <br>
+
+      گفتی «می‌خوام برم خونه»،
+
+      برنامه همون‌جا تمومه.
+
+      <br><br>
+
+      لازم نیست برای هیچ‌کدومش دلیل بیاری
+
+      <br>
+
+      و لازم نیست نگران این باشی که من ناراحت می‌شم.
+
+      <br><br>
+
+      حتی اگه پنج دقیقه قبل به چیزی «آره» گفته باشی،
+
+      <br>
+
+      بازم هر لحظه حق داری نظرت رو عوض کنی.
+
+      <br><br>
+
+      <strong>
+
+        تنها چیزی که واقعاً برام مهمه
+
+        اینه که هردومون راحت باشیم،
+
+        خودمون باشیم
+
+        و بهمون خوش بگذره. 🤍
+
+      </strong>
+
+      <br><br>
+
+      چون آخرش مهم نیست
+
+      چندتا از این برنامه‌ها انجام بشه...
+
+      <br><br>
+
+      <strong>
+        مهم اینه که شب خوبی برای تو باشه.
+      </strong>
 
       <br><br>
 
@@ -1787,9 +2747,13 @@ body.theme-duesseldorf {
 
       <br>
 
-      بعد از این چند خط جدی،
-      می‌تونیم دوباره برگردیم
-      به آزمایش‌های غیرعلمی‌مون 😂🧬
+      دیگه زیادی جدی شدیم.
+
+      <br>
+
+      برگردیم به آزمایشگاه
+
+      قبل از اینکه احساساتی‌تر بشم. 🧬
 
     </div>
 
@@ -1797,7 +2761,7 @@ body.theme-duesseldorf {
       class="continue-btn active"
       onclick="openSummary()"
     >
-      خوندم، ثبت نهایی رو ببینیم 🤍
+      🤍 خوندم، ثبت نهایی رو ببینیم
     </button>
 
   </main>
@@ -1806,9 +2770,14 @@ body.theme-duesseldorf {
 
 
 
-<!-- صفحه ۱۴ - خلاصه -->
+<!-- =====================================================
+     PAGE 14 - SUMMARY
+===================================================== -->
 
-<section id="page14" class="page">
+<section
+  id="page14"
+  class="page"
+>
 
   <main class="card">
 
@@ -1822,76 +2791,149 @@ body.theme-duesseldorf {
     </h1>
 
     <div class="subtitle">
-      پارامترهای انتخاب‌شده آماده‌ی بررسی نهایی هستن 🧪
+
+      پارامترهای انتخاب‌شده آماده‌ی بررسی نهایی هستن.
+
     </div>
 
     <div class="summary">
 
       <div class="summary-row">
+
         📅
+
         <strong>
           تاریخ:
         </strong>
+
         <span id="summaryDate"></span>
+
       </div>
 
       <div class="summary-row">
+
         🕐
+
         <strong>
           ساعت:
         </strong>
+
         <span id="summaryTime"></span>
+
       </div>
 
       <div class="summary-row">
+
         📍
+
         <strong>
           محیط آزمایش:
         </strong>
+
         <span id="summaryCity"></span>
+
       </div>
 
       <div class="summary-row">
+
         🍽️
+
         <strong>
           فاز غذایی:
         </strong>
+
         <span id="summaryRestaurant"></span>
+
       </div>
 
       <div class="summary-row">
+
         🥃
+
         <strong>
           فاز دوم:
         </strong>
+
         <span id="summaryBar"></span>
+
       </div>
 
       <div class="summary-row">
+
         🎯
+
         <strong>
           اختتامیه:
         </strong>
+
         <span id="summaryActivity"></span>
+
       </div>
 
     </div>
 
-    <div class="main-text">
 
-      همه این پارامترها رو خودت انتخاب کردی...
+    <div class="security-box">
 
-      <br>
+      <div class="security-title">
 
-      پس بعداً نگو من نتایج آزمایش رو دستکاری کردم 😂🤍
+        ⚠️ پروتکل امنیتی آزمایشگاه
+
+      </div>
+
+      🚫👩‍🔬 ورود همکار دخترِ مزاحم
+
+      به محیط آزمایش
+
+      <strong>
+        اکیداً ممنوع است.
+      </strong>
+
+      <br><br>
+
+      در صورت مشاهده،
+
+      فرد مذکور بدون بررسی نمونه
+
+      و بدون حق اعتراض،
+
+      از محیط آزمایشگاه اخراج خواهد شد. 😌
 
     </div>
+
+
+    <div class="main-text">
+
+      همه‌ی این پارامترها رو خودت انتخاب کردی...
+
+      <br><br>
+
+      پس بعداً نگو من نتایج آزمایش رو دستکاری کردم. 🧪
+
+      <br><br>
+
+      از این لحظه به بعد
+
+      فقط یه متغیر ناشناخته باقی مونده:
+
+      <br><br>
+
+      <span class="highlight">
+
+        اینکه قراره چقدر بهمون خوش بگذره. 🤍
+
+      </span>
+
+    </div>
+
 
     <button
       class="final-btn"
       onclick="showPage(15)"
     >
-      تأیید و ثبت آزمایش ❤️🧬
+
+      ❤️🧬 تأیید و ثبت آزمایش
+
     </button>
 
   </main>
@@ -1900,18 +2942,30 @@ body.theme-duesseldorf {
 
 
 
-<!-- صفحه ۱۵ - پایان -->
+<!-- =====================================================
+     PAGE 15 - FINAL
+===================================================== -->
 
-<section id="page15" class="page">
+<section
+  id="page15"
+  class="page"
+>
 
   <main class="card intro-card">
 
-    <div style="font-size:55px;margin-bottom:18px;">
+    <div
+      style="
+        font-size:55px;
+        margin-bottom:18px;
+      "
+    >
       🧬
     </div>
 
     <div class="mission">
+
       Experiment Approved
+
     </div>
 
     <div class="main-text">
@@ -1924,17 +2978,34 @@ body.theme-duesseldorf {
 
       <br>
 
-      با موفقیت ثبت شد 🧪
-
-      <br><br>
-
-      از اینجا به بعد
-      دیگه انتخابی در کار نیست...
+      با موفقیت ثبت شد.
 
       <br><br>
 
       <span class="highlight">
-        بقیه‌ش سورپرایزه 😉
+        STATUS: APPROVED
+      </span>
+
+      <br><br>
+
+      از اینجا به بعد
+
+      دیگه پارامتر جدیدی ثبت نمی‌شه...
+
+      <br><br>
+
+      بقیه‌ش می‌مونه برای خودِ آزمایش. 😉
+
+      <br><br>
+
+      <span class="highlight">
+
+        امیدوارم نتیجه‌ی این آزمایش
+
+        جوری باشه که قرار باشه
+
+        دوباره تکرار بشه. 🤍
+
       </span>
 
     </div>
@@ -1949,7 +3020,7 @@ body.theme-duesseldorf {
 
       <br>
 
-      — Mardin
+      With love, Mardin ❤️
 
     </div>
 
@@ -1961,21 +3032,40 @@ body.theme-duesseldorf {
 
 <script>
 
+
+  /* ==========================================
+     DATA
+  ========================================== */
+
   let selectedDate = null;
+
   let selectedDateLabel = null;
+
   let selectedTime = null;
+
   let selectedCity = null;
+
   let selectedRestaurant = null;
+
   let selectedBar = null;
+
   let selectedActivity = null;
 
+
+
+  /* ==========================================
+     SHOW PAGE
+  ========================================== */
 
   function showPage(number) {
 
     document
       .querySelectorAll(".page")
       .forEach(page => {
-        page.style.display = "none";
+
+        page.style.display =
+          "none";
+
       });
 
     const target =
@@ -1983,15 +3073,28 @@ body.theme-duesseldorf {
         "page" + number
       );
 
-    target.style.display = "flex";
+    if (!target)
+      return;
+
+    target.style.display =
+      "flex";
 
     window.scrollTo({
+
       top: 0,
-      behavior: "smooth"
+
+      behavior:
+        "smooth"
+
     });
 
   }
 
+
+
+  /* ==========================================
+     PAGE 1 NO
+  ========================================== */
 
   function brokenButton() {
 
@@ -2000,8 +3103,11 @@ body.theme-duesseldorf {
         "errorMessage"
       );
 
-    message.style.display = "block";
-    message.style.animation = "none";
+    message.style.display =
+      "block";
+
+    message.style.animation =
+      "none";
 
     void message.offsetWidth;
 
@@ -2010,6 +3116,11 @@ body.theme-duesseldorf {
 
   }
 
+
+
+  /* ==========================================
+     DINNER NO
+  ========================================== */
 
   function dinnerNo() {
 
@@ -2018,8 +3129,11 @@ body.theme-duesseldorf {
         "dinnerNoMessage"
       );
 
-    message.style.display = "block";
-    message.style.animation = "none";
+    message.style.display =
+      "block";
+
+    message.style.animation =
+      "none";
 
     void message.offsetWidth;
 
@@ -2029,7 +3143,10 @@ body.theme-duesseldorf {
   }
 
 
-  /* تاریخ */
+
+  /* ==========================================
+     DATE
+  ========================================== */
 
   const dateButtons =
     document.querySelectorAll(
@@ -2043,9 +3160,11 @@ body.theme-duesseldorf {
       function() {
 
         dateButtons.forEach(btn => {
+
           btn.classList.remove(
             "selected"
           );
+
         });
 
         this.classList.add(
@@ -2097,7 +3216,10 @@ body.theme-duesseldorf {
     };
 
 
-  /* ساعت */
+
+  /* ==========================================
+     TIME
+  ========================================== */
 
   const timeButtons =
     document.querySelectorAll(
@@ -2111,9 +3233,11 @@ body.theme-duesseldorf {
       function() {
 
         timeButtons.forEach(btn => {
+
           btn.classList.remove(
             "selected"
           );
+
         });
 
         this.classList.add(
@@ -2162,7 +3286,10 @@ body.theme-duesseldorf {
     };
 
 
-  /* شهر */
+
+  /* ==========================================
+     CITY
+  ========================================== */
 
   const cityButtons =
     document.querySelectorAll(
@@ -2176,9 +3303,11 @@ body.theme-duesseldorf {
       function() {
 
         cityButtons.forEach(btn => {
+
           btn.classList.remove(
             "selected"
           );
+
         });
 
         this.classList.add(
@@ -2212,12 +3341,17 @@ body.theme-duesseldorf {
   });
 
 
+
   function activateCityTheme() {
 
     document.body.classList.remove(
+
       "theme-koeln",
+
       "theme-duesseldorf"
+
     );
+
 
     if (
       selectedCity ===
@@ -2233,21 +3367,21 @@ body.theme-duesseldorf {
           "afterDinnerBadge"
         )
         .innerText =
-        "🏙️ KÖLN PROTOCOL";
+        "🧫 KÖLN • PHASE I COMPLETE";
 
       document
         .getElementById(
           "personalBadge"
         )
         .innerText =
-        "🏙️ KÖLN PROTOCOL";
+        "🧫 KÖLN PROTOCOL";
 
       document
         .getElementById(
           "summaryBadge"
         )
         .innerText =
-        "🏙️ KÖLN • FINAL REPORT";
+        "🧫 KÖLN • FINAL REPORT";
 
     }
 
@@ -2262,21 +3396,21 @@ body.theme-duesseldorf {
           "afterDinnerBadge"
         )
         .innerText =
-        "🌆 DÜSSELDORF PROTOCOL";
+        "🔬 DÜSSELDORF • PHASE I COMPLETE";
 
       document
         .getElementById(
           "personalBadge"
         )
         .innerText =
-        "🌆 DÜSSELDORF PROTOCOL";
+        "🔬 DÜSSELDORF PROTOCOL";
 
       document
         .getElementById(
           "summaryBadge"
         )
         .innerText =
-        "🌆 DÜSSELDORF • FINAL REPORT";
+        "🔬 DÜSSELDORF • FINAL REPORT";
 
     }
 
@@ -2299,30 +3433,47 @@ body.theme-duesseldorf {
         selectedCity ===
         "Köln"
       ) {
+
         showPage(6);
+
       }
 
       else {
+
         showPage(7);
+
       }
 
     };
 
 
+
+  /* ==========================================
+     GENERIC SELECTION
+  ========================================== */
+
   function setupSelection(
+
     pageId,
+
     selector,
+
     textId,
+
     continueId,
+
     variableSetter
+
   ) {
 
     const buttons =
       document.querySelectorAll(
+
         "#" +
         pageId +
         " " +
         selector
+
       );
 
     const text =
@@ -2335,6 +3486,7 @@ body.theme-duesseldorf {
         continueId
       );
 
+
     buttons.forEach(button => {
 
       button.addEventListener(
@@ -2342,9 +3494,11 @@ body.theme-duesseldorf {
         function() {
 
           buttons.forEach(btn => {
+
             btn.classList.remove(
               "selected"
             );
+
           });
 
           this.classList.add(
@@ -2359,6 +3513,7 @@ body.theme-duesseldorf {
           );
 
           text.innerText =
+
             "✓ داده ثبت شد: " +
             value +
             " 🧬";
@@ -2376,26 +3531,42 @@ body.theme-duesseldorf {
   }
 
 
-  /* رستوران‌ها */
+
+  /* ==========================================
+     RESTAURANT
+  ========================================== */
 
   setupSelection(
+
     "page6",
+
     ".restaurant-option",
+
     "restaurantTextK",
+
     "restaurantContinueK",
+
     value =>
       selectedRestaurant =
       value
+
   );
 
+
   setupSelection(
+
     "page7",
+
     ".restaurant-option",
+
     "restaurantTextD",
+
     "restaurantContinueD",
+
     value =>
       selectedRestaurant =
       value
+
   );
 
 
@@ -2429,7 +3600,10 @@ body.theme-duesseldorf {
     };
 
 
-  /* بعد شام */
+
+  /* ==========================================
+     AFTER DINNER
+  ========================================== */
 
   function continueAfterDinner() {
 
@@ -2437,36 +3611,56 @@ body.theme-duesseldorf {
       selectedCity ===
       "Köln"
     ) {
+
       showPage(9);
+
     }
 
     else {
+
       showPage(10);
+
     }
 
   }
 
 
-  /* بارها */
+
+  /* ==========================================
+     BARS
+  ========================================== */
 
   setupSelection(
+
     "page9",
+
     ".bar-option",
+
     "barTextK",
+
     "barContinueK",
+
     value =>
       selectedBar =
       value
+
   );
 
+
   setupSelection(
+
     "page10",
+
     ".bar-option",
+
     "barTextD",
+
     "barContinueD",
+
     value =>
       selectedBar =
       value
+
   );
 
 
@@ -2500,26 +3694,42 @@ body.theme-duesseldorf {
     };
 
 
-  /* فعالیت‌ها */
+
+  /* ==========================================
+     ACTIVITIES
+  ========================================== */
 
   setupSelection(
+
     "page11",
+
     ".activity-option",
+
     "activityTextK",
+
     "activityContinueK",
+
     value =>
       selectedActivity =
       value
+
   );
 
+
   setupSelection(
+
     "page12",
+
     ".activity-option",
+
     "activityTextD",
+
     "activityContinueD",
+
     value =>
       selectedActivity =
       value
+
   );
 
 
@@ -2553,7 +3763,10 @@ body.theme-duesseldorf {
     };
 
 
-  /* خلاصه */
+
+  /* ==========================================
+     SUMMARY
+  ========================================== */
 
   function openSummary() {
 
@@ -2602,6 +3815,7 @@ body.theme-duesseldorf {
     showPage(14);
 
   }
+
 
 </script>
 
