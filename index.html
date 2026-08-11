@@ -64,7 +64,7 @@
           rgba(0,15,25,.12),
           rgba(0,15,25,.12)
         ),
-url("D86F75AE-89CA-4887-994D-7B23416B7755.png")
+        url("D86F75AE-89CA-4887-994D-7B23416B7755.png")
         center center / cover no-repeat fixed;
 
       transition:
@@ -213,18 +213,15 @@ url("D86F75AE-89CA-4887-994D-7B23416B7755.png")
 
     }
 
+    .heart-name {
 
-    /* ==========================================
-       اسم نیلوفر + قلب‌های ریز
-    ========================================== */
+      position: relative;
 
-.heart-name {
-    position: relative;
-    display: inline-block;
-    color: var(--accent);
-}
+      display: inline-block;
 
+      color: var(--accent);
 
+    }
 
     .niloufar,
     .name,
@@ -232,8 +229,7 @@ url("D86F75AE-89CA-4887-994D-7B23416B7755.png")
     .once,
     .highlight {
 
-      color:
-        var(--accent);
+      color: var(--accent);
 
     }
 
@@ -465,21 +461,13 @@ url("D86F75AE-89CA-4887-994D-7B23416B7755.png")
     @keyframes pop {
 
       from {
-
         opacity: 0;
-
-        transform:
-          scale(.92);
-
+        transform: scale(.92);
       }
 
       to {
-
         opacity: 1;
-
-        transform:
-          scale(1);
-
+        transform: scale(1);
       }
 
     }
@@ -534,7 +522,7 @@ url("D86F75AE-89CA-4887-994D-7B23416B7755.png")
 
 
     /* ==========================================
-       DATE
+       DATE / TIME / GRIDS
     ========================================== */
 
     .date-grid {
@@ -565,11 +553,6 @@ url("D86F75AE-89CA-4887-994D-7B23416B7755.png")
 
     }
 
-
-    /* ==========================================
-       TIME
-    ========================================== */
-
     .time-grid {
 
       display: grid;
@@ -584,11 +567,6 @@ url("D86F75AE-89CA-4887-994D-7B23416B7755.png")
       margin-bottom: 24px;
 
     }
-
-
-    /* ==========================================
-       GRIDS
-    ========================================== */
 
     .city-grid,
     .restaurant-grid,
@@ -753,7 +731,6 @@ url("D86F75AE-89CA-4887-994D-7B23416B7755.png")
 
     }
 
-
     .selected {
 
       border-color:
@@ -799,6 +776,133 @@ url("D86F75AE-89CA-4887-994D-7B23416B7755.png")
 
       pointer-events:
         auto;
+
+    }
+
+
+    /* ==========================================
+       CUSTOM CHOICE
+    ========================================== */
+
+    .custom-choice-box {
+
+      display: none;
+
+      width: 100%;
+
+      margin:
+        -8px 0 22px;
+
+      padding:
+        18px;
+
+      border-radius: 22px;
+
+      border:
+        1px solid
+        var(--accent-soft);
+
+      background:
+        rgba(0,0,0,.22);
+
+      animation:
+        pop .25s ease;
+
+    }
+
+    .custom-choice-box.visible {
+
+      display: block;
+
+    }
+
+    .custom-label {
+
+      font-size: 14px;
+
+      line-height: 1.9;
+
+      margin-bottom: 10px;
+
+      color:
+        rgba(255,255,255,.90);
+
+    }
+
+    .custom-input,
+    .free-note {
+
+      width: 100%;
+
+      border:
+        1px solid
+        var(--accent-medium);
+
+      border-radius: 17px;
+
+      background:
+        rgba(0,0,0,.30);
+
+      color: white;
+
+      font-family:
+        "Vazirmatn",
+        sans-serif;
+
+      font-size: 16px;
+
+      line-height: 1.8;
+
+      outline: none;
+
+      padding:
+        14px 15px;
+
+      direction: rtl;
+
+      text-align: right;
+
+      transition:
+        border-color .2s ease,
+        box-shadow .2s ease;
+
+    }
+
+    .custom-input:focus,
+    .free-note:focus {
+
+      border-color:
+        var(--accent);
+
+      box-shadow:
+        0 0 14px
+        var(--accent-soft);
+
+    }
+
+    .custom-input::placeholder,
+    .free-note::placeholder {
+
+      color:
+        rgba(255,255,255,.45);
+
+    }
+
+    .free-note {
+
+      min-height: 220px;
+
+      resize: vertical;
+
+    }
+
+    .optional-text {
+
+      font-size: 13px;
+
+      margin-top: 10px;
+
+      opacity: .62;
 
     }
 
@@ -879,6 +983,9 @@ url("D86F75AE-89CA-4887-994D-7B23416B7755.png")
 
       line-height: 1.8;
 
+      overflow-wrap:
+        anywhere;
+
     }
 
     .summary-row:last-child {
@@ -892,6 +999,13 @@ url("D86F75AE-89CA-4887-994D-7B23416B7755.png")
 
       color:
         var(--accent);
+
+    }
+
+    .summary-note {
+
+      white-space:
+        pre-wrap;
 
     }
 
@@ -1228,7 +1342,7 @@ url("D86F75AE-89CA-4887-994D-7B23416B7755.png")
 
       اولین پارامتر آزمایش:
       <strong>
-        زمان
+        تاریخ
       </strong>
 
       <br>
@@ -1344,7 +1458,7 @@ url("D86F75AE-89CA-4887-994D-7B23416B7755.png")
 
       پارامتر دوم آزمایش:
       <strong>
-        زمان
+        ساعت
       </strong>
 
       <br>
@@ -1359,68 +1473,23 @@ url("D86F75AE-89CA-4887-994D-7B23416B7755.png")
 
     <div class="time-grid">
 
-      <button
-        class="time-option"
-        data-time="17:00"
-      >
-        17:00
-      </button>
+      <button class="time-option" data-time="17:00">17:00</button>
 
-      <button
-        class="time-option"
-        data-time="17:15"
-      >
-        17:15
-      </button>
+      <button class="time-option" data-time="17:15">17:15</button>
 
-      <button
-        class="time-option"
-        data-time="17:30"
-      >
-        17:30
-      </button>
+      <button class="time-option" data-time="17:30">17:30</button>
 
-      <button
-        class="time-option"
-        data-time="17:45"
-      >
-        17:45
-      </button>
+      <button class="time-option" data-time="17:45">17:45</button>
 
-      <button
-        class="time-option"
-        data-time="18:00"
-      >
-        18:00
-      </button>
+      <button class="time-option" data-time="18:00">18:00</button>
 
-      <button
-        class="time-option"
-        data-time="18:15"
-      >
-        18:15
-      </button>
+      <button class="time-option" data-time="18:15">18:15</button>
 
-      <button
-        class="time-option"
-        data-time="18:30"
-      >
-        18:30
-      </button>
+      <button class="time-option" data-time="18:30">18:30</button>
 
-      <button
-        class="time-option"
-        data-time="18:45"
-      >
-        18:45
-      </button>
+      <button class="time-option" data-time="18:45">18:45</button>
 
-      <button
-        class="time-option"
-        data-time="19:00"
-      >
-        19:00
-      </button>
+      <button class="time-option" data-time="19:00">19:00</button>
 
     </div>
 
@@ -1664,8 +1733,9 @@ url("D86F75AE-89CA-4887-994D-7B23416B7755.png")
 
 
       <button
-        class="restaurant-option"
-        data-value="انتخاب نیلوفر"
+        class="restaurant-option custom-option"
+        data-value="CUSTOM"
+        data-custom-target="customRestaurantK"
       >
 
         <span class="option-name">
@@ -1684,6 +1754,27 @@ url("D86F75AE-89CA-4887-994D-7B23416B7755.png")
 
 
     </div>
+
+
+    <div
+      id="customRestaurantK"
+      class="custom-choice-box"
+    >
+
+      <div class="custom-label">
+        انتخاب با خودت؛ کجا بریم؟ 🤍
+      </div>
+
+      <input
+        id="customRestaurantInputK"
+        class="custom-input"
+        type="text"
+        autocomplete="off"
+        placeholder="اسم رستوران یا جایی که دوست داری..."
+      >
+
+    </div>
+
 
     <div
       id="restaurantTextK"
@@ -1707,7 +1798,6 @@ url("D86F75AE-89CA-4887-994D-7B23416B7755.png")
 
 <!-- =====================================================
      PAGE 7 - DÜSSELDORF RESTAURANTS
-     فعلاً نسخه پایه
 ===================================================== -->
 
 <section
@@ -1727,15 +1817,20 @@ url("D86F75AE-89CA-4887-994D-7B23416B7755.png")
 
     <div class="subtitle">
 
-      وارد شاخه‌ی Düsseldorf شدیم.
+      وارد شاخه‌ی Düsseldorf شدیم 🧬
 
       <br>
 
-      این بخش رو مرحله بعد باهم نهایی می‌کنیم 🧬
+      چند نمونه برای بررسی آماده‌ست...
+
+      <br>
+
+      ببین کدوم بیشتر با سلول‌های چشاییت سازگاره 😌
 
     </div>
 
     <div class="restaurant-grid">
+
 
       <button
         class="restaurant-option"
@@ -1747,10 +1842,15 @@ url("D86F75AE-89CA-4887-994D-7B23416B7755.png")
         </span>
 
         <span class="option-desc">
-          Modern • International • Crossover
+          رستوران مدرن و بین‌المللی
+        </span>
+
+        <span class="option-science">
+          نمونه‌ی چندمتغیره با ترکیب‌های متنوع؛ مناسب برای وقتی که نمی‌خوایم آزمایش قابل‌پیش‌بینی باشه.
         </span>
 
       </button>
+
 
       <button
         class="restaurant-option"
@@ -1762,10 +1862,15 @@ url("D86F75AE-89CA-4887-994D-7B23416B7755.png")
         </span>
 
         <span class="option-desc">
-          Mediterranean • Seafood • Sushi
+          مدیترانه‌ای، دریایی و سوشی
+        </span>
+
+        <span class="option-science">
+          نمونه‌ی دریایی با طیف وسیع داده‌ها؛ احتمال فعال شدن هم‌زمان چند گیرنده‌ی چشایی بالاست.
         </span>
 
       </button>
+
 
       <button
         class="restaurant-option"
@@ -1777,10 +1882,15 @@ url("D86F75AE-89CA-4887-994D-7B23416B7755.png")
         </span>
 
         <span class="option-desc">
-          Argentinian Steakhouse
+          استیک‌هاوس آرژانتینی
+        </span>
+
+        <span class="option-science">
+          نمونه‌ی پروتئینی با شدت بالا؛ مناسب برای وقتی که می‌خوایم آزمایش رو جدی‌تر ادامه بدیم.
         </span>
 
       </button>
+
 
       <button
         class="restaurant-option"
@@ -1792,10 +1902,15 @@ url("D86F75AE-89CA-4887-994D-7B23416B7755.png")
         </span>
 
         <span class="option-desc">
-          Asian Fusion • Sushi
+          آسیایی و سوشی
+        </span>
+
+        <span class="option-science">
+          نمونه‌ی ترکیبی با چند زیرگروه؛ مناسب برای بررسی واکنش به مزه‌های مختلف در یک محیط کنترل‌شده.
         </span>
 
       </button>
+
 
       <button
         class="restaurant-option"
@@ -1807,14 +1922,20 @@ url("D86F75AE-89CA-4887-994D-7B23416B7755.png")
         </span>
 
         <span class="option-desc">
-          Italian • Pasta • Mediterranean
+          رستوران ایتالیایی
+        </span>
+
+        <span class="option-science">
+          نمونه‌ی کلاسیک با پاستا و ترکیب‌های مدیترانه‌ای؛ احتمال بالای رضایت سلول‌های چشایی.
         </span>
 
       </button>
 
+
       <button
-        class="restaurant-option"
-        data-value="انتخاب نیلوفر"
+        class="restaurant-option custom-option"
+        data-value="CUSTOM"
+        data-custom-target="customRestaurantD"
       >
 
         <span class="option-name">
@@ -1822,12 +1943,38 @@ url("D86F75AE-89CA-4887-994D-7B23416B7755.png")
         </span>
 
         <span class="option-desc">
-          خودت یه گزینه پیشنهاد بده
+          هیچکدوم؟
+        </span>
+
+        <span class="option-science">
+          اگه هیچ‌کدوم با شرایط آزمایش سازگار نبود، خودت یه نمونه‌ی مناسب‌تر معرفی کن.
         </span>
 
       </button>
 
+
     </div>
+
+
+    <div
+      id="customRestaurantD"
+      class="custom-choice-box"
+    >
+
+      <div class="custom-label">
+        انتخاب با خودت؛ کجا بریم؟ 🤍
+      </div>
+
+      <input
+        id="customRestaurantInputD"
+        class="custom-input"
+        type="text"
+        autocomplete="off"
+        placeholder="اسم رستوران یا جایی که دوست داری..."
+      >
+
+    </div>
+
 
     <div
       id="restaurantTextD"
@@ -1920,7 +2067,7 @@ url("D86F75AE-89CA-4887-994D-7B23416B7755.png")
       class="funny-message"
     >
 
-      😐 مگه میشه بهت خوش نگذره؟
+      😐 یعنی ممکنه بهت خوش نگذشته باشه؟
 
       <br><br>
 
@@ -2077,7 +2224,49 @@ url("D86F75AE-89CA-4887-994D-7B23416B7755.png")
       </button>
 
 
+      <button
+        class="bar-option custom-option"
+        data-value="CUSTOM"
+        data-custom-target="customBarK"
+      >
+
+        <span class="option-name">
+          🧪 Unknown Sample
+        </span>
+
+        <span class="option-desc">
+          هیچکدوم؟
+        </span>
+
+        <span class="option-science">
+          اگه هیچ‌کدوم به مود امشب نخورد، خودت یه جای دیگه پیشنهاد بده.
+        </span>
+
+      </button>
+
+
     </div>
+
+
+    <div
+      id="customBarK"
+      class="custom-choice-box"
+    >
+
+      <div class="custom-label">
+        خودت انتخاب کن؛ برای فاز دوم کجا بریم؟ 🥃
+      </div>
+
+      <input
+        id="customBarInputK"
+        class="custom-input"
+        type="text"
+        autocomplete="off"
+        placeholder="اسم بار یا جایی که دوست داری..."
+      >
+
+    </div>
+
 
     <div
       id="barTextK"
@@ -2101,7 +2290,6 @@ url("D86F75AE-89CA-4887-994D-7B23416B7755.png")
 
 <!-- =====================================================
      PAGE 10 - DÜSSELDORF PHASE II
-     فعلاً پایه
 ===================================================== -->
 
 <section
@@ -2121,11 +2309,16 @@ url("D86F75AE-89CA-4887-994D-7B23416B7755.png")
 
     <div class="subtitle">
 
-      این بخش Düsseldorf رو مرحله بعد باهم نهایی می‌کنیم. 🧬
+      حالا ببینیم برای ادامه‌ی شب،
+
+      <br>
+
+      سلول‌ها چه محیطی رو انتخاب می‌کنن... 😌
 
     </div>
 
     <div class="bar-grid">
+
 
       <button
         class="bar-option"
@@ -2137,10 +2330,15 @@ url("D86F75AE-89CA-4887-994D-7B23416B7755.png")
         </span>
 
         <span class="option-desc">
-          Cocktail Bar
+          کوکتل‌بار شیک برای کوکتل و حرف زدن.
+        </span>
+
+        <span class="option-science">
+          شروع متمدنانه‌ی فاز دوم، قبل از اینکه نتایج آزمایش غیرقابل‌اعتماد بشن.
         </span>
 
       </button>
+
 
       <button
         class="bar-option"
@@ -2152,10 +2350,15 @@ url("D86F75AE-89CA-4887-994D-7B23416B7755.png")
         </span>
 
         <span class="option-desc">
-          Wine Bar
+          شراب، فضای آروم و یکم کلاس.
+        </span>
+
+        <span class="option-science">
+          اینجا فعلاً وانمود می‌کنیم دو تا آدم خیلی باکلاسیم.
         </span>
 
       </button>
+
 
       <button
         class="bar-option"
@@ -2167,10 +2370,15 @@ url("D86F75AE-89CA-4887-994D-7B23416B7755.png")
         </span>
 
         <span class="option-desc">
-          Hotel Bar & Smoking Lounge
+          هتل‌بار و Smoking Lounge
+        </span>
+
+        <span class="option-science">
+          یه گزینه‌ی شیک‌تر و سنگین‌تر؛ برای وقتی که سلول‌ها اعلام کنن امشب باید باکلاس رفتار کنیم.
         </span>
 
       </button>
+
 
       <button
         class="bar-option"
@@ -2185,7 +2393,12 @@ url("D86F75AE-89CA-4887-994D-7B23416B7755.png")
           Rock Pub
         </span>
 
+        <span class="option-science">
+          آبجو، موزیک و فضای راحت‌تر؛ اینجا آزمایشگاه یکم از کنترل خارج میشه.
+        </span>
+
       </button>
+
 
       <button
         class="bar-option"
@@ -2200,9 +2413,56 @@ url("D86F75AE-89CA-4887-994D-7B23416B7755.png")
           Shisha & Cocktail Lounge
         </span>
 
+        <span class="option-science">
+          ⚠️ شیشه + کوکتل؛ گزینه‌ی مخصوص وقتی که میگرن رسماً وارد فاز دوم آزمایش میشه.
+        </span>
+
       </button>
 
+
+      <button
+        class="bar-option custom-option"
+        data-value="CUSTOM"
+        data-custom-target="customBarD"
+      >
+
+        <span class="option-name">
+          🧪 Unknown Sample
+        </span>
+
+        <span class="option-desc">
+          هیچکدوم؟
+        </span>
+
+        <span class="option-science">
+          اگه هیچ‌کدوم به مود امشب نخورد، خودت یه جای دیگه پیشنهاد بده.
+        </span>
+
+      </button>
+
+
     </div>
+
+
+    <div
+      id="customBarD"
+      class="custom-choice-box"
+    >
+
+      <div class="custom-label">
+        خودت انتخاب کن؛ برای فاز دوم کجا بریم؟ 🥃
+      </div>
+
+      <input
+        id="customBarInputD"
+        class="custom-input"
+        type="text"
+        autocomplete="off"
+        placeholder="اسم بار یا جایی که دوست داری..."
+      >
+
+    </div>
+
 
     <div
       id="barTextD"
@@ -2354,7 +2614,49 @@ url("D86F75AE-89CA-4887-994D-7B23416B7755.png")
       </button>
 
 
+      <button
+        class="activity-option custom-option"
+        data-value="CUSTOM"
+        data-custom-target="customActivityK"
+      >
+
+        <span class="option-name">
+          🧪 Unknown Protocol
+        </span>
+
+        <span class="option-desc">
+          هیچکدوم؟
+        </span>
+
+        <span class="option-science">
+          اگه برای پایان شب ایده‌ی بهتری داری، خودت پروتکل نهایی رو تعیین کن.
+        </span>
+
+      </button>
+
+
     </div>
+
+
+    <div
+      id="customActivityK"
+      class="custom-choice-box"
+    >
+
+      <div class="custom-label">
+        ایده‌ی خودت برای ادامه‌ی شب چیه؟ 😌
+      </div>
+
+      <input
+        id="customActivityInputK"
+        class="custom-input"
+        type="text"
+        autocomplete="off"
+        placeholder="پروتکل نهایی پیشنهادی خودت..."
+      >
+
+    </div>
+
 
     <div
       id="activityTextK"
@@ -2397,11 +2699,35 @@ url("D86F75AE-89CA-4887-994D-7B23416B7755.png")
 
     <div class="subtitle">
 
-      این بخش Düsseldorf رو مرحله بعد باهم نهایی می‌کنیم. 🧬
+      هنوز انرژی داری؟ 😏
+
+      <br>
+
+      چون من هنوز برنامه دارم.
+
+      <br><br>
+
+      وقتشه از حالت نشسته خارج بشیم
+
+      <br>
+
+      و ببینیم کدوممون استعداد بیشتری در
+
+      <strong>
+        تخریب نتایج آزمایش
+      </strong>
+
+      داره 🧬
+
+      <br><br>
+
+      خانم نیلوفر، مرحله‌ی آخر رو شما انتخاب کنید:
 
     </div>
 
+
     <div class="activity-grid">
+
 
       <button
         class="activity-option"
@@ -2416,7 +2742,12 @@ url("D86F75AE-89CA-4887-994D-7B23416B7755.png")
           Die Gameshow
         </span>
 
+        <span class="option-science">
+          بازی، رقابت و احتمالاً مشخص شدن اینکه کدوممون باخت رو بدتر تحمل می‌کنه.
+        </span>
+
       </button>
+
 
       <button
         class="activity-option"
@@ -2431,11 +2762,16 @@ url("D86F75AE-89CA-4887-994D-7B23416B7755.png")
           Bowling Düsseldorf
         </span>
 
+        <span class="option-science">
+          یه رقابت کلاسیک برای آخر شب؛ بازنده حق اعتراض به نتایج آزمایش رو نداره.
+        </span>
+
       </button>
+
 
       <button
         class="activity-option"
-        data-value="7th Space Düsseldorf"
+        data-value="7th Space Düsseldorf – Axtwerfen + VR"
       >
 
         <span class="option-name">
@@ -2446,7 +2782,12 @@ url("D86F75AE-89CA-4887-994D-7B23416B7755.png")
           7th Space Düsseldorf
         </span>
 
+        <span class="option-science">
+          بخش کمی خطرناک‌تر آزمایش؛ اینجا مشخص میشه سپردن تبر دست ما تصمیم عاقلانه‌ای بوده یا نه.
+        </span>
+
       </button>
+
 
       <button
         class="activity-option"
@@ -2461,7 +2802,12 @@ url("D86F75AE-89CA-4887-994D-7B23416B7755.png")
           LaserTag Düsseldorf
         </span>
 
+        <span class="option-science">
+          اینجا دیگه آزمایش رسماً تبدیل به جنگ میشه؛ رحم هم نداریم.
+        </span>
+
       </button>
+
 
       <button
         class="activity-option"
@@ -2473,12 +2819,59 @@ url("D86F75AE-89CA-4887-994D-7B23416B7755.png")
         </span>
 
         <span class="option-desc">
-          یه فیلم خوب برای اختتامیه.
+          یه فیلم خوب برای اختتامیه 🤍
+        </span>
+
+        <span class="option-science">
+          وقتی سلول‌ها اعلام کنن برای امشب دیگه بسه.
         </span>
 
       </button>
 
+
+      <button
+        class="activity-option custom-option"
+        data-value="CUSTOM"
+        data-custom-target="customActivityD"
+      >
+
+        <span class="option-name">
+          🧪 Unknown Protocol
+        </span>
+
+        <span class="option-desc">
+          هیچکدوم؟
+        </span>
+
+        <span class="option-science">
+          اگه برای پایان شب ایده‌ی بهتری داری، خودت پروتکل نهایی رو تعیین کن.
+        </span>
+
+      </button>
+
+
     </div>
+
+
+    <div
+      id="customActivityD"
+      class="custom-choice-box"
+    >
+
+      <div class="custom-label">
+        ایده‌ی خودت برای ادامه‌ی شب چیه؟ 😌
+      </div>
+
+      <input
+        id="customActivityInputD"
+        class="custom-input"
+        type="text"
+        autocomplete="off"
+        placeholder="پروتکل نهایی پیشنهادی خودت..."
+      >
+
+    </div>
+
 
     <div
       id="activityTextD"
@@ -2514,7 +2907,9 @@ url("D86F75AE-89CA-4887-994D-7B23416B7755.png")
     <div
       id="personalBadge"
       class="city-theme-badge"
-    ></div>
+    >
+      🧬 FINAL PROTOCOL
+    </div>
 
     <h1 class="title">
       قبل از ثبت نهایی... 🤍
@@ -2710,9 +3105,9 @@ url("D86F75AE-89CA-4887-994D-7B23416B7755.png")
 
     <button
       class="continue-btn active"
-      onclick="openSummary()"
+      onclick="showPage(14)"
     >
-      🤍 خوندم، ثبت نهایی رو ببینیم
+      🤍 خوندم، یه چیز دیگه هم مونده
     </button>
 
   </main>
@@ -2722,11 +3117,74 @@ url("D86F75AE-89CA-4887-994D-7B23416B7755.png")
 
 
 <!-- =====================================================
-     PAGE 14 - SUMMARY
+     PAGE 14 - FREE NOTE
 ===================================================== -->
 
 <section
   id="page14"
+  class="page"
+>
+
+  <main class="card">
+
+    <div class="city-theme-badge">
+      📝 OPEN NOTES
+    </div>
+
+    <h1 class="title">
+      یه چیزی مونده؟ 📝
+    </h1>
+
+    <div class="subtitle">
+
+      هر نکته، پیشنهاد، درخواست
+
+      <br>
+
+      یا هر چیزی که دوست داری قبل از شبمون بدونم،
+
+      <br>
+
+      اینجا برام بنویس.
+
+      <br><br>
+
+      با کمال میل همه‌ش رو می‌خونم 🤍
+
+    </div>
+
+
+    <textarea
+      id="freeNote"
+      class="free-note"
+      placeholder="هرچی دوست داری اینجا بنویس..."
+    ></textarea>
+
+    <div class="optional-text">
+      این بخش کاملاً اختیاریه؛ اگه چیزی نداری می‌تونی خالی بذاری.
+    </div>
+
+    <br><br>
+
+    <button
+      class="continue-btn active"
+      onclick="saveNoteAndOpenSummary()"
+    >
+      ثبت یادداشت و ادامه 🤍
+    </button>
+
+  </main>
+
+</section>
+
+
+
+<!-- =====================================================
+     PAGE 15 - SUMMARY
+===================================================== -->
+
+<section
+  id="page15"
   class="page"
 >
 
@@ -2761,6 +3219,7 @@ url("D86F75AE-89CA-4887-994D-7B23416B7755.png")
 
       </div>
 
+
       <div class="summary-row">
 
         🕐
@@ -2772,6 +3231,7 @@ url("D86F75AE-89CA-4887-994D-7B23416B7755.png")
         <span id="summaryTime"></span>
 
       </div>
+
 
       <div class="summary-row">
 
@@ -2785,6 +3245,7 @@ url("D86F75AE-89CA-4887-994D-7B23416B7755.png")
 
       </div>
 
+
       <div class="summary-row">
 
         🍽️
@@ -2796,6 +3257,7 @@ url("D86F75AE-89CA-4887-994D-7B23416B7755.png")
         <span id="summaryRestaurant"></span>
 
       </div>
+
 
       <div class="summary-row">
 
@@ -2809,6 +3271,7 @@ url("D86F75AE-89CA-4887-994D-7B23416B7755.png")
 
       </div>
 
+
       <div class="summary-row">
 
         🎯
@@ -2818,6 +3281,28 @@ url("D86F75AE-89CA-4887-994D-7B23416B7755.png")
         </strong>
 
         <span id="summaryActivity"></span>
+
+      </div>
+
+
+      <div
+        id="summaryNoteRow"
+        class="summary-row"
+        style="display:none;"
+      >
+
+        📝
+
+        <strong>
+          یادداشت نیلوفر:
+        </strong>
+
+        <br>
+
+        <span
+          id="summaryNote"
+          class="summary-note"
+        ></span>
 
       </div>
 
@@ -2880,7 +3365,7 @@ url("D86F75AE-89CA-4887-994D-7B23416B7755.png")
 
     <button
       class="final-btn"
-      onclick="showPage(15)"
+      onclick="showPage(16)"
     >
 
       ❤️🧬 تأیید و ثبت آزمایش
@@ -2894,11 +3379,11 @@ url("D86F75AE-89CA-4887-994D-7B23416B7755.png")
 
 
 <!-- =====================================================
-     PAGE 15 - FINAL
+     PAGE 16 - FINAL
 ===================================================== -->
 
 <section
-  id="page15"
+  id="page16"
   class="page"
 >
 
@@ -2963,7 +3448,7 @@ url("D86F75AE-89CA-4887-994D-7B23416B7755.png")
 
     <div class="signature">
 
-      Status: Ready for Experiment 🧪
+      Status: Date Protocol Approved 🧪❤️
 
       <br><br>
 
@@ -3001,6 +3486,8 @@ url("D86F75AE-89CA-4887-994D-7B23416B7755.png")
   let selectedBar = null;
 
   let selectedActivity = null;
+
+  let freeNote = "";
 
 
 
@@ -3322,13 +3809,6 @@ url("D86F75AE-89CA-4887-994D-7B23416B7755.png")
 
       document
         .getElementById(
-          "personalBadge"
-        )
-        .innerText =
-        "🧫 KÖLN PROTOCOL";
-
-      document
-        .getElementById(
           "summaryBadge"
         )
         .innerText =
@@ -3348,13 +3828,6 @@ url("D86F75AE-89CA-4887-994D-7B23416B7755.png")
         )
         .innerText =
         "🔬 DÜSSELDORF • PHASE I COMPLETE";
-
-      document
-        .getElementById(
-          "personalBadge"
-        )
-        .innerText =
-        "🔬 DÜSSELDORF PROTOCOL";
 
       document
         .getElementById(
@@ -3400,42 +3873,52 @@ url("D86F75AE-89CA-4887-994D-7B23416B7755.png")
 
 
   /* ==========================================
-     GENERIC SELECTION
+     HELPERS FOR CUSTOM CHOICES
   ========================================== */
 
-  function setupSelection(
+  function hideCustomBoxes(pageId) {
 
-    pageId,
-
-    selector,
-
-    textId,
-
-    continueId,
-
-    variableSetter
-
-  ) {
-
-    const buttons =
-      document.querySelectorAll(
-
+    document
+      .querySelectorAll(
         "#" +
         pageId +
-        " " +
-        selector
+        " .custom-choice-box"
+      )
+      .forEach(box => {
 
+        box.classList.remove(
+          "visible"
+        );
+
+      });
+
+  }
+
+
+  function setupChoicePage(config) {
+
+    const page =
+      document.getElementById(
+        config.pageId
+      );
+
+    const buttons =
+      page.querySelectorAll(
+        config.selector
       );
 
     const text =
       document.getElementById(
-        textId
+        config.textId
       );
 
     const continueButton =
       document.getElementById(
-        continueId
+        config.continueId
       );
+
+    let customMode =
+      false;
 
 
     buttons.forEach(button => {
@@ -3456,69 +3939,218 @@ url("D86F75AE-89CA-4887-994D-7B23416B7755.png")
             "selected"
           );
 
-          const value =
-            this.dataset.value;
-
-          variableSetter(
-            value
+          hideCustomBoxes(
+            config.pageId
           );
 
-          text.innerText =
 
-            "✓ داده ثبت شد: " +
-            value +
-            " 🧬";
+          if (
+            this.dataset.value ===
+            "CUSTOM"
+          ) {
 
-          continueButton
-            .classList.add(
-              "active"
+            customMode =
+              true;
+
+            const targetId =
+              this.dataset.customTarget;
+
+            const box =
+              document.getElementById(
+                targetId
+              );
+
+            box.classList.add(
+              "visible"
             );
+
+            const input =
+              box.querySelector(
+                ".custom-input"
+              );
+
+            const currentValue =
+              input.value.trim();
+
+            if (currentValue) {
+
+              config.setter(
+                currentValue
+              );
+
+              text.innerText =
+
+                "✓ انتخاب خودت ثبت شد: " +
+                currentValue +
+                " 🧬";
+
+              continueButton
+                .classList.add(
+                  "active"
+                );
+
+            }
+
+            else {
+
+              config.setter(
+                null
+              );
+
+              text.innerText =
+                "اسم انتخاب خودت رو داخل کادر بنویس 🤍";
+
+              continueButton
+                .classList.remove(
+                  "active"
+                );
+
+            }
+
+            setTimeout(
+              () => input.focus(),
+              120
+            );
+
+          }
+
+          else {
+
+            customMode =
+              false;
+
+            const value =
+              this.dataset.value;
+
+            config.setter(
+              value
+            );
+
+            text.innerText =
+
+              "✓ داده ثبت شد: " +
+              value +
+              " 🧬";
+
+            continueButton
+              .classList.add(
+                "active"
+              );
+
+          }
 
         }
       );
 
     });
 
+
+    page
+      .querySelectorAll(
+        ".custom-input"
+      )
+      .forEach(input => {
+
+        input.addEventListener(
+          "input",
+          function() {
+
+            if (!customMode)
+              return;
+
+            const value =
+              this.value.trim();
+
+            if (value) {
+
+              config.setter(
+                value
+              );
+
+              text.innerText =
+
+                "✓ انتخاب خودت ثبت شد: " +
+                value +
+                " 🧬";
+
+              continueButton
+                .classList.add(
+                  "active"
+                );
+
+            }
+
+            else {
+
+              config.setter(
+                null
+              );
+
+              text.innerText =
+                "برای ادامه اسم انتخابت رو بنویس 🤍";
+
+              continueButton
+                .classList.remove(
+                  "active"
+                );
+
+            }
+
+          }
+        );
+
+      });
+
   }
 
 
 
   /* ==========================================
-     RESTAURANT
+     RESTAURANTS
   ========================================== */
 
-  setupSelection(
+  setupChoicePage({
 
-    "page6",
+    pageId:
+      "page6",
 
-    ".restaurant-option",
+    selector:
+      ".restaurant-option",
 
-    "restaurantTextK",
+    textId:
+      "restaurantTextK",
 
-    "restaurantContinueK",
+    continueId:
+      "restaurantContinueK",
 
-    value =>
-      selectedRestaurant =
-      value
+    setter:
+      value =>
+        selectedRestaurant =
+        value
 
-  );
+  });
 
 
-  setupSelection(
+  setupChoicePage({
 
-    "page7",
+    pageId:
+      "page7",
 
-    ".restaurant-option",
+    selector:
+      ".restaurant-option",
 
-    "restaurantTextD",
+    textId:
+      "restaurantTextD",
 
-    "restaurantContinueD",
+    continueId:
+      "restaurantContinueD",
 
-    value =>
-      selectedRestaurant =
-      value
+    setter:
+      value =>
+        selectedRestaurant =
+        value
 
-  );
+  });
 
 
   document
@@ -3581,38 +4213,48 @@ url("D86F75AE-89CA-4887-994D-7B23416B7755.png")
      BARS
   ========================================== */
 
-  setupSelection(
+  setupChoicePage({
 
-    "page9",
+    pageId:
+      "page9",
 
-    ".bar-option",
+    selector:
+      ".bar-option",
 
-    "barTextK",
+    textId:
+      "barTextK",
 
-    "barContinueK",
+    continueId:
+      "barContinueK",
 
-    value =>
-      selectedBar =
-      value
+    setter:
+      value =>
+        selectedBar =
+        value
 
-  );
+  });
 
 
-  setupSelection(
+  setupChoicePage({
 
-    "page10",
+    pageId:
+      "page10",
 
-    ".bar-option",
+    selector:
+      ".bar-option",
 
-    "barTextD",
+    textId:
+      "barTextD",
 
-    "barContinueD",
+    continueId:
+      "barContinueD",
 
-    value =>
-      selectedBar =
-      value
+    setter:
+      value =>
+        selectedBar =
+        value
 
-  );
+  });
 
 
   document
@@ -3650,38 +4292,48 @@ url("D86F75AE-89CA-4887-994D-7B23416B7755.png")
      ACTIVITIES
   ========================================== */
 
-  setupSelection(
+  setupChoicePage({
 
-    "page11",
+    pageId:
+      "page11",
 
-    ".activity-option",
+    selector:
+      ".activity-option",
 
-    "activityTextK",
+    textId:
+      "activityTextK",
 
-    "activityContinueK",
+    continueId:
+      "activityContinueK",
 
-    value =>
-      selectedActivity =
-      value
+    setter:
+      value =>
+        selectedActivity =
+        value
 
-  );
+  });
 
 
-  setupSelection(
+  setupChoicePage({
 
-    "page12",
+    pageId:
+      "page12",
 
-    ".activity-option",
+    selector:
+      ".activity-option",
 
-    "activityTextD",
+    textId:
+      "activityTextD",
 
-    "activityContinueD",
+    continueId:
+      "activityContinueD",
 
-    value =>
-      selectedActivity =
-      value
+    setter:
+      value =>
+        selectedActivity =
+        value
 
-  );
+  });
 
 
   document
@@ -3716,8 +4368,23 @@ url("D86F75AE-89CA-4887-994D-7B23416B7755.png")
 
 
   /* ==========================================
-     SUMMARY
+     NOTE + SUMMARY
   ========================================== */
+
+  function saveNoteAndOpenSummary() {
+
+    freeNote =
+      document
+        .getElementById(
+          "freeNote"
+        )
+        .value
+        .trim();
+
+    openSummary();
+
+  }
+
 
   function openSummary() {
 
@@ -3726,44 +4393,77 @@ url("D86F75AE-89CA-4887-994D-7B23416B7755.png")
         "summaryDate"
       )
       .innerText =
-      selectedDateLabel;
+      selectedDateLabel || "—";
 
     document
       .getElementById(
         "summaryTime"
       )
       .innerText =
-      selectedTime;
+      selectedTime || "—";
 
     document
       .getElementById(
         "summaryCity"
       )
       .innerText =
-      selectedCity;
+      selectedCity || "—";
 
     document
       .getElementById(
         "summaryRestaurant"
       )
       .innerText =
-      selectedRestaurant;
+      selectedRestaurant || "—";
 
     document
       .getElementById(
         "summaryBar"
       )
       .innerText =
-      selectedBar;
+      selectedBar || "—";
 
     document
       .getElementById(
         "summaryActivity"
       )
       .innerText =
-      selectedActivity;
+      selectedActivity || "—";
 
-    showPage(14);
+
+    const noteRow =
+      document.getElementById(
+        "summaryNoteRow"
+      );
+
+    const noteText =
+      document.getElementById(
+        "summaryNote"
+      );
+
+
+    if (freeNote) {
+
+      noteText.innerText =
+        freeNote;
+
+      noteRow.style.display =
+        "block";
+
+    }
+
+    else {
+
+      noteText.innerText =
+        "";
+
+      noteRow.style.display =
+        "none";
+
+    }
+
+
+    showPage(15);
 
   }
 
