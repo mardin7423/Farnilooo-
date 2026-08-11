@@ -3363,14 +3363,19 @@
     </div>
 
 
-    <button
-      class="final-btn"
-      onclick="showPage(16)"
-    >
+<button
+  id="submitExperimentBtn"
+  class="final-btn"
+  onclick="submitExperiment()"
+>
+  ❤️🧬 تأیید و ثبت آزمایش
+</button>
 
-      ❤️🧬 تأیید و ثبت آزمایش
-
-    </button>
+<div
+  id="submitStatus"
+  class="selected-text"
+  style="margin-top:16px;"
+></div>
 
   </main>
 
@@ -4466,7 +4471,73 @@
     showPage(15);
 
   }
+/* ==========================================
+   SEND RESULTS TO FORMSPREE
+========================================== */
 
+async function submitExperiment() {
+
+  const button = document.getElementById("submitExperimentBtn");
+  const status = document.getElementById("submitStatus");
+
+  button.disabled = true;
+  button.style.opacity = ".6";
+  button.innerText = "در حال ثبت نتایج... 🧬";
+
+  status.innerText = "لطفاً چند ثانیه صبر کن...";
+
+  const experimentData = {
+    _subject: "❤️ Niloufar Experiment - Final Results",
+    date: selectedDateLabel || "",
+    time: selectedTime || "",
+    city: selectedCity || "",
+    restaurant: selectedRestaurant || "",
+    bar: selectedBar || "",
+    activity: selectedActivity || "",
+    note: freeNote || "یادداشتی ثبت نشده"
+  };
+
+  try {
+
+    const response = await fetch(
+      "https://formspree.io/f/xvkpavdj",
+      {
+        method: "POST",
+
+        headers: {
+          "Content-Type": "application/json",
+          "Accept": "application/json"
+        },
+
+        body: JSON.stringify(experimentData)
+      }
+    );
+
+    if (response.ok) {
+
+      status.innerText = "✓ نتایج با موفقیت ثبت شد 🤍";
+
+      setTimeout(() => {
+        showPage(16);
+      }, 600);
+
+    } else {
+
+      throw new Error("Formspree error");
+
+    }
+
+  } catch (error) {
+
+    status.innerText =
+      "⚠️ ثبت نتیجه انجام نشد. دوباره امتحان کن.";
+
+    button.disabled = false;
+    button.style.opacity = "1";
+    button.innerText = "❤️🧬 دوباره تلاش کن";
+
+  }
+}
 
 </script>
 
