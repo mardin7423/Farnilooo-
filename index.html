@@ -4541,6 +4541,113 @@ async function submitExperiment() {
 
 </script>
 
+  <!-- DNA / CELL AMBIENT EFFECTS -->
+<style>
+.bio-effects {
+  position: fixed;
+  inset: 0;
+  pointer-events: none;
+  overflow: hidden;
+  z-index: 0;
+}
+
+.bio-particle {
+  position: absolute;
+  opacity: .18;
+  filter: drop-shadow(0 0 12px rgba(120,255,220,.55));
+  animation: bioFloat 9s ease-in-out infinite;
+  user-select: none;
+}
+
+.bio-particle:nth-child(1) {
+  left: 7%;
+  top: 15%;
+  font-size: 34px;
+  animation-delay: 0s;
+}
+
+.bio-particle:nth-child(2) {
+  right: 8%;
+  top: 28%;
+  font-size: 25px;
+  animation-delay: -3s;
+}
+
+.bio-particle:nth-child(3) {
+  left: 12%;
+  bottom: 18%;
+  font-size: 24px;
+  animation-delay: -6s;
+}
+
+.bio-particle:nth-child(4) {
+  right: 10%;
+  bottom: 12%;
+  font-size: 32px;
+  animation-delay: -2s;
+}
+
+@keyframes bioFloat {
+  0%, 100% {
+    transform: translateY(0) rotate(-5deg) scale(1);
+    opacity: .12;
+  }
+
+  50% {
+    transform: translateY(-22px) rotate(8deg) scale(1.08);
+    opacity: .32;
+  }
+}
+
+.bio-glow {
+  position: fixed;
+  width: 280px;
+  height: 280px;
+  border-radius: 50%;
+  background: radial-gradient(
+    circle,
+    rgba(80,255,210,.10),
+    rgba(255,70,130,.05) 45%,
+    transparent 70%
+  );
+  filter: blur(12px);
+  pointer-events: none;
+  z-index: 0;
+  animation: glowPulse 6s ease-in-out infinite;
+}
+
+.bio-glow.one {
+  top: -80px;
+  right: -80px;
+}
+
+.bio-glow.two {
+  bottom: -100px;
+  left: -100px;
+  animation-delay: -3s;
+}
+
+@keyframes glowPulse {
+  0%,100% {
+    transform: scale(.9);
+    opacity: .45;
+  }
+  50% {
+    transform: scale(1.15);
+    opacity: .8;
+  }
+}
+</style>
+
+<div class="bio-effects" aria-hidden="true">
+  <div class="bio-particle">🧬</div>
+  <div class="bio-particle">🫧</div>
+  <div class="bio-particle">🧬</div>
+  <div class="bio-particle">🫧</div>
+</div>
+
+<div class="bio-glow one" aria-hidden="true"></div>
+<div class="bio-glow two" aria-hidden="true"></div>
 
 </body>
 
